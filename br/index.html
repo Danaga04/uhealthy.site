@@ -375,47 +375,100 @@ function getParams() {
 <!-- Importa a fonte DM Sans (caso ainda não tenha) -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- FAQ - Truque das Amantes -->
-<section style="font-family: 'DM Sans', sans-serif; background: #ffffff; color: #000; padding: 40px 20px; max-width: 800px; margin: 0 auto;">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Perguntas Frequentes</h2>
+  <style>
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">1. O que exatamente vou aprender no Truque das Amantes?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">Você vai aprender técnicas tântricas práticas para estimular seu parceiro de forma intensa e diferente de tudo que ele já sentiu. São mais de 50 aulas com demonstrações explícitas com modelos reais.</div>
+  .faq-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .faq-item {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #ff3b3b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background: #262626;
+    border-top: 1px solid #444;
+    color: #ddd;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .faq-question::after {
+    content: "+";
+    font-size: 18px;
+  }
+
+  .faq-item.active .faq-question::after {
+    content: "–";
+  }
+</style>
+
+<div class="faq-container">
+  <h2>Perguntas frequentes:</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">A compra é sigilosa?</div>
+    <div class="faq-answer">Sim, a compra é 100% sigilosa!</div>
   </div>
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">2. Por quanto tempo terei acesso ao conteúdo?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">O acesso é vitalício! Você pode assistir quando quiser e quantas vezes quiser, no seu ritmo e no seu tempo.</div>
+  <div class="faq-item">
+    <div class="faq-question">Em quanto tempo vou ter resultados com o que vou aprender nesse programa?</div>
+    <div class="faq-answer">Seguindo o passo a passo logo nos primeiros dias já verá resultado aplicando o método, lembrando que depende somente de você.</div>
   </div>
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">3. O conteúdo é seguro? Como faço o pagamento?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">Sim! A plataforma de pagamento é 100% segura, com criptografia igual à de grandes sites como Amazon. Você pode pagar por Pix ou cartão de crédito com acesso imediato após a compra.</div>
+  <div class="faq-item">
+    <div class="faq-question">Como as aulas serão liberadas?</div>
+    <div class="faq-answer">O conteúdo será liberado em uma área de membros exclusiva e individual, o acesso será enviado pelo e-mail cadastrado na hora da compra.</div>
   </div>
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">4. E se eu não gostar do curso?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">Você tem 60 dias de garantia incondicional. Basta solicitar o reembolso por e-mail ou WhatsApp e devolveremos seu dinheiro sem perguntas.</div>
+  <div class="faq-item">
+    <div class="faq-question">Existe alguma garantia que o programa funciona?</div>
+    <div class="faq-answer">O programa é validado e comprovado por centenas de mulheres que já adquiriram o produto.</div>
   </div>
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">5. Preciso ter experiência anterior?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">Não! O conteúdo foi feito para iniciantes e avançadas. Você será guiada passo a passo desde o básico até as técnicas mais avançadas.</div>
+  <div class="faq-item">
+    <div class="faq-question">Preciso ter alguma experiência ou posso ser uma total inexperiente?</div>
+    <div class="faq-answer">Não precisa ter experiência alguma.</div>
   </div>
 
-  <div class="faq-item" style="border-bottom: 1px solid #ccc; padding: 15px 0;">
-    <p class="faq-question" style="font-weight: 700; cursor: pointer; margin: 0;">6. O curso é indicado para mulheres casadas ou solteiras?</p>
-    <div class="faq-answer" style="display: none; margin-top: 10px;">É indicado para todas! Casadas, solteiras, divorciadas... qualquer mulher que queira dominar o prazer e se tornar inesquecível na cama.</div>
+  <div class="faq-item">
+    <div class="faq-question">Como vou receber acesso às aulas?</div>
+    <div class="faq-answer">Pelo mesmo e-mail que cadastrará na hora da compra.</div>
   </div>
-</section>
+</div>
 
-<!-- Script de abrir e fechar -->
 <script>
   document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
-      const answer = item.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      const parent = item.parentElement;
+      parent.classList.toggle('active');
     });
   });
 </script>
