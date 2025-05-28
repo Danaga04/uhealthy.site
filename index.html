@@ -34,8 +34,7 @@
             <!-- VIDEO -->
             <div id="vid_6825212b95ac937b2938f1d9" style="position: relative; width: 100%; padding: 125% 0 0;"> <img id="thumb_6825212b95ac937b2938f1d9" src="images/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_6825212b95ac937b2938f1d9" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_6825212b95ac937b2938f1d9"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/8519bf2a-bd31-4e5b-9b3e-70303620aa9f/players/6825212b95ac937b2938f1d9/player.js", s.async=!0,document.head.appendChild(s); </script>
 
-            <!-- BOTÃO CTA -->
-            <a href="#valor" id="01" class="esconder btn fundo-verde rounded-1 fs-5 my-3">QUERO ACESSAR A PLATAFORMA</a>
+           
 
             <!-- TEXTO -->
             <h2 class="my-3">Se fizer isso na buc3t4 da sua parceira ela vai implorar para que seja o homem da vida dela!</h2>
@@ -206,61 +205,7 @@
     }();
 </script>
 
-    <!-- DELAY -->
-    <script>
-        // SCRIPT PARA FAZER O BOTÃO APARECER CONFORME O VÍDEO
-        document.addEventListener("DOMContentLoaded", function() {
-            /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-            var SECONDS_TO_DISPLAY = 1;
-            var CLASS_TO_DISPLAY = ".esconder";
-            /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-            var attempts = 0;
-            var elsHiddenList = [];
-            var elsDisplayed = false;
-            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
-            var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
-            var alreadyElsDisplayed = null;
-            try {
-                alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
-            } catch (e) {
-                console.warn('Failed to read data from localStorage: ', e);
-            }
-            setTimeout(function() {
-                elsHiddenList = Array.prototype.slice.call(elsHidden);
-            }, 0);
-            var showHiddenElements = function() {
-                elsDisplayed = true;
-                elsHiddenList.forEach((e) => e.style.setProperty("display", "block", "important"));
-                try {
-                    localStorage.setItem(alreadyDisplayedKey, true);
-                } catch (e) {
-                    console.warn('Failed to save data in localStorage: ', e);
-                }
-            }
-            var startWatchVideoProgress = function() {
-                if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
-                    if (attempts >= 10) return;
-                    attempts += 1;
-                    return setTimeout(function() {
-                        startWatchVideoProgress()
-                    }, 1000);
-                }
-                smartplayer.instances[0].on('timeupdate', () => {
-                    if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
-                    if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
-                    showHiddenElements();
-                })
-            }
-            if (alreadyElsDisplayed === 'true') {
-                setTimeout(function() {
-                    showHiddenElements();
-                }, 100);
-            } else {
-                startWatchVideoProgress()
-            }
-        });
-    </script>
-
+    
 
 
 </body></html>
