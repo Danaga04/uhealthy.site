@@ -111,17 +111,17 @@
 
 
 <!-- provas s 2 -->
-<style>
+  <style>
     body {
       margin: 0;
       font-family: sans-serif;
-      background: #f8f9fa;
+      background: #ffffff;
     }
 
     .carrossel-container {
       overflow-x: auto;
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       padding: 1rem;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -134,47 +134,41 @@
     .carrossel-item {
       flex: 0 0 auto;
       scroll-snap-align: start;
-      width: 80%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      background: white;
+      width: 70%;
+      max-width: 240px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff;
     }
 
     .carrossel-item img {
       width: 100%;
       display: block;
-      border-radius: 12px;
-    }
-
-    @media (min-width: 768px) {
-      .carrossel-item {
-        width: 250px;
-      }
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
   <section>
-    <h2 style="text-align:center;">O que estão dizendo:</h2>
+    <!-- Texto em branco escondido -->
+    <h2 style="text-align:center; color: transparent; user-select: none;">.</h2>
+
     <div class="carrossel-container">
       <div class="carrossel-item">
-        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136.png" alt="Prova Social 1">
+        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136%20(1).png" alt="Prova Social 1">
       </div>
       <div class="carrossel-item">
-        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136%20(1).png" alt="Prova Social 2">
+        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136%20(2).png" alt="Prova Social 2">
+      </div>
+      <div class="carrossel-item">
+        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136%20(3).png" alt="Prova Social 3">
+      </div>
+      <div class="carrossel-item">
+        <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/main/img_0136.png" alt="Prova Social 4">
       </div>
     </div>
-  </section>
-
-</body>
-</html>
-
-
-
-    
+ 
 <!-- SECTION 2 -->
 <div class="bg-white">
     <div class="container mt-4 py-4">
