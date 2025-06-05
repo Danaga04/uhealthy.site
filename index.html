@@ -15,8 +15,24 @@
         }
         .logo-topo {
             width: 120px;
-            margin: 20px auto;
+            margin: 20px auto 10px auto;
             display: none;
+        }
+        .progress-container {
+            width: 90%;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            margin: 0 auto 10px auto;
+            height: 15px;
+            overflow: hidden;
+            display: none;
+        }
+        .progress {
+            height: 100%;
+            width: 0;
+            background-color: #28a745;
+            border-radius: 20px;
+            transition: width 0.3s;
         }
         .quiz-container {
             max-width: 500px;
@@ -70,11 +86,27 @@
             font-size: 18px;
             margin-top: 15px;
         }
+
+        /* Efeito Fade In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
 
     <img src="https://raw.githubusercontent.com/Danaga04/uhealthy.site/refs/heads/main/images/Logo-simples-pra-confeitaria-rosaFESFSFS-150x150.jpg.webp" class="logo-topo" id="logoTopo">
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress" id="progress"></div>
+    </div>
 
     <div class="quiz-container">
         <div id="step"></div>
@@ -161,6 +193,8 @@
         let currentStep = 0;
 
         const logoTopo = document.getElementById('logoTopo');
+        const progressContainer = document.getElementById('progressContainer');
+        const progress = document.getElementById('progress');
         const stepDiv = document.getElementById('step');
 
         function renderStep() {
@@ -168,11 +202,14 @@
 
             if (currentStep === 0) {
                 logoTopo.style.display = 'none';
+                progressContainer.style.display = 'none';
             } else {
                 logoTopo.style.display = 'block';
+                progressContainer.style.display = 'block';
+                updateProgress();
             }
 
-            let html = "";
+            let html = `<div class="fade-in">`;
 
             if (step.img) {
                 html += `<img src="${step.img}" class="quiz-image">`;
@@ -190,7 +227,15 @@
                 html += '</div>';
             }
 
+            html += `</div>`;
+
             stepDiv.innerHTML = html;
+        }
+
+        function updateProgress() {
+            const totalSteps = steps.length - 1;
+            const percentage = Math.min((currentStep / totalSteps) * 100, 100);
+            progress.style.width = percentage + '%';
         }
 
         function nextStep() {
@@ -205,21 +250,25 @@
 
         function renderLoading() {
             logoTopo.style.display = 'block';
+            progressContainer.style.display = 'block';
             stepDiv.innerHTML = `
-                <div class="question">${steps[currentStep].question}</div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progressBar"></div>
+                <div class="fade-in">
+                    <div class="question">${steps[currentStep].question}</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="loading-text">Carregando...</div>
                 </div>
-                <div class="loading-text">Carregando...</div>
             `;
             let width = 0;
-            const progress = setInterval(() => {
+            const progressBar = document.getElementById('progressBar');
+            const progressInterval = setInterval(() => {
                 if (width >= 100) {
-                    clearInterval(progress);
+                    clearInterval(progressInterval);
                     window.location.href = 'https://uhealthy.site/br/';
                 } else {
                     width++;
-                    document.getElementById('progressBar').style.width = width + '%';
+                    progressBar.style.width = width + '%';
                 }
             }, 30);
         }
