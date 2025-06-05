@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brigadeiros Sem Fogo - Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             background: #fff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             text-align: center;
         }
         .logo-topo {
@@ -26,7 +28,6 @@
         }
         .question {
             font-size: 22px;
-            font-weight: bold;
             margin: 20px 0;
         }
         .options button {
@@ -76,91 +77,76 @@
 
     <script>
         const steps = [
-            // Etapa inicial (sem logo do topo)
             {
                 img: 'https://raw.githubusercontent.com/Danaga04/uhealthy.site/refs/heads/main/TEMPLATE-G1-TBFSFASF-e1742836670158.png.webp',
                 question: 'Você está pronta para aprender a fazer brigadeiros perfeitos e começar a lucrar trabalhando de casa ainda hoje?',
                 options: ['SIM, VAMOS COMEÇAR!']
             },
-            // Etapa 2
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS.webp',
                 question: 'Você já realizou algum treinamento de brigadeiros?',
                 options: ['Nunca fiz', 'Aprendi sozinha', 'Gostaria de fazer']
             },
-            // Etapa 3
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1.webp',
                 question: 'Seus brigadeiros ficam na qualidade que você quer?',
                 options: ['Não, cada vez ficam de um jeito', 'Às vezes sim, mas não sempre', 'Tenho dificuldade. Nunca fiz']
             },
-            // Etapa 4
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-1.webp',
                 question: 'Ele perde qualidade de um dia para o outro?',
                 options: ['Sim', 'Não', 'Não sei fazer']
             },
-            // Etapa 5
             {
                 img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2.jpg.webp',
                 question: 'O tempo de preparo tem sido muito longo?',
                 options: ['3 a 4 horas. Fico bem cansada', 'Mais de 4 horas', 'Em média 2 horas... 100/130 unidades', 'Não sei fazer']
             },
-            // Etapa 6 - imagem + botão
             {
                 img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/TEMPLATE-G1-TBF.png.webp',
                 question: '',
                 options: ['CONTINUAR...']
             },
-            // Etapa 7 - história
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/DGSGD.webp',
                 question: 'Olá, eu sou a Mariana Sánchez…\n\nTer filhos foi a melhor coisa que já aconteceu na minha vida. Mas também me forçou a aprender uma nova profissão.\n\nComecei a vender brigadeiros que não vão ao fogo e hoje faturo em média R$20.000 todos os meses. Agora é exatamente isso que eu vou te ensinar!',
                 options: ['CONTINUAR...']
             },
-            // Etapa 8
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2.webp',
                 question: 'Ganhar até R$5.000,00 por mês e sem precisar sair de casa é interessante pra você nesse momento?',
                 options: ['Sim, irá mudar minha vida!', 'Ajudaria, estou precisando']
             },
-            // Etapa 9
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-2-e1742852436475.webp',
                 question: 'Você já trabalha com confeitaria?',
                 options: ['Estou entrando agora', 'Sei me virar com minhas receitas', 'Já trabalhei por um tempo', 'Sou expert, já faço e vendo doces']
             },
-            // Etapa 10
             {
                 img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2yhukioyu.jpg.webp',
                 question: 'Como é sua disponibilidade de horário atualmente?',
                 options: ['2 horas ou menos', 'De 3 a 4 horas', 'Tenho o dia todo']
             },
-            // Etapa 11
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-3.webp',
                 question: 'O que mais te incomoda hoje?',
                 options: ['Não sobra dinheiro pra fazer as coisas que gosto', 'Não sobra tempo pra ficar com minha família', 'Não consigo guardar dinheiro']
             },
-            // Etapa 12
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-1-1.webp',
                 question: 'Quanto você gostaria de ganhar vendendo brigadeiros já no próximo mês?',
                 options: ['Entre R$1.000 e R$2.000', 'Entre R$2.000 e R$4.000', 'Entre R$5.000 e R$7.000']
             },
-            // Etapa 13
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2-2.webp',
                 question: 'Você tem um leite condensado em casa?',
                 options: ['Sim. pronta para começar', 'Não, mas eu posso comprar']
             },
-            // Etapa 14
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-3KJKJ.webp',
                 question: 'Você se compromete a seguir o plano que vou desenvolver para você?',
                 options: ['Sim, me comprometo', 'Não sei se vou conseguir']
             },
-            // Tela de carregamento com barra
             {
                 img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/TEMPLATE-G1-TBF.png.webp',
                 question: 'Processando suas respostas...',
@@ -176,16 +162,13 @@
         function renderStep() {
             const step = steps[currentStep];
 
-            // Mostra ou esconde logo do topo
             if (currentStep === 0) {
                 logoTopo.style.display = 'none';
             } else {
                 logoTopo.style.display = 'block';
             }
 
-            let html = `
-                <img src="${step.img}" class="quiz-image">
-            `;
+            let html = `<img src="${step.img}" class="quiz-image">`;
 
             if (step.question) {
                 html += `<div class="question">${step.question.replace(/\n/g, '<br>')}</div>`;
@@ -231,7 +214,7 @@
                     width++;
                     document.getElementById('progressBar').style.width = width + '%';
                 }
-            }, 30); // tempo total da barra: ~3 segundos
+            }, 30);
         }
 
         renderStep();
