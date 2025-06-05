@@ -91,5 +91,31 @@
   defer
 ></script>
 
+  <script>
+  // ALTERE O LINK PARA A PÃGINA QUE QUISER MOSTRAR QUANDO O USUÃRIO TENTAR SAIR
+  const link = 'https://lastlink.com/p/C077EB63F/checkout-payment/';
+
+  function setBackRedirect(url) {
+    let urlBackRedirect = url;
+    urlBackRedirect = urlBackRedirect =
+      urlBackRedirect.trim() +
+      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', () => {
+      console.log('onpopstate', urlBackRedirect);
+      setTimeout(() => {
+        location.href = urlBackRedirect;
+      }, 1);
+    });
+  }
+
+  setBackRedirect(link);
+  </script>
+
 
 </body></html><!-- Page optimized by LiteSpeed Cache @2025-06-04 10:12:37 --><!-- Page supported by LiteSpeed Cache 7.1 on 2025-06-04 10:12:36 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/719aca4225901ca6986eb599c64c8bb0.css --><!-- QUIC.cloud UCSS loaded ✅ -->
