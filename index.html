@@ -26,7 +26,7 @@
         .quiz-image {
             width: 80%;
             max-width: 300px;
-            border: 5px solid #5C4033; /* contorno marrom */
+            border: 5px solid #5C4033;
             border-radius: 12px;
             display: block;
             margin: 0 auto 20px auto;
@@ -153,7 +153,6 @@
                 options: ['Sim, me comprometo', 'Não sei se vou conseguir']
             },
             {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/TEMPLATE-G1-TBF.png.webp',
                 question: 'Processando suas respostas...',
                 options: []
             }
@@ -173,7 +172,11 @@
                 logoTopo.style.display = 'block';
             }
 
-            let html = `<img src="${step.img}" class="quiz-image">`;
+            let html = "";
+
+            if (step.img) {
+                html += `<img src="${step.img}" class="quiz-image">`;
+            }
 
             if (step.question) {
                 html += `<div class="question">${step.question.replace(/\n/g, '<br>')}</div>`;
@@ -203,7 +206,6 @@
         function renderLoading() {
             logoTopo.style.display = 'block';
             stepDiv.innerHTML = `
-                <img src="${steps[currentStep].img}" class="quiz-image">
                 <div class="question">${steps[currentStep].question}</div>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="progressBar"></div>
