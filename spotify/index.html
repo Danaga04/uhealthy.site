@@ -1,436 +1,114 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-
-    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
-
-<script>
-  window.pixelId = "683b3ed3b67da67997e52c5d";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-
-
-<title>Privacy Opina | Avalie</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" href="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Camada_1.webp" type="image/png">
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/" rel="preconnect">
-	<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet"><script src="js/jquery-3.6.4.min.js"></script><script src="js/js.cookie.min.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oferta Especial</title>
+<!-- Importa a fonte Poppins do Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+  }
+  .container {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .highlight {
+    font-weight: 700;
+  }
+  .green-highlight {
+    color: #0F8E15; /* Mantive verde escuro */
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .button {
+    margin-top: 20px;
+    background-color: #0F8E15; /* verde forte para contraste no fundo branco */
+    border: none;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+  }
+  .button svg {
+    fill: white;
+    width: 18px;
+    height: 18px;
+  }
+  .clock {
+    color: #0F8E15;
+    font-weight: 700;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px #0F8E15; }
+    50% { box-shadow: 0 0 20px #0F8E15; }
+  }
+  .footer {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 15px 0;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+  .footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+</style>
 </head>
-<body bis_frame_id="263" bis_status="ok">
-<p>
-<audio id="meuAudio"><source src="media/dinheiro.mp3" type="audio/mp3"></audio>
-
-<!--------------------- Pagina de login" ---------------------></p>
-
-<div id="login" style="display: block;">
-<div style="padding-top:30%;"></div>
-
-<div class="outer-box-login">
-<div class="white-box-login"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Camada_1.webp" style="width:30%; margin: 0 auto; display: flex;">
-<p class="popup-textL" style="text-align: center; color: rgb(101, 101, 101); font-weight: bold; font-size: 18px;">Bem-vindo(a) ao PrivacyOpina</p>
-
-<p class="popup-textL" style="text-align: center; color: rgb(101, 101, 101); font-size: 15px;">Insira seu e-mail para prosseguir!</p>
-<input class="form-input" for="email" id="email" name="email" oninput="validateEmail()" placeholder="E-mail" style="margin-top:20px;" type="text"><button class="prosseguir-button" href="#" id="prosseguir-button" onclick="verificarCampos()" style="margin-top: 15px;">ENTRAR</button>
-
-<div style="margin-bottom: 10px;"></div>
-</div>
-</div>
-
-<div class="footer-text">
-<p style="text-align: center; color: rgb(101, 101, 101); font-size: 15px; margin-top: 30px; font-weight: bold;">2025 PrivacyOpina LLC</p>
-
-<p style="text-align: center; color: rgb(101, 101, 101); font-size: 14px; margin-top: -10px; margin-bottom: 0px;">Termos e Politica de Privacidade</p>
-</div>
-</div>
-
-<div id="inicio" style="display: none;">
-<div class="menu"><a style="width: 30%; "> <img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Camada_1.webp" style="width:  110px;"> </a>
-
-<div class="buttons-container" href="#" onclick="mostrarPagina('saque')" style="width: 45%;">
-<div class="valor-box"><span id="valor" style="font-family: 'Montserrat', sans-serif; max-width: 100%;">R$ 100.00</span></div>
-</div>
-</div>
-
-<div style="margin-bottom: 100px;"></div>
-<!--------------------- Anuncio 1 --------------------->
-
-<div class="outer-box" id="ad1" style="display: block;">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$33,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Jada%20Stevens.jpg" style="width: 50%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Jada Stevens?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B1" onclick="showLoadingB1();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B1 ---->
-
-
-
-
-<div class="popup-container" id="popupB1"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 33,00</span></div>
-<!--------------------- Anuncio 2 --------------------->
-
-<div class="outer-box" id="ad2" style="display: none;">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$34,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Autumn%20Falls.jpg" style="width: 70%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Autumn Falls?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B2" onclick="showLoadingB2();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B2 ---->
-
-<div class="popup-container" id="popupB2"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 34,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p3" ---------------------->
-
-<div class="outer-box" id="ad3" style="display: none;">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$47,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Aidra%20Fox.jpg" style="width: 50%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Aidra Fox?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B3" onclick="showLoadingB3();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B3 ---->
-
-<div class="popup-container" id="popupB3"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 47,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p4" ---------------------->
-
-<div class="outer-box" id="ad4" style="display: none;">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$43,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Karla%20Kush.jpg" style="width: 80%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Karla Kush?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B4" onclick="showLoadingB4();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B4 ---->
-
-<div class="popup-container" id="popupB4"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 43,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p5" ---------------------->
-
-<div class="outer-box" id="ad5" style="display: none;">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$52,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Violet%20Myers.jpg" style="width: 80%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Violet Myers?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B5" onclick="showLoadingB5();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B5 ---->
-
-<div class="popup-container" id="popupB5"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 52,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p6" ---------------------->
-
-<div class="outer-box" id="ad6" style="display: none">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$32,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Gia%20Derza.jpg" style="width: 85%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Gia Derza?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B6" onclick="showLoadingB6();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B6 ---->
-
-<div class="popup-container" id="popupB6"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 32,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p7" ---------------------->
-
-<div class="outer-box" id="ad7" style="display: none">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$32,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Kenzie%20Anne.jpg" style="width: 75%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Kenzie Anne?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B7" onclick="showLoadingB7();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B7 ---->
-
-<div class="popup-container" id="popupB7"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 32,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p8" ---------------------->
-
-<div class="outer-box" id="ad8" style="display: none">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$27,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Kissa%20Sins.jpg" style="width: 80%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Kissa Sins?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B8" onclick="showLoadingB8();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B8 ---->
-
-<div class="popup-container" id="popupB8"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 27,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p9" ---------------------->
-
-<div class="outer-box" id="ad9" style="display: none">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$30,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Scarlett%20Sage.jpg" style="width: 80%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Scarlett Sage?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B9" onclick="showLoadingB9();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B9 ---->
-
-<div class="popup-container" id="popupB9"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 30,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p10" ---------------------->
-
-<div class="outer-box" id="ad10" style="display: none">
-<div class="white-box">
-<p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$43,00!</p>
-
-<div class="imagem"><img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Kimmy%20Granger.jpg" style="width: 80%; margin: 0 auto; display: flex; border-radius: 15px;"></div>
-
-<p class="pergunta-whats">De 1 a 5, qual nota você daria para a Kimmy Granger?</p>
-
-<div class="rating-container" id="rating-container-1"><button class="rating-button" data-rating="1">1</button><button class="rating-button" data-rating="2">2</button><button class="rating-button" data-rating="3">3</button><button class="rating-button" data-rating="4">4</button><button class="rating-button" data-rating="5">5</button></div>
-
-<p class="pergunta-whats">Você assistiria os videos dessa atriz?</p>
-
-<div class="rating-container" id="rating-container-2"><button class="rating-button" data-rating="1">Sim</button><button class="rating-button" data-rating="2">Não</button></div>
-
-<p class="pergunta-whats">Qual faixa etária você acha que mais consumiria conteúdos dessa atriz no Brasil?</p>
-
-<div class="rating-container" id="rating-container-3"><button class="rating-button" data-rating="1">18-35 anos</button><button class="rating-button" data-rating="2">+36 anos</button></div>
-<button class="enviarCodigo" id="B10" onclick="showLoadingB10();" type="button">Enviar respostas</button></div>
-</div>
-<!---- Popup B10 ---->
-
-<div class="popup-container" id="popupB10"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player autoplay="" background="transparent.html" loop="" speed="1" src="https://lottie.host/dfcc0486-0a2c-42d7-b454-1922410a517d/ccVkLniJIv.json" style="width: 200; height: 200px; display: flex; margin: 0 auto; margin-top: -20px; margin-bottom: -20px;"></dotlottie-player> <span class="popup-text" style="font-size: 20px;">Voce recebeu:</span> <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -10px; color: #06B32E;">R$ 43,00</span></div>
-<!---------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "p11" ----------------------><!--------------------- Limite atingido --------------------->
-
-<div class="popup-containerL" id="popupL">
-<div id="container-progresso" style="display: flex; margin: 0 auto; width: 300px; height: 300px;"><svg id="barra-progresso-svg" viewBox="0 0 36 36"> <circle cx="18" cy="18" fill="none" r="16" stroke="#ccc" stroke-width="3"></circle> <circle cx="18" cy="18" fill="none" id="minha-barra-progresso" r="16" stroke="#06B32E" stroke-dasharray="0 1000" stroke-width="3"></circle> </svg>
-
-<div id="texto-progresso"><span id="valor-saque" style="font-family: 'Montserrat', sans-serif; font-size: 23px;">R$100.00</span> <span style="font-family: 'Montserrat', sans-serif; color: #202020; font-size: 14px;">Seu saldo subiu!</span></div>
-</div>
-
-<p style="font-family: 'Montserrat', sans-serif; font-size: 32px; color: #28a745; text-align: center; margin-top: 15px; margin-bottom: -5px;">Parabens!</p>
-
-<p class="popup-textL" style="margin-bottom: 20px; font-size: 18px; color: #636363">Voce atingiu seu<br>
-limite diario!</p>
-<button class="desbloquear-button" href="#" onclick="mostrarPagina('saque')" style="font-weight: bold; font-size: 18x; border-radius: 12px; margin-top: 15px;">SAQUE AGORA</button></div>
-<!--------------------- Menu debaixo --------------------->
-
-<div style="margin-bottom: 80px;"></div>
-
-<div class="menuemb"><!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "InÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­cio" --><a href="#" onclick="mostrarPagina('saque')"><span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">paid</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Pagina 2" --> <a href="#" onclick="mostrarPagina('inicio')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">home</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Saque" --> <a href="#" onclick="mostrarPagina('bonus')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">help</span> </a></div>
-</div>
-<!--------------------- ConteÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºdo do "Saque" --------------------->
-
-<div id="saque" style="display: none;">
-<div class="menu"><a style="width: 30%; "> <img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Camada_1.webp" style="width:  110px;"> </a></div>
-
-<div style="margin-bottom: 100px;"></div>
-
-<div class="outer-box">
-<div class="valor-box-saque">
-<p style="font-size: 16px; margin-bottom: 15px; text-align: center; color: rgb(101, 101, 101);">Seu saldo</p>
-<span id="valor-money" style="font-size: 45px; text-align: center; font-family: 'Montserrat', sans-serif; letter-spacing: -2px; color: #06B32E;">R$ 67.00</span></div>
-</div>
-
-<p style="margin-bottom: 18px; margin-top: 23px; color: rgb(101, 101, 101); text-align: center; font-weight: bold;">Selecione seu tipo de chave PIX</p>
-
-<div class="button-container"><button class="square-button" onclick="toggleButton(1)"><img alt="Botao 1" decoding="async" src="images/cpf.png"></button><button class="square-button" onclick="toggleButton(2)"><img alt="Botao 2" decoding="async" src="images/telefone.png"></button><button class="square-button" onclick="toggleButton(3)"><img alt="Botao 3" decoding="async" src="images/email.png"></button><button class="square-button" onclick="toggleButton(4)"><img alt="Botao 4" decoding="async" src="images/qr.png"></button></div>
-
-<div style="margin-bottom: 15px;"></div>
-<!--------------------- MENU EMBAIXO --------------------->
-
-<div class="menuemb"><!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "InÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­cio" --><a href="#" onclick="mostrarPagina('saque')"><span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">paid</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Pagina 2" --> <a href="#" onclick="mostrarPagina('inicio')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">home</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Saque" --> <a href="#" onclick="mostrarPagina('bonus')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">help</span> </a></div>
-<input class="form-input" id="chave-pix" name="chave-pix" placeholder="Digite sua chave PIX aqui" type="text"> <input class="form-input" id="quantia" inputmode="numeric" name="quantia" oninput="formatarValor(this)" placeholder="Digite o valor que deseja sacar" style="margin-top: 15px;" type="text"><button class="desbloquear-button" onclick="showPopup()" style="font-weight: bold; font-size: 18x; border-radius: 12px; margin-top: 15px;">REALIZAR SAQUE</button> <!--------------------- TAXA DESBLOQUEIO --------------------->
-
-<div class="popup-container" id="popup">      <script src="js/lottie-player.js"></script><lottie-player src="https://lottie.host/7c73a00c-afa8-4ad5-b6b7-d8050e57f0c3/pg6N0GhPE7.json" background="##ffffff" speed="1.25" style="width: 150px; height: 150px; margin: 0 auto; display: flex;" loop="" autoplay="" direction="1" mode="normal"></lottie-player>
- <!--<span class="popup-text" style="font-size: 20px; font-weight: bold;">APRENDA A DESBLOQUEAR<br>SEU SALDO EM 1 MINUTO</span>---> <span class="popup-text" style="font-size: 20px; font-weight: bold;">DESBLOQUEAR SEU SALDO</span>
-
-<div style="margin-bottom: 20px;"></div>
-
-<p class="popup-text" style="padding-left: 5%; padding-right: 5%; text-align: justify;">Usamos uma taxa anti-fraudes, para evitar vazamentos dos vídeos e abuso dos pontos que estavam ocorrendo dentro do sistema.<br>
-<br>
-Fique tranquilo, você recebera o valor da taxa de volta junto ao valor dos seus pontos, é apenas uma etapa de validamento para garantir que você é uma pessoa real e não um robô.</p>
-
-<div style="margin-bottom: 20px;"></div>
-<button class="desbloquear-button" style="font-weight: bold;" onclick="window.open('saque')">DESBLOQUEAR AGORA</button></div>
-
-<div style="margin-bottom: 20px;"></div>
-<!--------------------- VIDEO DESBLOQUEIO ---------------------> 
-<!--<div class="popup-container" id="popupvideo">
-    
-<p style="text-align: center; margin: 20px 5px 30px 5px; font-size: 16px; font-weight: bold;">
-    ASSISTA O VÍDEO ABAIXO PARA LIBERAR SEU SAQUE E ACESSO VITALÍCIO
-</p>
-
-<div id="vid_68514482ee099cc3b7d06a68" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_68514482ee099cc3b7d06a68" src="https://images.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68514482ee099cc3b7d06a68/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_68514482ee099cc3b7d06a68" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_68514482ee099cc3b7d06a68"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68514482ee099cc3b7d06a68/player.js", s.async=!0,document.head.appendChild(s); </script>
+<body>
+  <div class="container">
+    <p style="font-weight:700; font-size:16px; margin-bottom: 10px;">
+      🎁 <span class="highlight">¡FUESELECCIONADO!</span> 🎁
+    </p>
+
+    <p>Mientras se procesaba su solicitud...<br />
+    <span class="highlight">✨ Se liberó una condición especial para su correo electrónico.</span></p>
+
+    <p>Acaba de ser seleccionado al azar para recibir acceso al <span class="green-highlight">truco del sal rosa con bicarbonato</span> con <span class="green-highlight">50% de descuento</span>, solo en esta página y por tiempo limitado.</p>
+
+    <p class="clock">⏰ Esta condición solo es válida ahora.</p>
+
+    <p>Si sale, el sistema entenderá que <span class="green-highlight">rechazó</span> la plaza con descuento.</p>
+
+    <a href="https://global.mundpay.com/orbxa" class="button" target="_blank" rel="noopener noreferrer">
+      ACCEDER A LA PLAZA CON DESCUENTO
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M10 17l5-5-5-5v10z"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>Copyright 2025<br />Todos los Derechos Reservados</p>
+    <p><a href="#">Términos de Uso</a> | <a href="#">Política de Privacidad</a></p>
+  </div>
+
+
+
+	<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 	
-<a href="https://go.tribopay.com.br/vb2qnilzvu" style="display: block; text-decoration: none;">
-    <button class="desbloquear-button" 
-            style="font-weight: bold; font-size: 18px; border-radius: 12px; margin-top: 15px;">
-        DESBLOQUEAR AGORA
-    </button>
-</a>
--->
-<div style="margin-bottom: 40px;"></div>
-
-    </div>
-
-    
-<!--------------------- Pagina bonus --------------------->
-
-<div id="bonus" style="display: none;">
-
-<!--------------------- Menu de cima --------------------->
-<div class="menu"><a style="width: 30%; "> <img src="https://raw.githubusercontent.com/Danaga04/receitasvirais.site/refs/heads/main/images/Camada_1.webp" style="width:  110px;"> </a></div>
-
-<div style="margin-bottom: 90px;"></div>
-
-<div style="margin-bottom: 110px;"></div>
-
-<p class="faq-title">Perguntas frequentes</p>
-
-<div class="faq-container">
-<div class="faq-item">
-<div class="question" onclick="toggleAnswer(this)">Preciso pagar a taxa toda vez?</div>
-
-<div class="answer">Não! A taxa seria paga somente a primeira vez, para confirmar que você é um humano, e não um robô. Você receberá o estorno do valor da taxa após o primeiro saque</div>
-</div>
-
-<div class="faq-item">
-<div class="question" onclick="toggleAnswer(this)">Por que existe a taxa?</div>
-
-<div class="answer">Serve como uma etapa anti-fraude, para evitar fraudes e abusos dos saques que estavam ocorrendo na plataforma! Mas não precisa se preocupar, você receberá o valor da taxa de volta junto ao valor do seu saque; seria apenas uma etapa de validação de que você é humano e não um robô.</div>
-</div>
-
-<div class="faq-item">
-<div class="question" onclick="toggleAnswer(this)">Em quanto tempo vou receber?</div>
-
-<div class="answer">Você receberá seu saque dentro de 24 horas, da mesma forma que você receberá seu saque teste!</div>
-</div>
-
-<div class="faq-item">
-<div class="question" onclick="toggleAnswer(this)">Quantas vezes posso sacar por dia?</div>
-
-<div class="answer">Quantos você quiser, mas existe uma quantidade limitada de códigos que temos acesso por dia!</div>
-</div>
-
-<div class="faq-item">
-<div class="question" onclick="toggleAnswer(this)">Como usa o aplicativo?</div>
-
-<div class="answer">É muito simples de usar! Basta responder às perguntas sobre as empresas no menu principal e, por fim, clicar no botão de 'Enviar respostas'. Quando enviar, você já receberá seu dinheiro pela tarefa realizada!</div>
-</div>
-</div>
-
-<div style="margin-bottom: 150px;"></div>
-
-<!--------------------- Menu debaixo --------------------->
-
-<div class="menuemb"><!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "InÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­cio" --><a href="#" onclick="mostrarPagina('saque')"><span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">paid</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Pagina 2" --> <a href="#" onclick="mostrarPagina('inicio')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">home</span> </a> <!-- Chamando a funÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ao para mostrar "Saque" --> <a href="#" onclick="mostrarPagina('bonus')"> <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">help</span> </a></div>
-</div>
-<script src="js/scripts.js"></script>
-
-
-<!--------------------- Fim do body --------------------->
-
-</body></html>
+</body>
+</html>
