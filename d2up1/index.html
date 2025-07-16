@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Oferta Especial por Tiempo Limitado!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .urgency-banner {
+            background: linear-gradient(90deg, #ff4757, #ff3838);
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 30px -20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 3px solid #28a745;
+            position: relative;
+        }
+
+        .old-price {
+            font-size: 1.5em;
+            color: #666;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .new-price {
+            font-size: 3em;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #ff4757;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transform: rotate(15deg);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .benefits {
+            text-align: left;
+            margin: 30px 0;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #28a745;
+        }
+
+        .benefits h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+            background: #d4edda;
+            padding: 5px 8px;
+            border-radius: 50%;
+        }
+
+        .timer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .timer-numbers {
+            font-size: 2em;
+            color: #ff4757;
+            margin: 10px 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ffc107, #ff8c00);
+            color: #333;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .guarantee {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #28a745;
+        }
+
+        .guarantee h4 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .new-price {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>¡ESPERA!</h1>
+            <p>Antes de que te vayas, tenemos algo especial para ti...</p>
+        </div>
+
+        <div class="content">
+            <div class="urgency-banner">
+                ⚡ OFERTA EXCLUSIVA - SOLO POR HOY ⚡
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 20px;">
+                ¡Obtén el mismo contenido por una fracción del precio!
+            </h2>
+
+            <div class="price-section">
+                <div class="discount-badge">70% OFF</div>
+                <div class="old-price">$59</div>
+                <div class="new-price">$17</div>
+                <p style="color: #666; font-size: 1.1em;">¡Precio especial solo para ti!</p>
+            </div>
+
+            <div class="benefits">
+                <h3>✨ Lo que obtienes con esta oferta:</h3>
+                <div class="benefit-item">
+                    <span>Acceso completo al contenido premium</span>
+                </div>
+                <div class="benefit-item">
+                    <span>Guías paso a paso fáciles de seguir</span>
+                </div>
+                <div class="benefit-item">
+                    <span>Bonos exclusivos incluidos</span>
+                </div>
+                <div class="benefit-item">
+                    <span>Soporte prioritario por 30 días</span>
+                </div>
+                <div class="benefit-item">
+                    <span>Actualizaciones gratuitas de por vida</span>
+                </div>
+            </div>
+
+            <div class="timer">
+                ⏰ Esta oferta expira en:
+                <div class="timer-numbers" id="countdown">15:00</div>
+                <div style="font-size: 0.9em;">¡No pierdas esta oportunidad única!</div>
+            </div>
+
+            <div class="cta-section">
+                <h3 style="margin-bottom: 15px;">¡Aprovecha esta oferta AHORA!</h3>
+                <p style="margin-bottom: 20px; opacity: 0.9;">
+                    Miles de personas ya han transformado sus vidas con este contenido.
+                    ¡Tú puedes ser el siguiente!
+                </p>
+                
+                <!-- HOTMART - Sales Funnel Widget -->
+                <div id="hotmart-sales-funnel"></div>
+                
+                <div style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                    💳 Pago 100% seguro | 🔒 Compra protegida
+                </div>
+            </div>
+
+            <div class="guarantee">
+                <h4>🛡️ Garantía de 30 días</h4>
+                <p style="color: #333;">
+                    Si no estás completamente satisfecho, te devolvemos el 100% de tu dinero.
+                    ¡Sin preguntas, sin complicaciones!
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; color: #666;">
+                <p><strong>¿Por qué esta oferta especial?</strong></p>
+                <p>Queremos que tengas acceso a este contenido transformador, independientemente de tu situación financiera actual. Esta es nuestra forma de hacer que sea accesible para todos.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 - Todos los derechos reservados | Términos y Condiciones | Política de Privacidad</p>
+        </div>
+    </div>
+
+    <!-- HOTMART - Sales Funnel Widget -->
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
+
+    <script>
+        // Countdown Timer
+        let timeLeft = 15 * 60; // 15 minutos en segundos
+        
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            document.getElementById('countdown').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                document.getElementById('countdown').textContent = "¡OFERTA EXPIRADA!";
+                document.getElementById('countdown').style.color = '#ff4757';
+            }
+        }
+        
+        // Actualizar cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Llamar inmediatamente
+        
+        // Efecto de scroll suave
+        document.addEventListener('DOMContentLoaded', function() {
+            const benefitItems = document.querySelectorAll('.benefit-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideUp 0.6s ease-out';
+                    }
+                });
+            });
+            
+            benefitItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
