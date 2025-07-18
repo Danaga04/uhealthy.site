@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativador Secreto da Segunda Queima</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .congratulations {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .congratulations h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b6b;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffd700, #ffed4e);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #ffcccb;
+            font-size: 1.2em;
+        }
+
+        .current-price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .bonus {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .bonus h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .guarantee {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #4ecdc4;
+        }
+
+        .guarantee h4 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .urgency {
+            background: linear-gradient(135deg, #ff7e7e, #ff6b6b);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .separator {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa500, #ff6b6b);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        /* Botões originais do código fornecido */
+        .fornpay_btn {
+            background: #3d94f6;
+            background-image: -webkit-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -moz-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -ms-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -o-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -webkit-gradient(to bottom, #3d94f6, #1e62d0);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-family: Arial;
+            font-size: 18px;
+            font-weight: 100;
+            padding: 10px 20px;
+            border: 1px solid #337fed;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .fornpay_btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(61, 148, 246, 0.4);
+        }
+
+        .fornpay_downsell {
+            color: #004faa;
+            font-family: Arial;
+            margin-top: 10px;
+            font-size: 16px!important;
+            font-weight: 100;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            max-width: 400px;
+            margin: 10px auto;
+        }
+
+        .fornpay_downsell:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .current-price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 UPSELL: "Ativador Secreto da Segunda Queima" 🔥</h1>
+        </div>
+
+        <div class="content">
+            <div class="congratulations">
+                <h2><strong>Parabéns!</strong></h2>
+                <p>Você acabou de garantir o <strong>Truque do Sal Rosa de Pobre</strong> e está prestes a ativar o hormônio assassino de gordura que vai fazer seu corpo queimar gordura como nunca antes...</p>
+            </div>
+
+            <p><strong>Bianca aqui de novo.</strong></p>
+
+            <p>Por favor, <span class="highlight">não saia desse vídeo ou atualize esta página</span>, isso pode causar erros em sua compra…</p>
+
+            <p>Esse vídeo de 2 minutos é <strong>muito importante</strong> e é essencial que você assista ele até o final se quiser ter <span class="highlight">resultados absurdos</span> no seu emagrecimento…</p>
+
+            <p>Você escolheu garantir a sua vaga hoje no <strong>Truque do Sal Rosa de Pobre</strong>…</p>
+
+            <p>E posso te garantir que <span class="highlight">sua vida mudará completamente</span> por ter tomado essa decisão…</p>
+
+            <p>Finalmente vai estar livre da gordura localizada que tanto te incomoda...</p>
+
+            <p>Finalmente vai poder ter orgulho de olhar no espelho e se sentir <strong>poderosa e confiante</strong>...</p>
+
+            <p>E de uma vez por todas vai se sentir bem consigo mesma e com uma <span class="highlight">autoestima nas alturas</span>!</p>
+
+            <p>Quantas mulheres queriam viver isso também? Aposto que <strong>milhares</strong>!</p>
+
+            <p>Mas como um presente divino, esse vídeo apareceu pra você e agora sua vida será <span class="highlight">totalmente diferente…</span></p>
+
+            <hr class="separator">
+
+            <div class="section">
+                <p>Mas agora tenho que ser <strong>sincera</strong> com você…</p>
+
+                <p>Nos últimos dias, nossa equipe recebeu emails de pessoas que compraram o <strong>Truque do Sal Rosa de Pobre</strong>.</p>
+
+                <p>Essas pessoas relataram que estavam <span class="highlight">amando os resultados</span> e vendo a balança baixar já na primeira semana…</p>
+
+                <p><strong>Porém</strong> elas sentiam que poderiam estar queimando gordura <span class="highlight">ainda mais rápido</span>...</p>
+
+                <p>E me perguntavam: <em>"Bianca, existe algo que eu possa fazer para acelerar esses efeitos?"</em></p>
+
+                <p>Olha, isso faz <strong>toda diferença</strong>, porque quando você está emagrecendo, cada dia conta...</p>
+
+                <p>E se você conseguir <span class="highlight">dobrar a velocidade</span> dos resultados, significa que vai chegar no seu peso ideal <strong>2x mais rápido</strong>…</p>
+
+                <p>Mas a maioria das mulheres não sabe que existe uma <span class="highlight">segunda zona de queima</span> no corpo humano que pode ser ativada...</p>
+
+                <p>E sem isso, você está deixando <strong>50% do seu potencial de queima</strong> na mesa...</p>
+
+                <p>É como dirigir um carro potente sempre na primeira marcha…</p>
+
+                <p>Você chega no destino, mas <span class="highlight">demora muito mais</span> do que poderia...</p>
+
+                <p>E eu não posso aceitar de nenhuma forma que você <strong>desperdice</strong> metade do seu potencial de emagrecimento…</p>
+
+                <p>Eu quero é que você <span class="highlight">queime gordura no máximo da sua capacidade</span>...</p>
+
+                <p>E chegue no seu peso ideal <strong>o mais rápido possível</strong>…</p>
+
+                <p>Por isso, chamei a minha equipe e pedi a eles para me ajudarem com esse assunto.</p>
+            </div>
+
+            <hr class="separator">
+
+            <div class="section">
+                <p>Nós teríamos que encontrar uma forma de <span class="highlight">acelerar os efeitos do Sal Rosa</span> e ativar uma <strong>segunda queima de gordura</strong> no corpo das nossas clientes.</p>
+
+                <p>E o que eles descobriram foi <span class="highlight">revolucionário</span>...</p>
+
+                <p>Existem <strong>3 micro-hábitos noturnos</strong> que os povos tibetanos usam há séculos...</p>
+
+                <p>Esses hábitos têm o poder de <span class="highlight">elevar a temperatura corporal</span> em 0,5ºC naturalmente e fazer o corpo entrar no modo <strong>"torra gordura"</strong> mesmo durante o sono…</p>
+
+                <p>É por isso que mulheres tibetanas conseguem manter um corpo <span class="highlight">magro e definido</span> mesmo depois dos 50 anos, vivendo em altitudes extremas...</p>
+
+                <p>Para não ficar só nas minhas palavras, <strong>pesquisadores da Johns Hopkins</strong> descobriram que mulheres que aplicavam esses micro-hábitos <span class="highlight">queimavam 73% mais gordura</span> nas 4 horas seguintes ao jantar...</p>
+
+                <p><strong>Sem fazer exercício. Sem dieta restritiva. Apenas dormindo.</strong></p>
+
+                <p>E acredite, você também pode ter esses <span class="highlight">resultados absurdos</span> ao usar esses micro-hábitos junto com o Truque do Sal Rosa…</p>
+
+                <p>Quando você combina o <strong>hormônio assassino de gordura</strong> (ativado pelo Sal Rosa) com a <strong>segunda queima noturna</strong> (ativada pelos micro-hábitos), seu corpo se transforma numa <span class="highlight">máquina de queimar gordura 24 horas por dia</span>...</p>
+
+                <p>E foi para ajudar mulheres como você que querem <span class="highlight">acelerar os resultados</span> e chegar no peso ideal <strong>2x mais rápido</strong>…</p>
+
+                <p>Que eu e minha equipe criamos o primeiro programa do Brasil de ativação da segunda queima, chamado:</p>
+            </div>
+
+            <hr class="separator">
+
+            <div class="section">
+                <h3>✨ ATIVADOR SECRETO DA SEGUNDA QUEIMA ✨</h3>
+
+                <p>Nesse programa vamos te mostrar todo o passo-a-passo para <span class="highlight">acelerar os efeitos do Sal Rosa</span> e ativar a segunda zona de queima do seu corpo…</p>
+
+                <p>Para você <strong>dobrar a velocidade</strong> dos seus resultados e chegar no seu peso ideal <span class="highlight">muito mais rápido</span>.</p>
+
+                <p>E o melhor, tudo com <strong>hábitos simples e naturais</strong>, que você pode fazer em casa, sem gastar nada a mais.</p>
+
+                <p>Para você entender melhor como funciona esse programa…</p>
+
+                <p><strong>Logo no início</strong>, você receberá o <span class="highlight">Protocolo Noturno de Ativação da Segunda Queima</span> com todos os 3 micro-hábitos que elevam sua temperatura corporal naturalmente…</p>
+
+                <p><strong>Primeiro</strong>, vou te mostrar como preparar seu corpo para a queima noturna, desde 2 horas antes de dormir até o momento que você deita na cama.</p>
+
+                <p>Vou te mostrar <strong>truques e técnicas</strong> para acelerar o metabolismo, ativar as glândulas adrenais e fazer seu corpo <span class="highlight">queimar gordura até dormindo</span>…</p>
+
+                <p><strong>Após essa etapa</strong>, você irá receber a <span class="highlight">Receita do Chá Metabólico</span> que é <strong>3x mais forte</strong> que chá verde para acelerar a queima de gordura.</p>
+
+                <p>Esse chá você toma <strong>30 minutos antes de dormir</strong> e ele faz sua temperatura corporal subir sutilmente, iniciando o processo de queima noturna…</p>
+
+                <p><strong>Também</strong> receberá o <span class="highlight">Checklist dos 4 Hábitos Sabotadores</span> que 90% das mulheres fazem sem saber e que <strong>travam completamente</strong> a queima de gordura durante a noite.</p>
+
+                <p><strong>E por último</strong>, o <span class="highlight">Ritual de 5 Minutos</span> antes de dormir que acelera o metabolismo e garante que você acorde <strong>mais magra</strong> a cada manhã.</p>
+
+                <p>Esses protocolos juntos, farão seu corpo <span class="highlight">queimar gordura 24 horas por dia</span> e vão acelerar drasticamente os efeitos do Sal Rosa.</p>
+
+                <p>Além disso, você vai <strong>evitar o efeito platô</strong> (quando o corpo trava e para de perder peso) e vai ver a balança baixar <span class="highlight">consistentemente</span> toda semana.</p>
+
+                <p>Isso vai te deixar com a <strong>motivação lá em cima</strong> e quando olhar no espelho, vai estar ainda mais <span class="highlight">magra e confiante</span>, com resultados que todo mundo vai notar.</p>
+
+                <p><strong>Incrível, né?</strong></p>
+
+                <p>Realmente, eu quis fazer tudo de uma forma bem <strong>simples e natural</strong> para você <span class="highlight">dobrar os resultados</span> do Sal Rosa e emagrecer no máximo da sua capacidade.</p>
+            </div>
+
+            <div class="price-section">
+                <p>E bom, você pode ter acesso a tudo isso <strong>hoje</strong>…</p>
+                
+                <p>Tem como colocar um valor nisso?</p>
+                
+                <div class="old-price">
+                    <p>Trezentos reais…</p>
+                    <p>Duzentos reais talvez...</p>
+                </div>
+                
+                <p>Olha… você deve concordar que isso ainda estaria <strong>barato</strong>...</p>
+                
+                <p>Afinal, acelerar seus resultados e chegar no peso ideal <span class="highlight">2x mais rápido</span> não tem preço…</p>
+                
+                <p>Mas eu quero <strong>facilitar</strong> as coisas para você hoje.</p>
+                
+                <p><strong>Apenas agora</strong>, você pode garantir o seu acesso ao <span class="highlight">Ativador Secreto da Segunda Queima</span> por apenas…</p>
+                
+                <div class="current-price">R$ 47,00</div>
+                
+                <p style="font-size: 1.2em;">Um único pagamento de R$ 47,00</p>
+            </div>
+
+            <div class="guarantee">
+                <h4>🛡️ Garantia Incondicional de 7 Dias</h4>
+                <p>Se você garantir sua vaga agora no <strong>Ativador Secreto da Segunda Queima</strong> e <strong>NÃO conseguir</strong> acelerar os efeitos do Sal Rosa…</p>
+                <p>Não conseguir ativar a <span class="highlight">segunda queima</span> depois de seguir o protocolo noturno…</p>
+                <p>Ou até mesmo <strong>não ver resultados 2x mais rápidos</strong> já na primeira semana…</p>
+                <p>Eu <strong>insisto</strong> que você envie um email para nosso suporte em até 7 dias…</p>
+                <p>Porque vou devolver <span class="highlight">cada centavo</span> que você pagou...</p>
+                <p><strong>Todo o risco é meu</strong> e você pode tomar essa decisão com total confiança e segurança…</p>
+            </div>
+
+            <div class="bonus">
+                <h4>🎁 BÔNUS #1: Receitas Turbo que Combinam com o Sal Rosa</h4>
+                <p>Um <strong>PDF exclusivo</strong> com receitas de refeições que <span class="highlight">potencializam</span> os efeitos do Sal Rosa e aceleram ainda mais a queima de gordura…</p>
+                <p>Essas receitas foram <strong>testadas</strong> por nossa equipe e aumentam a eficácia do protocolo em até <span class="highlight">40%</span>…</p>
+                <p><strong>Valor: R$ 97,00 → GRÁTIS</strong></p>
+            </div>
+
+            <div class="bonus">
+                <h4>🎁 BÔNUS #2: Playlist "Sono Queimador"</h4>
+                <p>Uma <strong>playlist exclusiva</strong> com áudios binaurais e frequências específicas que <span class="highlight">aceleram o metabolismo</span> durante o sono…</p>
+                <p>Essa tecnologia sonora foi desenvolvida para <strong>otimizar</strong> a queima de gordura noturna e você só precisa <span class="highlight">ouvir enquanto dorme</span>…</p>
+                <p><strong>Valor: R$ 127,00 → GRÁTIS</strong></p>
+            </div>
+
+            <div class="cta-section">
+                <p>Então, o que acha de <span class="highlight">acelerar seus resultados</span> agora e receber esses dois bônus incríveis para <strong>dobrar</strong> os efeitos do Sal Rosa?</p>
+                
+                <p>Para começar basta <strong>clicar no botão abaixo</strong> agora mesmo…</p>
+
+                <div style="width: auto; max-width: 400px; margin: 0 auto;">
+                    <a href="javascript:void(0)" data-fornpay="2xzmkvtzcj" class="fornpay_btn">🔥 SIM! QUERO ATIVAR O EFEITO TURBO DO SAL ROSA E QUEIMAR GORDURA ATÉ DORMINDO!</a>
+                    <a href="javascript:void(0)" data-downsell="http://uhealthy.site/d1up1salrosabr" class="fornpay_downsell">Vou recusar essa oferta</a>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="urgency">
+                <h4>⚠️ ALERTA IMPORTANTE ⚠️</h4>
+                <p>E agora, já estamos chegando ao <strong>final</strong> desse vídeo.</p>
+                <p>E tenho um <span class="highlight">alerta importante</span> para você...</p>
+                <p>Bom, essa oferta é <strong>única</strong> e você não terá essa oportunidade novamente…</p>
+                <p>Se você <strong>sair desse vídeo</strong> e fechar essa página…</p>
+                <p><span class="highlight">Não vai mais conseguir</span> comprar o <strong>Ativador Secreto da Segunda Queima</strong> em nenhum outro lugar.</p>
+                <p>Isso porque esse produto é <strong>exclusivo</strong> para quem aproveitar essa oportunidade <span class="highlight">agora</span>…</p>
+                <p>É <strong>apenas</strong> para clientes do <strong>Truque do Sal Rosa de Pobre</strong>.</p>
+            </div>
+
+            <div class="section">
+                <p>E se você está assistindo esse vídeo até agora, é porque você <span class="highlight">faz parte</span> de tudo isso...</p>
+
+                <p>Por esse motivo, quero te <strong>relembrar</strong> tudo o que você vai receber garantindo o seu acesso especial ao <span class="highlight">Ativador Secreto da Segunda Queima</span>.</p>
+
+                <p>Bom, você já recebeu no seu email o <strong>Truque do Sal Rosa de Pobre</strong> com todos os bônus especiais que foram prometidos…</p>
+
+                <p>E <strong>agora</strong> você tem a chance de receber o programa completo <span class="highlight">Ativador Secreto da Segunda Queima</span>, que inclui todos os <strong>3 micro-hábitos noturnos</strong> para acelerar 2x seus resultados…</p>
+
+                <p>E o <strong>protocolo completo</strong> para ativar a segunda queima e queimar gordura até dormindo.</p>
+
+                <p>Além disso, você também recebe a minha <span class="highlight">garantia de 7 dias</span>, para experimentar o programa o tanto quanto quiser, <strong>sem compromisso</strong>.</p>
+
+                <p>E para fechar com <strong>chave de ouro</strong>, também vai receber <span class="highlight">2 bônus especiais</span>…</p>
+
+                <p>As <strong>Receitas Turbo</strong> que potencializam o Sal Rosa…</p>
+
+                <p>E a <strong>Playlist "Sono Queimador"</strong> com frequências para acelerar o metabolismo…</p>
+
+                <p>Tudo isso <span class="highlight">só está disponível</span> para você <strong>agora</strong> e chegou o momento de tomar uma <span class="highlight">decisão</span>…</p>
+
+                <p>Bom, eu <strong>não posso fazer isso</strong> por você…</p>
+
+                <p>Então a escolha é <span class="highlight">somente sua</span>.</p>
+
+                <p>Se você quer <strong>acelerar seus resultados</strong> e chegar no peso ideal <span class="highlight">2x mais rápido</span>…</p>
+
+                <p>Se você quer <strong>queimar gordura até dormindo</strong> e acordar mais magra a cada manhã…</p>
+
+                <p>E acima de tudo, se você quer <span class="highlight">aproveitar ao máximo</span> o potencial do Sal Rosa e ter os <strong>resultados absurdos</strong> que você merece...</p>
+
+                <p>Então, por favor… <strong>não atrase</strong> a sua transformação.</p>
+
+                <p>Você está <span class="highlight">tão perto</span>...</p>
+
+                <p>É só <strong>clicar no botão abaixo</strong> agora mesmo e aproveitar a oportunidade especial que eu preparei para você.</p>
+            </div>
+
+            <div class="cta-section">
+                <div style="width: auto; max-width: 400px; margin: 0 auto;">
+                    <a href="javascript:void(0)" data-fornpay="2xzmkvtzcj" class="fornpay_btn">🔥 SIM! QUERO DOBRAR MEUS RESULTADOS COM O ATIVADOR SECRETO DA SEGUNDA QUEIMA!</a>
+                    <a href="javascript:void(0)" data-downsell="http://uhealthy.site/d1up1salrosabr" class="fornpay_downsell">Vou recusar essa oferta</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Um grande beijo e espero que tome a <strong>decisão correta</strong>.</p>
+            <p><strong>Bianca</strong></p>
+        </div>
+    </div>
+
+    <script src="https://app.tribopay.com.br/js/oneclick.js"></script>
+</body>
+</html>
