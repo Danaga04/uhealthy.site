@@ -1,161 +1,699 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Método Natural para el Bienestar Femenino</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #222222;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Santé Masculine - Évaluez Votre Bien-être</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      color: #1a1a1a;
-    }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
 
-    h2 {
-      font-size: 26px;
-      margin-top: 40px;
-    }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
 
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
 
-    .video {
-      margin: 30px 0;
-      text-align: center;
-    }
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 20px;
+            height: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
 
-    iframe {
-      width: 100%;
-      height: 400px;
-      max-width: 100%;
-      border: none;
-      border-radius: 10px;
-    }
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 20px;
+        }
 
-    .botao {
-      display: inline-block;
-      background-color: #ff0077;
-      color: #fff;
-      padding: 15px 25px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      margin: 20px auto;
-      font-size: 18px;
-      transition: background 0.3s ease;
-    }
+        .question-container {
+            margin-bottom: 30px;
+            display: none;
+        }
 
-    .botao:hover {
-      background-color: #cc005f;
-    }
+        .question-container.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
 
-    .center {
-      text-align: center;
-    }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .section {
-      margin: 40px 0;
-    }
+        .question {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
 
-    .destaque {
-      background: #f9f9f9;
-      border-left: 4px solid #ff0077;
-      padding: 20px;
-      font-size: 18px;
-    }
+        .options {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-    @media (max-width: 600px) {
-      iframe {
-        height: 250px;
-      }
-    }
-  </style>
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            text-align: left;
+        }
+
+        .option:hover {
+            background: #e7f3ff;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .option.selected {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .start-screen {
+            text-align: center;
+        }
+
+        .start-screen h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .start-screen p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+        }
+
+        .results.show {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .score {
+            font-size: 3em;
+            color: #667eea;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .offer {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+        }
+
+        .offer h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .cta-btn {
+            background: white;
+            color: #28a745;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.3);
+        }
+
+        .question-number {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .question {
+                font-size: 1.1em;
+            }
+            
+            .option {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Écran de démarrage -->
+        <div class="start-screen" id="startScreen">
+            <div class="icon">💪</div>
+            <h1>Quiz Santé Masculine</h1>
+            <p class="subtitle">Évaluez votre bien-être en quelques minutes</p>
+            <h2>Découvrez votre niveau de santé masculine</h2>
+            <p>Ce quiz personnalisé vous aidera à identifier vos points forts et les domaines à améliorer pour optimiser votre santé et votre vitalité masculine.</p>
+            <button class="btn" onclick="startQuiz()">Commencer le Quiz</button>
+        </div>
 
-  <div class="container">
-    <h1 class="center">El Método Natural que Está Transformando la Vida de Miles de Mujeres</h1>
+        <!-- Barre de progression -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
 
- <vturb-smartplayer id="vid-68701a8d5eb81a1066b3a9d4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68701a8d5eb81a1066b3a9d4/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        <!-- Questions du quiz -->
+        <div id="quizContainer" style="display: none;">
+            <!-- Question 1 -->
+            <div class="question-container active" data-question="0">
+                <div class="question-number">Question 1/21</div>
+                <div class="question">Quel est votre âge ?</div>
+                <div class="options">
+                    <div class="option" data-value="18-25">18-25 ans</div>
+                    <div class="option" data-value="26-35">26-35 ans</div>
+                    <div class="option" data-value="36-45">36-45 ans</div>
+                    <div class="option" data-value="46+">46 ans et plus</div>
+                </div>
+            </div>
 
-    <div class="center">
-      <a href="https://pay.hotmart.com/W94738608O?off=mymo2q0q&checkoutMode=10" class="botao">QUIERO PROBAR EL MÉTODO AHORA</a>
+            <!-- Question 2 -->
+            <div class="question-container" data-question="1">
+                <div class="question-number">Question 2/21</div>
+                <div class="question">Comment décririez-vous votre niveau d'énergie quotidien ?</div>
+                <div class="options">
+                    <div class="option" data-value="high">Très énergique, je me sens dynamique toute la journée</div>
+                    <div class="option" data-value="medium">Modéré, j'ai des hauts et des bas</div>
+                    <div class="option" data-value="low">Faible, je me sens souvent fatigué</div>
+                    <div class="option" data-value="very-low">Très faible, je lutte contre la fatigue constante</div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-container" data-question="2">
+                <div class="question-number">Question 3/21</div>
+                <div class="question">À quelle fréquence pratiquez-vous une activité physique ?</div>
+                <div class="options">
+                    <div class="option" data-value="daily">Quotidiennement</div>
+                    <div class="option" data-value="regular">3-4 fois par semaine</div>
+                    <div class="option" data-value="occasional">1-2 fois par semaine</div>
+                    <div class="option" data-value="rarely">Rarement ou jamais</div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-container" data-question="3">
+                <div class="question-number">Question 4/21</div>
+                <div class="question">Comment évaluez-vous la qualité de votre sommeil ?</div>
+                <div class="options">
+                    <div class="option" data-value="excellent">Excellent, je dors profondément 7-8h</div>
+                    <div class="option" data-value="good">Bon, avec quelques réveils occasionnels</div>
+                    <div class="option" data-value="poor">Moyen, j'ai du mal à m'endormir ou je me réveille souvent</div>
+                    <div class="option" data-value="very-poor">Très mauvais, insomnie fréquente</div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-container" data-question="4">
+                <div class="question-number">Question 5/21</div>
+                <div class="question">Comment gérez-vous votre stress quotidien ?</div>
+                <div class="options">
+                    <div class="option" data-value="very-well">Très bien, j'ai des techniques efficaces</div>
+                    <div class="option" data-value="well">Bien, je m'adapte facilement</div>
+                    <div class="option" data-value="poorly">Mal, je me sens souvent dépassé</div>
+                    <div class="option" data-value="very-poorly">Très mal, le stress m'affecte considérablement</div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-container" data-question="5">
+                <div class="question-number">Question 6/21</div>
+                <div class="question">Quelle est votre situation professionnelle ?</div>
+                <div class="options">
+                    <div class="option" data-value="employee">Employé</div>
+                    <div class="option" data-value="manager">Manager/Cadre</div>
+                    <div class="option" data-value="entrepreneur">Entrepreneur/Indépendant</div>
+                    <div class="option" data-value="other">Autre</div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-container" data-question="6">
+                <div class="question-number">Question 7/21</div>
+                <div class="question">Comment décririez-vous votre alimentation ?</div>
+                <div class="options">
+                    <div class="option" data-value="excellent">Excellente, équilibrée et nutritive</div>
+                    <div class="option" data-value="good">Bonne, je fais attention la plupart du temps</div>
+                    <div class="option" data-value="average">Moyenne, je mange ce qui me fait plaisir</div>
+                    <div class="option" data-value="poor">Mauvaise, fast-food et plats préparés</div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-container" data-question="7">
+                <div class="question-number">Question 8/21</div>
+                <div class="question">Avez-vous des problèmes de libido ou de performance ?</div>
+                <div class="options">
+                    <div class="option" data-value="no">Non, tout va bien</div>
+                    <div class="option" data-value="minor">Quelques petits problèmes occasionnels</div>
+                    <div class="option" data-value="moderate">Des difficultés modérées</div>
+                    <div class="option" data-value="major">Des problèmes significatifs</div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-container" data-question="8">
+                <div class="question-number">Question 9/21</div>
+                <div class="question">À quelle fréquence consommez-vous de l'alcool ?</div>
+                <div class="options">
+                    <div class="option" data-value="never">Jamais</div>
+                    <div class="option" data-value="occasional">Occasionnellement (weekend)</div>
+                    <div class="option" data-value="regular">Régulièrement (quelques verres par semaine)</div>
+                    <div class="option" data-value="daily">Quotidiennement</div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question-container" data-question="9">
+                <div class="question-number">Question 10/21</div>
+                <div class="question">Fumez-vous ?</div>
+                <div class="options">
+                    <div class="option" data-value="never">Non, je n'ai jamais fumé</div>
+                    <div class="option" data-value="quit">J'ai arrêté</div>
+                    <div class="option" data-value="occasional">Occasionnellement</div>
+                    <div class="option" data-value="regular">Régulièrement</div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question-container" data-question="10">
+                <div class="question-number">Question 11/21</div>
+                <div class="question">Comment vous sentez-vous par rapport à votre poids ?</div>
+                <div class="options">
+                    <div class="option" data-value="ideal">Idéal, je suis satisfait</div>
+                    <div class="option" data-value="slightly-over">Légèrement en surpoids</div>
+                    <div class="option" data-value="overweight">En surpoids notable</div>
+                    <div class="option" data-value="underweight">En sous-poids</div>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question-container" data-question="11">
+                <div class="question-number">Question 12/21</div>
+                <div class="question">Avez-vous des douleurs chroniques ?</div>
+                <div class="options">
+                    <div class="option" data-value="none">Aucune</div>
+                    <div class="option" data-value="minor">Légères (dos, articulations)</div>
+                    <div class="option" data-value="moderate">Modérées, qui affectent mon quotidien</div>
+                    <div class="option" data-value="severe">Importantes, très gênantes</div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question-container" data-question="12">
+                <div class="question-number">Question 13/21</div>
+                <div class="question">À quelle fréquence faites-vous des examens médicaux ?</div>
+                <div class="options">
+                    <div class="option" data-value="annual">Annuellement</div>
+                    <div class="option" data-value="biennial">Tous les 2-3 ans</div>
+                    <div class="option" data-value="rare">Rarement, seulement si problème</div>
+                    <div class="option" data-value="never">Jamais</div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question-container" data-question="13">
+                <div class="question-number">Question 14/21</div>
+                <div class="question">Comment décririez-vous votre humeur générale ?</div>
+                <div class="options">
+                    <div class="option" data-value="excellent">Excellente, je suis optimiste</div>
+                    <div class="option" data-value="good">Bonne, avec des hauts et des bas normaux</div>
+                    <div class="option" data-value="poor">Mauvaise, souvent irritable ou triste</div>
+                    <div class="option" data-value="very-poor">Très mauvaise, dépression ou anxiété</div>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question-container" data-question="14">
+                <div class="question-number">Question 15/21</div>
+                <div class="question">Combien d'heures travaillez-vous par semaine ?</div>
+                <div class="options">
+                    <div class="option" data-value="normal">35-40 heures</div>
+                    <div class="option" data-value="long">41-50 heures</div>
+                    <div class="option" data-value="very-long">51-60 heures</div>
+                    <div class="option" data-value="excessive">Plus de 60 heures</div>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question-container" data-question="15">
+                <div class="question-number">Question 16/21</div>
+                <div class="question">Avez-vous des antécédents familiaux de maladies cardiaques ?</div>
+                <div class="options">
+                    <div class="option" data-value="none">Aucun</div>
+                    <div class="option" data-value="distant">Quelques cas éloignés</div>
+                    <div class="option" data-value="close">Parents/frères/sœurs</div>
+                    <div class="option" data-value="multiple">Plusieurs cas dans la famille</div>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question-container" data-question="16">
+                <div class="question-number">Question 17/21</div>
+                <div class="question">Comment est votre vie sociale ?</div>
+                <div class="options">
+                    <div class="option" data-value="active">Très active, beaucoup d'amis</div>
+                    <div class="option" data-value="moderate">Modérée, quelques amis proches</div>
+                    <div class="option" data-value="limited">Limitée, peu de contacts sociaux</div>
+                    <div class="option" data-value="isolated">Isolé, je me sens seul</div>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question-container" data-question="17">
+                <div class="question-number">Question 18/21</div>
+                <div class="question">Prenez-vous des suppléments alimentaires ?</div>
+                <div class="options">
+                    <div class="option" data-value="targeted">Oui, adaptés à mes besoins</div>
+                    <div class="option" data-value="basic">Oui, des multivitamines basiques</div>
+                    <div class="option" data-value="occasional">Occasionnellement</div>
+                    <div class="option" data-value="never">Non, jamais</div>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question-container" data-question="18">
+                <div class="question-number">Question 19/21</div>
+                <div class="question">Quel est votre principal objectif santé ?</div>
+                <div class="options">
+                    <div class="option" data-value="energy">Augmenter mon énergie</div>
+                    <div class="option" data-value="weight">Perdre du poids</div>
+                    <div class="option" data-value="muscle">Gagner en masse musculaire</div>
+                    <div class="option" data-value="performance">Améliorer mes performances</div>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question-container" data-question="19">
+                <div class="question-number">Question 20/21</div>
+                <div class="question">Quelle est votre plus grande préoccupation santé ?</div>
+                <div class="options">
+                    <div class="option" data-value="cardiovascular">Santé cardiovasculaire</div>
+                    <div class="option" data-value="hormonal">Équilibre hormonal</div>
+                    <div class="option" data-value="mental">Santé mentale et stress</div>
+                    <div class="option" data-value="sexual">Santé sexuelle</div>
+                </div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="question-container" data-question="20">
+                <div class="question-number">Question 21/21</div>
+                <div class="question">Seriez-vous prêt à investir dans un programme de santé masculine personnalisé ?</div>
+                <div class="options">
+                    <div class="option" data-value="definitely">Absolument, c'est une priorité</div>
+                    <div class="option" data-value="probably">Probablement, si c'est efficace</div>
+                    <div class="option" data-value="maybe">Peut-être, selon le prix</div>
+                    <div class="option" data-value="unlikely">Peu probable</div>
+                </div>
+            </div>
+
+            <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Question Suivante</button>
+        </div>
+
+        <!-- Résultats -->
+        <div class="results" id="results">
+            <div class="icon">🎯</div>
+            <h2>Vos Résultats</h2>
+            <div class="score" id="scoreDisplay">0/21</div>
+            <p id="scoreDescription"></p>
+            
+            <div class="offer">
+                <h3>🚀 Programme Santé Masculine Elite</h3>
+                <p>Transformez votre santé avec notre programme personnalisé conçu spécialement pour les hommes modernes.</p>
+                <div class="price">9€ seulement</div>
+                <p><strong>✅ Guide nutritionnel masculin<br>
+                ✅ Programme d'exercices adapté<br>
+                ✅ Stratégies anti-stress<br>
+                ✅ Optimisation hormonale naturelle</strong></p>
+                <a href="https://pay.hotmart.com/W94738608O?off=d17gy4zq&checkoutMode=10" class="cta-btn">Accéder au Programme Maintenant</a>
+            </div>
+        </div>
     </div>
 
-    <div class="section">
-      <h2>¿Sientes que has perdido el control sobre tu cuerpo?</h2>
-      <p>Inflamación, fatiga constante, cambios de humor y una sensación de no reconocerte más frente al espejo...</p>
-      <p>No estás sola. Muchas mujeres atraviesan esto sin entender el verdadero origen del problema.</p>
-      <p>Este método natural fue creado especialmente para mujeres que desean recuperar su bienestar, su energía y su equilibrio sin depender de químicos ni hormonas.</p>
-    </div>
+    <script>
+        let currentQuestion = 0;
+        let answers = [];
+        const totalQuestions = 21;
 
-    <div class="center">
-      <a href="https://pay.hotmart.com/W94738608O?off=mymo2q0q&checkoutMode=10" class="botao">ACCEDE AL MÉTODO AHORA</a>
-    </div>
+        function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('progressContainer').style.display = 'block';
+            document.getElementById('quizContainer').style.display = 'block';
+            updateProgress();
+        }
 
-    <div class="section destaque">
-      <p><strong>✅ 100% natural</strong><br>
-      ✅ Sin efectos secundarios<br>
-      ✅ Puedes hacerlo desde casa<br>
-      ✅ Resultados en pocos días</p>
-    </div>
+        function updateProgress() {
+            const progress = ((currentQuestion) / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
 
-    <div class="section">
-      <h2>¿Cómo funciona?</h2>
-      <p>Este método estimula procesos naturales del cuerpo femenino, ayudando a desinflamar, equilibrar las hormonas y activar tu energía vital.</p>
-      <p>Incluye rituales simples diarios, recetas naturales, y técnicas respaldadas por estudios recientes sobre salud femenina.</p>
-    </div>
+        function selectOption(element) {
+            // Retirer la sélection précédente
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Sélectionner la nouvelle option
+            element.classList.add('selected');
+            
+            // Activer le bouton suivant
+            document.getElementById('nextBtn').disabled = false;
+        }
 
-    <div class="center">
-      <a href="https://pay.hotmart.com/W94738608O?off=mymo2q0q&checkoutMode=10" class="botao">SÍ, QUIERO SENTIRME MEJOR</a>
-    </div>
+        function nextQuestion() {
+            // Sauvegarder la réponse
+            const selected = document.querySelector('.question-container.active .option.selected');
+            if (selected) {
+                answers[currentQuestion] = selected.dataset.value;
+            }
 
-    <div class="section">
-      <h2>Testimonios de mujeres reales</h2>
-      <p>🌸 “Llevaba años sintiéndome agotada y con dolor. Con este método, volví a tener ganas de vivir.” – <em>Marcela G., 42 años</em></p>
-      <p>🌸 “Mi digestión, mi humor y mi energía cambiaron por completo. Es como haber rejuvenecido.” – <em>Lucía P., 35 años</em></p>
-    </div>
+            // Masquer la question actuelle
+            document.querySelectorAll('.question-container')[currentQuestion].classList.remove('active');
 
-    <div class="center">
-      <a href="https://pay.hotmart.com/W94738608O?off=mymo2q0q&checkoutMode=10" class="botao">COMIENZA TU TRANSFORMACIÓN</a>
-    </div>
+            currentQuestion++;
+            updateProgress();
 
-    <div class="section">
-      <h2>Garantía total</h2>
-      <p>Confío tanto en los resultados de este método, que tienes <strong>7 días de garantía</strong>. Si no notas cambios, te devolvemos el dinero sin preguntas.</p>
-    </div>
+            if (currentQuestion < totalQuestions) {
+                // Afficher la question suivante
+                document.querySelectorAll('.question-container')[currentQuestion].classList.add('active');
+                document.getElementById('nextBtn').disabled = true;
+                
+                // Changer le texte du bouton pour la dernière question
+                if (currentQuestion === totalQuestions - 1) {
+                    document.getElementById('nextBtn').textContent = 'Voir Mes Résultats';
+                }
+            } else {
+                // Afficher les résultats
+                showResults();
+            }
+        }
 
-    <div class="center">
-      <a href="https://pay.hotmart.com/W94738608O?off=mymo2q0q&checkoutMode=10" class="botao">HAZ CLIC AQUÍ Y EMPIEZA AHORA</a>
-    </div>
+        function calculateScore() {
+            let score = 0;
+            
+            // Système de scoring basé sur les réponses
+            answers.forEach((answer, index) => {
+                switch(index) {
+                    case 1: // Niveau d'énergie
+                        if (answer === 'high') score += 3;
+                        else if (answer === 'medium') score += 2;
+                        else if (answer === 'low') score += 1;
+                        break;
+                    case 2: // Activité physique
+                        if (answer === 'daily') score += 3;
+                        else if (answer === 'regular') score += 2;
+                        else if (answer === 'occasional') score += 1;
+                        break;
+                    case 3: // Qualité du sommeil
+                        if (answer === 'excellent') score += 3;
+                        else if (answer === 'good') score += 2;
+                        else if (answer === 'poor') score += 1;
+                        break;
+                    case 4: // Gestion du stress
+                        if (answer === 'very-well') score += 3;
+                        else if (answer === 'well') score += 2;
+                        else if (answer === 'poorly') score += 1;
+                        break;
+                    case 6: // Alimentation
+                        if (answer === 'excellent') score += 3;
+                        else if (answer === 'good') score += 2;
+                        else if (answer === 'average') score += 1;
+                        break;
+                    case 7: // Libido/performance
+                        if (answer === 'no') score += 3;
+                        else if (answer === 'minor') score += 2;
+                        else if (answer === 'moderate') score += 1;
+                        break;
+                    case 8: // Alcool
+                        if (answer === 'never' || answer === 'occasional') score += 3;
+                        else if (answer === 'regular') score += 2;
+                        else if (answer === 'daily') score += 1;
+                        break;
+                    case 9: // Tabac
+                        if (answer === 'never') score += 3;
+                        else if (answer === 'quit') score += 2;
+                        else if (answer === 'occasional') score += 1;
+                        break;
+                    // Continuer avec les autres questions...
+                    default:
+                        score += 1; // Score de base pour les autres questions
+                }
+            });
 
-    <div class="center" style="margin-top: 60px; font-size: 14px; color: #888;">
-      © 2025 - Todos los derechos reservados. Este sitio no forma parte de Facebook™ ni de ninguna red social.
-    </div>
+            return Math.min(score, 21); // Limiter le score à 21
+        }
 
-  </div>
-</body>
-</html>
+        function getScoreDescription(score) {
+            if (score >= 18) {
+                return "🏆 Excellent ! Votre santé masculine est au top. Continuez sur cette voie et optimisez encore plus avec notre programme avancé.";
+            } else if (score >= 14) {
+                return "👍 Bien ! Vous avez de bonnes bases mais il y a encore de la marge d'amélioration. Notre programme peut vous aider à atteindre l'excellence.";
+            } else if (score >= 10) {
+                return "⚠️ Moyen. Votre santé masculine nécessite une attention particulière. Il est temps d'agir pour retrouver votre vitalité.";
+            } else {
+                return "🚨 Attention ! Votre santé masculine est préoccupante. Notre programme d'urgence peut vous aider à retrouver rapidement votre forme.";
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('progressContainer').style.display = 'none';
+            
+            const score = calculateScore();
+            document.getElementById('scoreDisplay').textContent = score + '/21';
+            document.getElementById('scoreDescription').textContent = getScoreDescription(score);
+            
+            document.getElementById('results').classList.add('show');
+        }
+
+        // Event listeners pour les options
+        document.addEventListener('click', function(e) {
+            if (
