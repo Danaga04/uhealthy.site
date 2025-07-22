@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
@@ -21,71 +21,20 @@
             padding: 20px;
         }
 
-        .container {
+        .quiz-container {
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             max-width: 600px;
             width: 100%;
-            padding: 40px;
-            text-align: center;
-            position: relative;
             overflow: hidden;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .progress-container {
-            background: #f0f0f0;
-            border-radius: 20px;
-            height: 8px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s ease;
-            border-radius: 20px;
-        }
-
-        .question-container {
-            margin-bottom: 30px;
-            display: none;
-        }
-
-        .question-container.active {
-            display: block;
-            animation: slideIn 0.5s ease;
+            animation: slideIn 0.8s ease-out;
         }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -93,607 +42,477 @@
             }
         }
 
+        .quiz-header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .quiz-header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .quiz-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #f0f0f0;
+            margin: 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .quiz-content {
+            padding: 40px;
+        }
+
         .question {
-            font-size: 1.3em;
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .question.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .question h3 {
             color: #333;
+            font-size: 1.4em;
             margin-bottom: 25px;
-            font-weight: 600;
             line-height: 1.4;
         }
 
         .options {
             display: grid;
             gap: 15px;
-            margin-bottom: 30px;
         }
 
         .option {
             background: #f8f9fa;
             border: 2px solid #e9ecef;
             border-radius: 12px;
-            padding: 18px;
+            padding: 18px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1em;
-            text-align: left;
+            font-size: 1.05em;
         }
 
         .option:hover {
-            background: #e7f3ff;
-            border-color: #667eea;
-            transform: translateY(-2px);
+            border-color: #4CAF50;
+            background: #f0f8f0;
+            transform: translateX(5px);
         }
 
         .option.selected {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #4CAF50;
             color: white;
-            border-color: #667eea;
+            border-color: #45a049;
+            transform: scale(1.02);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
         }
 
         .btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            padding: 12px 30px;
             border: none;
-            padding: 15px 40px;
-            border-radius: 30px;
+            border-radius: 25px;
             font-size: 1.1em;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: bold;
         }
 
-        .btn:hover {
+        .btn-next {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .btn-next:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3);
         }
 
-        .btn:disabled {
-            opacity: 0.6;
+        .btn-next:disabled {
+            background: #ccc;
             cursor: not-allowed;
-            transform: none;
         }
 
-        .start-screen {
-            text-align: center;
-        }
-
-        .start-screen h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .start-screen p {
+        .question-counter {
             color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-weight: bold;
         }
 
         .results {
             display: none;
             text-align: center;
+            padding: 20px 0;
         }
 
-        .results.show {
+        .results.active {
             display: block;
-            animation: fadeIn 0.8s ease;
+            animation: fadeIn 0.8s ease-in;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .results h2 {
+            color: #4CAF50;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
-        .score {
-            font-size: 3em;
-            color: #667eea;
-            font-weight: 700;
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border: 8px solid #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-size: 2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .result-text {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
             margin: 20px 0;
         }
 
-        .offer {
-            background: linear-gradient(135deg, #28a745, #20c997);
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
             color: white;
             padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+            margin: 20px -40px -40px -40px;
+            text-align: center;
         }
 
-        .offer h3 {
+        .cta-section h3 {
             font-size: 1.5em;
             margin-bottom: 15px;
         }
 
-        .price {
-            font-size: 2em;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-
-        .cta-btn {
+        .cta-button {
             background: white;
-            color: #28a745;
-            padding: 15px 30px;
+            color: #ff6b6b;
+            padding: 15px 40px;
+            border: none;
             border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            font-weight: 700;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin-top: 15px;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.3);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        .question-number {
-            color: #667eea;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .icon {
-            font-size: 3em;
-            margin-bottom: 20px;
+        .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffeb3b;
+            margin: 10px 0;
         }
 
         @media (max-width: 768px) {
-            .container {
+            .quiz-container {
+                margin: 10px;
+            }
+            
+            .quiz-content {
                 padding: 20px;
             }
             
-            h1 {
-                font-size: 2em;
+            .quiz-header {
+                padding: 20px;
             }
             
-            .question {
-                font-size: 1.1em;
-            }
-            
-            .option {
-                padding: 15px;
+            .quiz-header h1 {
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Écran de démarrage -->
-        <div class="start-screen" id="startScreen">
-            <div class="icon">💪</div>
-            <h1>Quiz Santé Masculine</h1>
-            <p class="subtitle">Évaluez votre bien-être en quelques minutes</p>
-            <h2>Découvrez votre niveau de santé masculine</h2>
-            <p>Ce quiz personnalisé vous aidera à identifier vos points forts et les domaines à améliorer pour optimiser votre santé et votre vitalité masculine.</p>
-            <button class="btn" onclick="startQuiz()">Commencer le Quiz</button>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>🏃‍♂️ Quiz Santé Masculine</h1>
+            <p>Découvrez votre niveau de bien-être et obtenez des conseils personnalisés</p>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
         </div>
 
-        <!-- Barre de progression -->
-        <div class="progress-container" id="progressContainer" style="display: none;">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <!-- Questions du quiz -->
-        <div id="quizContainer" style="display: none;">
+        <div class="quiz-content">
             <!-- Question 1 -->
-            <div class="question-container active" data-question="0">
-                <div class="question-number">Question 1/21</div>
-                <div class="question">Quel est votre âge ?</div>
+            <div class="question active" data-question="1">
+                <h3>À quelle fréquence pratiquez-vous une activité physique régulière ?</h3>
                 <div class="options">
-                    <div class="option" data-value="18-25">18-25 ans</div>
-                    <div class="option" data-value="26-35">26-35 ans</div>
-                    <div class="option" data-value="36-45">36-45 ans</div>
-                    <div class="option" data-value="46+">46 ans et plus</div>
+                    <div class="option" data-value="1">Rarement ou jamais</div>
+                    <div class="option" data-value="2">1-2 fois par semaine</div>
+                    <div class="option" data-value="3">3-4 fois par semaine</div>
+                    <div class="option" data-value="4">5 fois ou plus par semaine</div>
                 </div>
             </div>
 
             <!-- Question 2 -->
-            <div class="question-container" data-question="1">
-                <div class="question-number">Question 2/21</div>
-                <div class="question">Comment décririez-vous votre niveau d'énergie quotidien ?</div>
+            <div class="question" data-question="2">
+                <h3>Comment évaluez-vous votre niveau d'énergie au quotidien ?</h3>
                 <div class="options">
-                    <div class="option" data-value="high">Très énergique, je me sens dynamique toute la journée</div>
-                    <div class="option" data-value="medium">Modéré, j'ai des hauts et des bas</div>
-                    <div class="option" data-value="low">Faible, je me sens souvent fatigué</div>
-                    <div class="option" data-value="very-low">Très faible, je lutte contre la fatigue constante</div>
+                    <div class="option" data-value="1">Très faible, je me sens souvent épuisé</div>
+                    <div class="option" data-value="2">Modéré, avec des hauts et des bas</div>
+                    <div class="option" data-value="3">Bon, je me sens généralement énergique</div>
+                    <div class="option" data-value="4">Excellent, débordant d'énergie</div>
                 </div>
             </div>
 
             <!-- Question 3 -->
-            <div class="question-container" data-question="2">
-                <div class="question-number">Question 3/21</div>
-                <div class="question">À quelle fréquence pratiquez-vous une activité physique ?</div>
+            <div class="question" data-question="3">
+                <h3>Quelle est la qualité de votre sommeil ?</h3>
                 <div class="options">
-                    <div class="option" data-value="daily">Quotidiennement</div>
-                    <div class="option" data-value="regular">3-4 fois par semaine</div>
-                    <div class="option" data-value="occasional">1-2 fois par semaine</div>
-                    <div class="option" data-value="rarely">Rarement ou jamais</div>
+                    <div class="option" data-value="1">Très mauvaise, insomnies fréquentes</div>
+                    <div class="option" data-value="2">Correcte mais perfectible</div>
+                    <div class="option" data-value="3">Bonne, je dors généralement bien</div>
+                    <div class="option" data-value="4">Excellente, sommeil réparateur</div>
                 </div>
             </div>
 
             <!-- Question 4 -->
-            <div class="question-container" data-question="3">
-                <div class="question-number">Question 4/21</div>
-                <div class="question">Comment évaluez-vous la qualité de votre sommeil ?</div>
+            <div class="question" data-question="4">
+                <h3>À quelle fréquence ressentez-vous du stress ou de l'anxiété ?</h3>
                 <div class="options">
-                    <div class="option" data-value="excellent">Excellent, je dors profondément 7-8h</div>
-                    <div class="option" data-value="good">Bon, avec quelques réveils occasionnels</div>
-                    <div class="option" data-value="poor">Moyen, j'ai du mal à m'endormir ou je me réveille souvent</div>
-                    <div class="option" data-value="very-poor">Très mauvais, insomnie fréquente</div>
+                    <div class="option" data-value="1">Très souvent, c'est envahissant</div>
+                    <div class="option" data-value="2">Régulièrement, plusieurs fois par semaine</div>
+                    <div class="option" data-value="3">Parfois, de manière gérable</div>
+                    <div class="option" data-value="4">Rarement, je gère bien le stress</div>
                 </div>
             </div>
 
             <!-- Question 5 -->
-            <div class="question-container" data-question="4">
-                <div class="question-number">Question 5/21</div>
-                <div class="question">Comment gérez-vous votre stress quotidien ?</div>
+            <div class="question" data-question="5">
+                <h3>Comment décririez-vous votre alimentation ?</h3>
                 <div class="options">
-                    <div class="option" data-value="very-well">Très bien, j'ai des techniques efficaces</div>
-                    <div class="option" data-value="well">Bien, je m'adapte facilement</div>
-                    <div class="option" data-value="poorly">Mal, je me sens souvent dépassé</div>
-                    <div class="option" data-value="very-poorly">Très mal, le stress m'affecte considérablement</div>
+                    <div class="option" data-value="1">Déséquilibrée, beaucoup de fast-food</div>
+                    <div class="option" data-value="2">Correcte mais avec des écarts fréquents</div>
+                    <div class="option" data-value="3">Équilibrée la plupart du temps</div>
+                    <div class="option" data-value="4">Très saine et bien planifiée</div>
                 </div>
             </div>
 
             <!-- Question 6 -->
-            <div class="question-container" data-question="5">
-                <div class="question-number">Question 6/21</div>
-                <div class="question">Quelle est votre situation professionnelle ?</div>
+            <div class="question" data-question="6">
+                <h3>Avez-vous des préoccupations concernant votre poids ?</h3>
                 <div class="options">
-                    <div class="option" data-value="employee">Employé</div>
-                    <div class="option" data-value="manager">Manager/Cadre</div>
-                    <div class="option" data-value="entrepreneur">Entrepreneur/Indépendant</div>
-                    <div class="option" data-value="other">Autre</div>
+                    <div class="option" data-value="1">Oui, je suis très insatisfait</div>
+                    <div class="option" data-value="2">Quelques kilos à perdre ou à gagner</div>
+                    <div class="option" data-value="3">Globalement satisfait</div>
+                    <div class="option" data-value="4">Parfaitement à l'aise avec mon poids</div>
                 </div>
             </div>
 
             <!-- Question 7 -->
-            <div class="question-container" data-question="6">
-                <div class="question-number">Question 7/21</div>
-                <div class="question">Comment décririez-vous votre alimentation ?</div>
+            <div class="question" data-question="7">
+                <h3>À quelle fréquence consultez-vous un professionnel de santé ?</h3>
                 <div class="options">
-                    <div class="option" data-value="excellent">Excellente, équilibrée et nutritive</div>
-                    <div class="option" data-value="good">Bonne, je fais attention la plupart du temps</div>
-                    <div class="option" data-value="average">Moyenne, je mange ce qui me fait plaisir</div>
-                    <div class="option" data-value="poor">Mauvaise, fast-food et plats préparés</div>
+                    <div class="option" data-value="1">Uniquement en cas d'urgence</div>
+                    <div class="option" data-value="2">Quand j'ai des symptômes inquiétants</div>
+                    <div class="option" data-value="3">Contrôle annuel régulier</div>
+                    <div class="option" data-value="4">Suivi préventif régulier</div>
                 </div>
             </div>
 
             <!-- Question 8 -->
-            <div class="question-container" data-question="7">
-                <div class="question-number">Question 8/21</div>
-                <div class="question">Avez-vous des problèmes de libido ou de performance ?</div>
+            <div class="question" data-question="8">
+                <h3>Comment gérez-vous votre santé mentale et émotionnelle ?</h3>
                 <div class="options">
-                    <div class="option" data-value="no">Non, tout va bien</div>
-                    <div class="option" data-value="minor">Quelques petits problèmes occasionnels</div>
-                    <div class="option" data-value="moderate">Des difficultés modérées</div>
-                    <div class="option" data-value="major">Des problèmes significatifs</div>
+                    <div class="option" data-value="1">Difficilement, je me sens souvent dépassé</div>
+                    <div class="option" data-value="2">Ça va, mais j'aimerais mieux faire</div>
+                    <div class="option" data-value="3">Plutôt bien, j'ai mes stratégies</div>
+                    <div class="option" data-value="4">Très bien, équilibre parfait</div>
                 </div>
             </div>
 
             <!-- Question 9 -->
-            <div class="question-container" data-question="8">
-                <div class="question-number">Question 9/21</div>
-                <div class="question">À quelle fréquence consommez-vous de l'alcool ?</div>
+            <div class="question" data-question="9">
+                <h3>Quel est votre niveau de satisfaction dans vos relations ?</h3>
                 <div class="options">
-                    <div class="option" data-value="never">Jamais</div>
-                    <div class="option" data-value="occasional">Occasionnellement (weekend)</div>
-                    <div class="option" data-value="regular">Régulièrement (quelques verres par semaine)</div>
-                    <div class="option" data-value="daily">Quotidiennement</div>
+                    <div class="option" data-value="1">Peu satisfait, relations difficiles</div>
+                    <div class="option" data-value="2">Correct mais perfectible</div>
+                    <div class="option" data-value="3">Satisfait de mes relations</div>
+                    <div class="option" data-value="4">Très épanoui relationnellement</div>
                 </div>
             </div>
 
             <!-- Question 10 -->
-            <div class="question-container" data-question="9">
-                <div class="question-number">Question 10/21</div>
-                <div class="question">Fumez-vous ?</div>
+            <div class="question" data-question="10">
+                <h3>Êtes-vous prêt à investir dans votre santé et bien-être ?</h3>
                 <div class="options">
-                    <div class="option" data-value="never">Non, je n'ai jamais fumé</div>
-                    <div class="option" data-value="quit">J'ai arrêté</div>
-                    <div class="option" data-value="occasional">Occasionnellement</div>
-                    <div class="option" data-value="regular">Régulièrement</div>
+                    <div class="option" data-value="1">Pas vraiment prioritaire pour moi</div>
+                    <div class="option" data-value="2">Si les solutions sont abordables</div>
+                    <div class="option" data-value="3">Oui, c'est important pour moi</div>
+                    <div class="option" data-value="4">Absolument, c'est ma priorité numéro 1</div>
                 </div>
             </div>
 
-            <!-- Question 11 -->
-            <div class="question-container" data-question="10">
-                <div class="question-number">Question 11/21</div>
-                <div class="question">Comment vous sentez-vous par rapport à votre poids ?</div>
-                <div class="options">
-                    <div class="option" data-value="ideal">Idéal, je suis satisfait</div>
-                    <div class="option" data-value="slightly-over">Légèrement en surpoids</div>
-                    <div class="option" data-value="overweight">En surpoids notable</div>
-                    <div class="option" data-value="underweight">En sous-poids</div>
+            <!-- Results -->
+            <div class="results" id="results">
+                <h2>🎉 Vos Résultats</h2>
+                <div class="score-circle">
+                    <span id="scoreText">0%</span>
+                </div>
+                <div class="result-text" id="resultText"></div>
+                
+                <div class="cta-section">
+                    <h3>🚀 Transformez Votre Santé Masculine</h3>
+                    <p>Découvrez notre guide complet avec des stratégies personnalisées pour optimiser votre bien-être masculin, votre énergie et votre confiance.</p>
+                    <div class="price">Seulement 9€</div>
+                    <a href="https://redgift.mycartpanda.com/ckt/E5VzpE" class="cta-button" target="_blank">
+                        Accéder au Guide Maintenant
+                    </a>
+                    <p style="font-size: 0.9em; margin-top: 15px; opacity: 0.9;">
+                        ✅ Conseils d'experts • ✅ Plans personnalisés • ✅ Résultats garantis
+                    </p>
                 </div>
             </div>
 
-            <!-- Question 12 -->
-            <div class="question-container" data-question="11">
-                <div class="question-number">Question 12/21</div>
-                <div class="question">Avez-vous des douleurs chroniques ?</div>
-                <div class="options">
-                    <div class="option" data-value="none">Aucune</div>
-                    <div class="option" data-value="minor">Légères (dos, articulations)</div>
-                    <div class="option" data-value="moderate">Modérées, qui affectent mon quotidien</div>
-                    <div class="option" data-value="severe">Importantes, très gênantes</div>
+            <div class="navigation">
+                <div class="question-counter">
+                    Question <span id="currentQ">1</span> sur 10
                 </div>
-            </div>
-
-            <!-- Question 13 -->
-            <div class="question-container" data-question="12">
-                <div class="question-number">Question 13/21</div>
-                <div class="question">À quelle fréquence faites-vous des examens médicaux ?</div>
-                <div class="options">
-                    <div class="option" data-value="annual">Annuellement</div>
-                    <div class="option" data-value="biennial">Tous les 2-3 ans</div>
-                    <div class="option" data-value="rare">Rarement, seulement si problème</div>
-                    <div class="option" data-value="never">Jamais</div>
-                </div>
-            </div>
-
-            <!-- Question 14 -->
-            <div class="question-container" data-question="13">
-                <div class="question-number">Question 14/21</div>
-                <div class="question">Comment décririez-vous votre humeur générale ?</div>
-                <div class="options">
-                    <div class="option" data-value="excellent">Excellente, je suis optimiste</div>
-                    <div class="option" data-value="good">Bonne, avec des hauts et des bas normaux</div>
-                    <div class="option" data-value="poor">Mauvaise, souvent irritable ou triste</div>
-                    <div class="option" data-value="very-poor">Très mauvaise, dépression ou anxiété</div>
-                </div>
-            </div>
-
-            <!-- Question 15 -->
-            <div class="question-container" data-question="14">
-                <div class="question-number">Question 15/21</div>
-                <div class="question">Combien d'heures travaillez-vous par semaine ?</div>
-                <div class="options">
-                    <div class="option" data-value="normal">35-40 heures</div>
-                    <div class="option" data-value="long">41-50 heures</div>
-                    <div class="option" data-value="very-long">51-60 heures</div>
-                    <div class="option" data-value="excessive">Plus de 60 heures</div>
-                </div>
-            </div>
-
-            <!-- Question 16 -->
-            <div class="question-container" data-question="15">
-                <div class="question-number">Question 16/21</div>
-                <div class="question">Avez-vous des antécédents familiaux de maladies cardiaques ?</div>
-                <div class="options">
-                    <div class="option" data-value="none">Aucun</div>
-                    <div class="option" data-value="distant">Quelques cas éloignés</div>
-                    <div class="option" data-value="close">Parents/frères/sœurs</div>
-                    <div class="option" data-value="multiple">Plusieurs cas dans la famille</div>
-                </div>
-            </div>
-
-            <!-- Question 17 -->
-            <div class="question-container" data-question="16">
-                <div class="question-number">Question 17/21</div>
-                <div class="question">Comment est votre vie sociale ?</div>
-                <div class="options">
-                    <div class="option" data-value="active">Très active, beaucoup d'amis</div>
-                    <div class="option" data-value="moderate">Modérée, quelques amis proches</div>
-                    <div class="option" data-value="limited">Limitée, peu de contacts sociaux</div>
-                    <div class="option" data-value="isolated">Isolé, je me sens seul</div>
-                </div>
-            </div>
-
-            <!-- Question 18 -->
-            <div class="question-container" data-question="17">
-                <div class="question-number">Question 18/21</div>
-                <div class="question">Prenez-vous des suppléments alimentaires ?</div>
-                <div class="options">
-                    <div class="option" data-value="targeted">Oui, adaptés à mes besoins</div>
-                    <div class="option" data-value="basic">Oui, des multivitamines basiques</div>
-                    <div class="option" data-value="occasional">Occasionnellement</div>
-                    <div class="option" data-value="never">Non, jamais</div>
-                </div>
-            </div>
-
-            <!-- Question 19 -->
-            <div class="question-container" data-question="18">
-                <div class="question-number">Question 19/21</div>
-                <div class="question">Quel est votre principal objectif santé ?</div>
-                <div class="options">
-                    <div class="option" data-value="energy">Augmenter mon énergie</div>
-                    <div class="option" data-value="weight">Perdre du poids</div>
-                    <div class="option" data-value="muscle">Gagner en masse musculaire</div>
-                    <div class="option" data-value="performance">Améliorer mes performances</div>
-                </div>
-            </div>
-
-            <!-- Question 20 -->
-            <div class="question-container" data-question="19">
-                <div class="question-number">Question 20/21</div>
-                <div class="question">Quelle est votre plus grande préoccupation santé ?</div>
-                <div class="options">
-                    <div class="option" data-value="cardiovascular">Santé cardiovasculaire</div>
-                    <div class="option" data-value="hormonal">Équilibre hormonal</div>
-                    <div class="option" data-value="mental">Santé mentale et stress</div>
-                    <div class="option" data-value="sexual">Santé sexuelle</div>
-                </div>
-            </div>
-
-            <!-- Question 21 -->
-            <div class="question-container" data-question="20">
-                <div class="question-number">Question 21/21</div>
-                <div class="question">Seriez-vous prêt à investir dans un programme de santé masculine personnalisé ?</div>
-                <div class="options">
-                    <div class="option" data-value="definitely">Absolument, c'est une priorité</div>
-                    <div class="option" data-value="probably">Probablement, si c'est efficace</div>
-                    <div class="option" data-value="maybe">Peut-être, selon le prix</div>
-                    <div class="option" data-value="unlikely">Peu probable</div>
-                </div>
-            </div>
-
-            <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Question Suivante</button>
-        </div>
-
-        <!-- Résultats -->
-        <div class="results" id="results">
-            <div class="icon">🎯</div>
-            <h2>Vos Résultats</h2>
-            <div class="score" id="scoreDisplay">0/21</div>
-            <p id="scoreDescription"></p>
-            
-            <div class="offer">
-                <h3>🚀 Programme Santé Masculine Elite</h3>
-                <p>Transformez votre santé avec notre programme personnalisé conçu spécialement pour les hommes modernes.</p>
-                <div class="price">9€ seulement</div>
-                <p><strong>✅ Guide nutritionnel masculin<br>
-                ✅ Programme d'exercices adapté<br>
-                ✅ Stratégies anti-stress<br>
-                ✅ Optimisation hormonale naturelle</strong></p>
-                <a href="https://pay.hotmart.com/W94738608O?off=d17gy4zq&checkoutMode=10" class="cta-btn">Accéder au Programme Maintenant</a>
+                <button class="btn btn-next" id="nextBtn" disabled>Suivant</button>
             </div>
         </div>
     </div>
 
     <script>
-        let currentQuestion = 0;
-        let answers = [];
-        const totalQuestions = 21;
-
-        function startQuiz() {
-            document.getElementById('startScreen').style.display = 'none';
-            document.getElementById('progressContainer').style.display = 'block';
-            document.getElementById('quizContainer').style.display = 'block';
-            updateProgress();
-        }
+        let currentQuestion = 1;
+        let totalQuestions = 10;
+        let answers = {};
+        let score = 0;
 
         function updateProgress() {
-            const progress = ((currentQuestion) / totalQuestions) * 100;
+            const progress = (currentQuestion - 1) / totalQuestions * 100;
             document.getElementById('progressBar').style.width = progress + '%';
         }
 
-        function selectOption(element) {
-            // Retirer la sélection précédente
-            const options = element.parentElement.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            
-            // Sélectionner la nouvelle option
-            element.classList.add('selected');
-            
-            // Activer le bouton suivant
-            document.getElementById('nextBtn').disabled = false;
-        }
-
-        function nextQuestion() {
-            // Sauvegarder la réponse
-            const selected = document.querySelector('.question-container.active .option.selected');
-            if (selected) {
-                answers[currentQuestion] = selected.dataset.value;
-            }
-
-            // Masquer la question actuelle
-            document.querySelectorAll('.question-container')[currentQuestion].classList.remove('active');
-
-            currentQuestion++;
+        function showQuestion(questionNumber) {
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.querySelector(`[data-question="${questionNumber}"]`).classList.add('active');
+            document.getElementById('currentQ').textContent = questionNumber;
             updateProgress();
-
-            if (currentQuestion < totalQuestions) {
-                // Afficher la question suivante
-                document.querySelectorAll('.question-container')[currentQuestion].classList.add('active');
-                document.getElementById('nextBtn').disabled = true;
-                
-                // Changer le texte du bouton pour la dernière question
-                if (currentQuestion === totalQuestions - 1) {
-                    document.getElementById('nextBtn').textContent = 'Voir Mes Résultats';
-                }
-            } else {
-                // Afficher les résultats
-                showResults();
-            }
-        }
-
-        function calculateScore() {
-            let score = 0;
             
-            // Système de scoring basé sur les réponses
-            answers.forEach((answer, index) => {
-                switch(index) {
-                    case 1: // Niveau d'énergie
-                        if (answer === 'high') score += 3;
-                        else if (answer === 'medium') score += 2;
-                        else if (answer === 'low') score += 1;
-                        break;
-                    case 2: // Activité physique
-                        if (answer === 'daily') score += 3;
-                        else if (answer === 'regular') score += 2;
-                        else if (answer === 'occasional') score += 1;
-                        break;
-                    case 3: // Qualité du sommeil
-                        if (answer === 'excellent') score += 3;
-                        else if (answer === 'good') score += 2;
-                        else if (answer === 'poor') score += 1;
-                        break;
-                    case 4: // Gestion du stress
-                        if (answer === 'very-well') score += 3;
-                        else if (answer === 'well') score += 2;
-                        else if (answer === 'poorly') score += 1;
-                        break;
-                    case 6: // Alimentation
-                        if (answer === 'excellent') score += 3;
-                        else if (answer === 'good') score += 2;
-                        else if (answer === 'average') score += 1;
-                        break;
-                    case 7: // Libido/performance
-                        if (answer === 'no') score += 3;
-                        else if (answer === 'minor') score += 2;
-                        else if (answer === 'moderate') score += 1;
-                        break;
-                    case 8: // Alcool
-                        if (answer === 'never' || answer === 'occasional') score += 3;
-                        else if (answer === 'regular') score += 2;
-                        else if (answer === 'daily') score += 1;
-                        break;
-                    case 9: // Tabac
-                        if (answer === 'never') score += 3;
-                        else if (answer === 'quit') score += 2;
-                        else if (answer === 'occasional') score += 1;
-                        break;
-                    // Continuer avec les autres questions...
-                    default:
-                        score += 1; // Score de base pour les autres questions
+            // Check if question already answered
+            if (answers[questionNumber]) {
+                document.getElementById('nextBtn').disabled = false;
+                // Highlight previously selected answer
+                const selectedOption = document.querySelector(`[data-question="${questionNumber}"] .option[data-value="${answers[questionNumber]}"]`);
+                if (selectedOption) {
+                    document.querySelectorAll(`[data-question="${questionNumber}"] .option`).forEach(opt => opt.classList.remove('selected'));
+                    selectedOption.classList.add('selected');
                 }
-            });
-
-            return Math.min(score, 21); // Limiter le score à 21
+            } else {
+                document.getElementById('nextBtn').disabled = true;
+            }
         }
 
-        function getScoreDescription(score) {
-            if (score >= 18) {
-                return "🏆 Excellent ! Votre santé masculine est au top. Continuez sur cette voie et optimisez encore plus avec notre programme avancé.";
-            } else if (score >= 14) {
-                return "👍 Bien ! Vous avez de bonnes bases mais il y a encore de la marge d'amélioration. Notre programme peut vous aider à atteindre l'excellence.";
-            } else if (score >= 10) {
-                return "⚠️ Moyen. Votre santé masculine nécessite une attention particulière. Il est temps d'agir pour retrouver votre vitalité.";
+        function calculateResults() {
+            score = Object.values(answers).reduce((sum, value) => sum + parseInt(value), 0);
+            const percentage = Math.round((score / 40) * 100);
+            
+            document.getElementById('scoreText').textContent = percentage + '%';
+            
+            let resultText = '';
+            if (percentage < 40) {
+                resultText = `
+                    <strong>🔄 Potentiel d'amélioration élevé</strong><br>
+                    Votre score suggère que plusieurs aspects de votre santé masculine pourraient bénéficier d'une attention particulière. C'est le moment idéal pour prendre des mesures concrètes !
+                `;
+            } else if (percentage < 65) {
+                resultText = `
+                    <strong>📈 Sur la bonne voie</strong><br>
+                    Vous avez déjà de bonnes habitudes, mais il y a encore de la marge pour optimiser votre bien-être masculin et atteindre votre plein potentiel.
+                `;
+            } else if (percentage < 85) {
+                resultText = `
+                    <strong>👍 Très bon niveau</strong><br>
+                    Félicitations ! Vous prenez déjà bien soin de votre santé. Quelques ajustements pourraient vous aider à passer au niveau supérieur.
+                `;
             } else {
-                return "🚨 Attention ! Votre santé masculine est préoccupante. Notre programme d'urgence peut vous aider à retrouver rapidement votre forme.";
+                resultText = `
+                    <strong>🏆 Excellence</strong><br>
+                    Bravo ! Vous maintenez un excellent niveau de santé masculine. Continuez sur cette lancée et inspirez les autres !
+                `;
             }
+            
+            document.getElementById('resultText').innerHTML = resultText;
         }
 
         function showResults() {
-            document.getElementById('quizContainer').style.display = 'none';
-            document.getElementById('progressContainer').style.display = 'none';
-            
-            const score = calculateScore();
-            document.getElementById('scoreDisplay').textContent = score + '/21';
-            document.getElementById('scoreDescription').textContent = getScoreDescription(score);
-            
-            document.getElementById('results').classList.add('show');
+            document.querySelector('.navigation').style.display = 'none';
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.getElementById('results').classList.add('active');
+            document.getElementById('progressBar').style.width = '100%';
+            calculateResults();
         }
 
-        // Event listeners pour les options
+        // Event listeners
         document.addEventListener('click', function(e) {
-            if (
+            if (e.target.classList.contains('option')) {
+                // Remove previous selection
+                e.target.parentNode.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Select current option
+                e.target.classList.add('selected');
+                
+                // Store answer
+                answers[currentQuestion] = e.target.getAttribute('data-value');
+                
+                // Enable next button
+                document.getElementById('nextBtn').disabled = false;
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        });
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
