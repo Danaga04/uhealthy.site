@@ -1,521 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código V - Método Exclusivo</title>
-    <meta name="description" content="Descubra o método revolucionário para proporcionar prazer intenso à sua parceira">
+    <title>Código V - Versão Atualizada</title>
     <meta name="robots" content="noindex, nofollow">
-    
-    <!-- Open Graph / Facebook -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Código V - Guia para Prazer Intenso">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.seudominio.com/">
-    <meta property="og:title" content="Código V - Método Exclusivo">
-    <meta property="og:description" content="Descubra o método revolucionário para proporcionar prazer intenso à sua parceira">
-    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://www.ritmointimo.com/v1">
+    <meta property="og:title" content="Código V">
+    <meta property="og:description" content="Guia para Prazer Intenso">
+    <meta property="og:image" content="images/ogimage.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.seudominio.com/">
-    <meta property="twitter:title" content="Código V - Método Exclusivo">
-    <meta property="twitter:description" content="Descubra o método revolucionário para proporcionar prazer intenso à sua parceira">
-    <meta property="twitter:image" content="images/og-image.jpg">
-
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Swiper CSS (para sliders) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <style>
-        /* Reset e estilos base */
-        :root {
-            --cor-primaria: #8e44ad;
-            --cor-secundaria: #9b59b6;
-            --cor-destaque: #fd79a8;
-            --cor-texto: #333333;
-            --cor-texto-claro: #777777;
-            --cor-fundo: #f8f9fa;
-            --cor-fundo-escuro: #1a1a1a;
-            --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
-            --transicao: all 0.3s ease;
+    <!-- Estilos Gerais -->
+    <style type="text/css" media="all">
+        :root { --main-bg-color: #000; --theme-color: #6495ed; --white: #ffffff; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Roboto, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--main-bg-color); }
+        *, ::after, ::before { margin: 0; padding: 0; box-sizing: border-box; }
+        a { color: inherit; text-decoration: none; }
+        button { border: none; outline: none; background: transparent; font-family: "Space Grotesk", sans-serif; cursor: pointer; }
+        .progress-bar { margin: 20px auto; padding: 0; max-width: 28rem; height: 8px; overflow: hidden; position: relative; border-radius: 1rem; }
+        .progress-bg { opacity: 0.1; width: 100%; height: 100%; background: var(--theme-color); position: absolute; top: 0; left: 0; }
+        .progress-fill { height: 100%; background: var(--theme-color); transition-duration: 0.7s; position: absolute; top: 0; left: 0; }
+        .heading-large { font-size: clamp(24px, 5vw, 28px); font-family: Poppins, sans-serif; color: #000; }
+        .text-content { font-family: Roboto, sans-serif; color: #000; white-space: pre-line; font-size: clamp(14px, 4vw, 16px); }
+        .button-style { color: #fff; font-family: Montserrat, sans-serif; background: var(--theme-color); cursor: pointer; padding: 12px 24px; border-radius: 8px; font-size: clamp(14px, 4vw, 16px); }
+        .full-height { height: 100%; }
+        .no-select { user-select: none; -moz-user-select: none; -webkit-user-select: none; cursor: default; }
+        .hidden { display: none; }
+        .relative-pos { position: relative; }
+        .flex-row { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+        .flex-column { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .gap-small { gap: 0.75rem; }
+        .container-max { max-width: 100%; padding: 0 15px; margin: 0 auto; }
+        .image-container { overflow: hidden; text-align: center; }
+        .image-container img { max-width: 100%; height: auto; display: inline-block; vertical-align: middle; }
+        .video-wrapper { position: relative; width: 100%; max-width: 400px; margin: 0 auto; box-shadow: 0 0 10px 0 #fd0000; aspect-ratio: 16 / 9; }
+        .accordion-item { border-radius: 8px; background: #f7f8fa; overflow: hidden; margin-bottom: 10px; }
+        .accordion-title { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: clamp(14px, 4vw, 16px); }
+        .accordion-content { padding: 12px 15px; font-weight: 400; white-space: pre-line; word-break: break-word; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; font-size: clamp(13px, 3.5vw, 14px); }
+        .accordion-content.active { max-height: 1000rem; }
+        .slider-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; }
+        .slider-item { flex: 0 0 auto; scroll-snap-align: center; width: 100%; max-width: 300px; margin: 0 10px; }
+        .slider-item iframe { width: 100%; height: 100%; max-height: 600px; }
+        /* Media Queries */
+        @media screen and (max-width: 480px) {
+            .hidden-mobile { display: none; }
+            .main-section { background: url(images/NNrito2134953.jpeg); background-size: cover; background-position: center; padding: 15px 0; }
+            .slider-section, .buy-section, .faq-section { padding: 15px; }
+            .video-section { width: 100%; max-width: 400px; }
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--cor-texto);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-color: #000;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .section {
-            padding: 60px 0;
-        }
-
-        .bg-cinza {
-            background-color: var(--cor-fundo);
-        }
-
-        .bg-escuro {
-            background-color: var(--cor-fundo-escuro);
-            color: white;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--cor-destaque);
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: var(--transicao);
-            border: none;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn:hover {
-            background-color: var(--cor-primaria);
-            transform: translateY(-3px);
-            box-shadow: var(--sombra);
-        }
-
-        /* Header */
-        .header {
-            padding: 20px 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: relative;
-            z-index: 100;
-        }
-
-        .logo {
-            max-width: 200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 80px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-titulo {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitulo {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--sombra);
-        }
-
-        /* Seção Benefícios */
-        .beneficios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .beneficio-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--sombra);
-            text-align: center;
-            transition: var(--transicao);
-        }
-
-        .beneficio-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .beneficio-icone {
-            font-size: 3rem;
-            color: var(--cor-primaria);
-            margin-bottom: 1rem;
-        }
-
-        /* Seção Depoimentos */
-        .depoimentos-slider {
-            padding: 40px 0;
-        }
-
-        .depoimento-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--sombra);
-            margin: 20px;
-        }
-
-        .depoimento-texto {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .depoimento-autor {
-            font-weight: 600;
-            color: var(--cor-primaria);
-        }
-
-        /* Seção FAQ */
-        .faq-item {
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--sombra);
-        }
-
-        .faq-pergunta {
-            padding: 20px;
-            background: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .faq-resposta {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: white;
-        }
-
-        .faq-resposta.aberta {
-            padding: 20px;
-            max-height: 500px;
-        }
-
-        /* Seção Garantia */
-        .garantia {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
-            color: white;
-        }
-
-        .garantia-icone {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 40px 0;
-            background-color: var(--cor-fundo-escuro);
-            color: white;
-            text-align: center;
-        }
-
-        .footer-links {
-            margin: 20px 0;
-        }
-
-        .footer-links a {
-            margin: 0 10px;
-            color: #ccc;
-            transition: var(--transicao);
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.8rem;
-            color: #999;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hero-titulo {
-                font-size: 2rem;
-            }
-            
-            .section {
-                padding: 40px 0;
-            }
-            
-            .beneficios-grid {
-                grid-template-columns: 1fr;
-            }
+        @media screen and (min-width: 481px) {
+            .hidden-desktop, .hidden-tablet { display: none; }
+            .container-max { max-width: 90%; }
         }
     </style>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXo.woff2" crossorigin>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Código V">
+<body class="no-select" data-version="1.6" data-page-type="page" data-variant="jjlccpvwlw" data-page="_A2fzkCkOdp6uBqzyMTjZ">
+
+    <!-- Seção Principal com Fundo e Vídeo -->
+    <div class="main-section relative-pos">
+        <div class="container-max flex-column">
+            <div class="image-wrapper hidden-mobile"><img src="images/JkpPLe1899129.webp#82328" alt="" loading="eager" srcset="images/JkpPLe1899129_3.webp#519971 1600w, images/JkpPLe1899129_1.webp#97608 300w, images/JkpPLe1899129_4.webp#380779 768w, images/JkpPLe1899129_2.webp#414485 1024w, images/JkpPLe1899129_5.webp#896199 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></div>
+            <div class="image-wrapper hidden-desktop hidden-tablet"><img src="images/ayumIc1899129.webp#566823" alt="" loading="eager" srcset="images/ayumIc1899129_3.webp#52914 786w, images/ayumIc1899129_2.webp#924540 300w, images/ayumIc1899129_1.webp#819089 768w" sizes="(max-width: 786px) 100vw, 786px"></div>
+            <div class="video-section">
+                <vturb-smartplayer id="vid-68953de294176522ab1b163a" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+                <script type="text/javascript">var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68953de294176522ab1b163a/v4/player.js", s.async=!0,document.head.appendChild(s);</script>
+            </div>
+            <div class="image-wrapper hidden-mobile"><img src="images/rSivMm1899129.webp#656771" alt="" loading="eager" srcset="images/rSivMm1899129_2.webp#715930 1600w, images/rSivMm1899129_5.webp#61342 300w, images/rSivMm1899129_3.webp#364769 768w, images/rSivMm1899129_1.webp#133313 1024w, images/rSivMm1899129_4.webp#125846 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></div>
+            <div class="image-wrapper hidden-desktop hidden-tablet"><img src="images/bjEXfo1899129.webp#265310" alt="" loading="eager" srcset="images/bjEXfo1899129_1.webp#554476 726w, images/bjEXfo1899129_2.webp#224514 300w" sizes="(max-width: 726px) 100vw, 726px"></div>
+        </div>
+    </div>
+
+    <!-- Seção com Slider de Imagens -->
+    <div class="slider-section" style="background: url(images/YAeKNK9515424.jpeg); background-size: cover; padding: 15px;">
+        <div class="container-max flex-column">
+            <div class="image-wrapper hidden-mobile"><img src="images/Dcqmwq2091795.webp#603556" alt="" loading="eager" srcset="images/Dcqmwq2091795_1.webp#419137 1600w, images/Dcqmwq2091795_2.webp#657108 300w, images/Dcqmwq2091795_5.webp#434792 768w, images/Dcqmwq2091795_4.webp#373984 1024w, images/Dcqmwq2091795_3.webp#305732 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></div>
+            <div class="image-wrapper hidden-desktop hidden-tablet"><img src="images/GBXJtY2091795.webp#733490" alt="" loading="eager" srcset="images/GBXJtY2091795_3.webp#278435 832w, images/GBXJtY2091795_1.webp#222818 300w, images/GBXJtY2091795_2.webp#217423 768w" sizes="(max-width: 832px) 100vw, 832px"></div>
+            <!-- Slider Principal -->
+            <div class="slider-container">
+                <div class="slider-item"><img src="images/YXiydX0383335.jpeg#545789" alt="" loading="eager" srcset="images/YXiydX0383335_1.jpeg#531555 744w, images/YXiydX0383335_2.jpeg#613909 300w" sizes="(max-width: 744px) 100vw, 744px"></div>
+                <div class="slider-item"><img src="images/teQhFR0383335.jpeg#58000" alt="" loading="eager" srcset="images/teQhFR0383335_1.jpeg#919167 746w, images/teQhFR0383335_2.jpeg#469606 300w" sizes="(max-width: 746px) 100vw, 746px"></div>
+                <div class="slider-item"><img src="images/CsDwaC0383335.jpeg#441556" alt="" loading="eager" srcset="images/CsDwaC0383335_1.jpeg#321828 746w, images/CsDwaC0383335_2.jpeg#777944 300w" sizes="(max-width: 746px) 100vw, 746px"></div>
+                <div class="slider-item"><img src="images/qWGxxg0383335.jpeg#931147" alt="" loading="eager" srcset="images/qWGxxg0383335_1.jpeg#196068 746w, images/qWGxxg0383335_2.jpeg#815388 300w" sizes="(max-width: 746px) 100vw, 746px"></div>
+            </div>
+            <!-- Outro Slider com Iframes -->
+            <div class="slider-container">
+                <div class="slider-item"><iframe src="https://player-vz-04b52785-8ac.tv.pandavideo.com/embed/?v=29d565ea-3931-403a-b50f-ffcb009d9b5d&preload=false" style="border:none" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen width="100%" height="600"></iframe></div>
+                <div class="slider-item"><iframe src="https://player-vz-04b52785-8ac.tv.pandavideo.com/embed/?v=384781f8-3f81-4b38-8aed-0b308ab55be1&preload=false" style="border:none" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen width="100%" height="600"></iframe></div>
+                <div class="slider-item"><iframe src="https://player-vz-04b52785-8ac.tv.pandavideo.com/embed/?v=4ee8ef63-41da-4c51-ac15-48e53f5805e1&preload=false" style="border:none" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen width="100%" height="600"></iframe></div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-titulo">Descubra o Segredo para Proporcionar Prazer Intenso à Sua Parceira</h1>
-            <p class="hero-subtitulo">Método exclusivo que vai revolucionar sua vida sexual e fazer sua parceira atingir o clímax múltiplas vezes</p>
-            
-            <div class="video-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/000000000?h=xxxxxxxxxx&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <script src="https://player.vimeo.com/api/player.js"></script>
-            </div>
+    <!-- Seção com Imagens e Botões de Compra -->
+    <div class="buy-section" style="background: url(images/vNSmGH9515424.jpeg); background-size: cover; padding: 15px;">
+        <div class="container-max flex-column">
+            <div class="image-wrapper hidden-desktop hidden-tablet"><img src="images/QRdAJH1813400.webp#336460" alt="" loading="eager" srcset="images/QRdAJH1813400_3.webp#701979 1287w, images/QRdAJH1813400_2.webp#659882 300w, images/QRdAJH1813400_4.webp#994159 768w, images/QRdAJH1813400_1.webp#714009 1024w" sizes="(max-width: 1287px) 100vw, 1287px"></div>
+            <div class="image-wrapper hidden-desktop hidden-tablet"><a href="[INSIRA_SEU_CHECKOUT_AQUI]"><img src="images/iSkzwt3923736.webp#234727" alt="" loading="eager" srcset="images/iSkzwt3923736_5.webp#567131 1263w, images/iSkzwt3923736_4.webp#784381 300w, images/iSkzwt3923736_3.webp#179977 768w, images/iSkzwt3923736_2.webp#277473 1024w" sizes="(max-width: 1263px) 100vw, 1263px"></a></div>
+            <div class="image-wrapper hidden-mobile"><img src="images/beivHi1813400.webp#102558" alt="" loading="eager" srcset="images/beivHi1813400_4.webp#142369 1600w, images/beivHi1813400_5.webp#994327 300w, images/beivHi1813400_2.webp#133998 768w, images/beivHi1813400_1.webp#290556 1024w, images/beivHi1813400_3.webp#932940 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></div>
+            <div class="image-wrapper hidden-mobile"><a href="[INSIRA_SEU_CHECKOUT_AQUI]"><img src="images/rjJyLq4242596.webp#957410" alt="" loading="eager" srcset="images/rjJyLq4242596_3.webp#720828 1600w, images/rjJyLq4242596_4.webp#613525 300w, images/rjJyLq4242596_6.webp#189978 768w, images/rjJyLq4242596_5.webp#564332 1024w, images/rjJyLq4242596_7.webp#143515 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></a></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Seção Benefícios -->
-    <section class="section bg-cinza">
-        <div class="container">
-            <h2 class="text-center">O Que Você Vai Aprender</h2>
-            
-            <div class="beneficios-grid">
-                <div class="beneficio-card">
-                    <div class="beneficio-icone">✓</div>
-                    <h3>Técnica do Ponto U</h3>
-                    <p>Ative a zona ultra sensível que a maioria dos homens nem sabe que existe</p>
+    <!-- Seção de FAQs com Accordion -->
+    <div class="faq-section" style="background: url(images/WCIsBb9515424.jpeg); background-size: cover; padding: 15px;">
+        <div class="container-max flex-column">
+            <div class="image-wrapper hidden-desktop hidden-tablet"><img src="images/yxLakQ2134953.webp#714452" alt="" loading="eager" srcset="images/yxLakQ2134953_2.webp#957605 718w, images/yxLakQ2134953_1.webp#924201 300w" sizes="(max-width: 718px) 100vw, 718px"></div>
+            <div class="image-wrapper hidden-mobile"><img src="images/GDuAfo9072240.webp#673192" alt="" loading="eager" srcset="images/GDuAfo9072240_1.webp#967745 1600w, images/GDuAfo9072240_2.webp#855241 300w, images/GDuAfo9072240_3.webp#752185 768w, images/GDuAfo9072240_5.webp#357596 1024w, images/GDuAfo9072240_4.webp#596249 1536w" sizes="(max-width: 1600px) 100vw, 1600px"></div>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <h3 class="accordion-title">Tengo más de 45 años, ¿esto funcionará para mí?<div class="toggle-icon">+</div></h3>
+                    <div class="accordion-content">Sí. No importa si tienes 18 o 60 años, mientras tengas una mano y ganas de verla temblar, esto es para ti. Esta técnica no depende de tu edad, tamaño o condición física, solo debes saber dónde y cómo tocarla.</div>
                 </div>
-                
-                <div class="beneficio-card">
-                    <div class="beneficio-icone">✓</div>
-                    <h3>Orgasmos Múltiplos</h3>
-                    <p>Faça sua parceira atingir o clímax repetidas vezes sem penetração</p>
+                <div class="accordion-item">
+                    <h3 class="accordion-title">¿Realmente puedo hacer que se venga múltiples veces sin meterla?<div class="toggle-icon">+</div></h3>
+                    <div class="accordion-content">Claro que sí, este truco es el mismo que usamos las lesbianas para activar el punto U, una zona ultra sensible que la mayoría de los hombres ni sabe que existe. Con los movimientos correctos, ella se vendrá una y otra vez sin que la penetres.</div>
                 </div>
-                
-                <div class="beneficio-card">
-                    <div class="beneficio-icone">✓</div>
-                    <h3>Resultados Rápidos</h3>
-                    <p>Alguns homens conseguem resultados já na primeira tentativa</p>
+                <div class="accordion-item">
+                    <h3 class="accordion-title">¿En Cuánto tiempo podré ver los resultados?<div class="toggle-icon">+</div></h3>
+                    <div class="accordion-content">Algunos hombres logran hacer venir a sus parejas la primera vez que lo aplican. Cuando estimulas el punto correcto, ella no puede evitar mojarse. Y con práctica, los resultados se hacen más rápidos, más intensos, y más adictivos.</div>
                 </div>
-                
-                <div class="beneficio-card">
-                    <div class="beneficio-icone">✓</div>
-                    <h3>Para Todas as Idades</h3>
-                    <p>Funciona independentemente da sua idade ou condição física</p>
+                <div class="accordion-item">
+                    <h3 class="accordion-title">¿Y si mi pareja ya no muestra interés en tener sexo conmigo?<div class="toggle-icon">+</div></h3>
+                    <div class="accordion-content">Justamente por eso este método existe. Cuando una mujer empieza a recibir el placer más intenso que haya sentido, todo cambia. Ella vuelve a buscarte, se activa su deseo, y empieza a cumplirte fantasías que antes ni mencionaba.</div>
                 </div>
             </div>
+            <div class="image-wrapper hidden-desktop hidden-tablet"><a href="[INSIRA_SEU_CHECKOUT_AQUI]"><img src="images/YLbmnI2134953.webp#92348" alt="" loading="eager" srcset="images/YLbmnI2134953_1.webp#667464 863w, images/YLbmnI2134953_2.webp#281061 300w, images/YLbmnI2134953_3.webp#395713 768w" sizes="(max-width: 863px) 100vw, 863px"></a></div>
+            <div class="image-wrapper hidden-mobile"><a href="[INSIRA_SEU_CHECKOUT_AQUI]"><img src="images/eLbwPm9072240.webp#627950" alt="" loading="eager" srcset="images/eLbwPm9072240_1.webp#345719 1598w, images/eLbwPm9072240_3.webp#302902 300w, images/eLbwPm9072240_4.webp#652988 768w, images/eLbwPm9072240_5.webp#58896 1024w, images/eLbwPm9072240_2.webp#396901 1536w" sizes="(max-width: 1598px) 100vw, 1598px"></a></div>
         </div>
-    </section>
-
-    <!-- Seção Depoimentos -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">O Que Nossos Clientes Estão Dizendo</h2>
-            
-            <div class="depoimentos-slider swiper">
-                <div class="swiper-wrapper">
-                    <div class="depoimento-card swiper-slide">
-                        <p class="depoimento-texto">"Depois de 12 anos de casado, finalmente consegui fazer minha esposa ter múltiplos orgasmos. Esse método mudou completamente nossa vida sexual!"</p>
-                        <p class="depoimento-autor">- Carlos M., 48 anos</p>
-                    </div>
-                    
-                    <div class="depoimento-card swiper-slide">
-                        <p class="depoimento-texto">"Sempre tive dificuldades para satisfazer minhas parceiras. Com a técnica do Ponto U, agora consigo fazer qualquer mulher chegar ao clímax rapidamente."</p>
-                        <p class="depoimento-autor">- Ricardo T., 36 anos</p>
-                    </div>
-                    
-                    <div class="depoimento-card swiper-slide">
-                        <p class="depoimento-texto">"Minha namorada sempre reclamava do nosso sexo, mas depois que aprendi esse método, ela não para de elogiar e sempre quer mais!"</p>
-                        <p class="depoimento-autor">- João P., 29 anos</p>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção FAQ -->
-    <section class="section bg-cinza">
-        <div class="container">
-            <h2 class="text-center">Perguntas Frequentes</h2>
-            
-            <div class="faq">
-                <div class="faq-item">
-                    <div class="faq-pergunta">
-                        <span>Tengo más de 45 años, ¿esto funcionará para mí?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        <p>Sí. No importa si tienes 18 o 60 años, mientras tengas una mano y ganas de verla temblar, esto es para ti. Esta técnica no depende de tu edad, tamaño o condición física, solo debes saber dónde y cómo tocarla.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-pergunta">
-                        <span>¿Realmente puedo hacer que se venga múltiples veces sin meterla?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        <p>Claro que sí, este truco es el mismo que usamos las lesbianas para activar el punto U, una zona ultra sensible que la mayoría de los hombres ni sabe que existe. Con los movimientos correctos, ella se vendrá una y otra vez sin que la penetres.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-pergunta">
-                        <span>¿En Cuánto tiempo podré ver los resultados?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        <p>Algunos hombres logran hacer venir a sus parejas la primera vez que lo aplican. Cuando estimulas el punto correcto, ella no puede evitar mojarse. Y con práctica, los resultados se hacen más rápidos, más intensos, y más adictivos.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-pergunta">
-                        <span>¿Y si mi pareja ya no muestra interés en tener sexo conmigo?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        <p>Justamente por eso este método existe. Cuando una mujer empieza a recibir el placer más intenso que haya sentido, todo cambia. Ella vuelve a buscarte, se activa su deseo, y empieza a cumplirte fantasías que antes ni mencionaba.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Garantia -->
-    <section class="garantia">
-        <div class="container">
-            <div class="garantia-icone">✓</div>
-            <h2>Garantia de 7 Dias</h2>
-            <p>Se você não ficar satisfeito com os resultados, devolvemos seu dinheiro sem questionamentos.</p>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo-branco.png" alt="Código V">
+    <div class="footer-section" style="background: #111; padding: 15px 0;">
+        <div class="container-max flex-column">
+            <div class="text-content" style="color: #888; font-size: clamp(10px, 3vw, 11px); text-align: center;">Copyright 2024 – CodigoV ®<br>Todos los Derechos Reservados</div>
+            <div class="flex-row gap-small">
+                <a href="/terminos" style="color: #747474; font-size: clamp(12px, 3.5vw, 14px);">Terminos de uso</a>
+                <span style="color: #747474;">|</span>
+                <a href="/privacidad" style="color: #747474; font-size: clamp(12px, 3.5vw, 14px);">Política de Privacidad</a>
             </div>
-            
-            <div class="footer-links">
-                <a href="/terminos">Termos de Uso</a> |
-                <a href="/privacidad">Política de Privacidade</a> |
-                <a href="/contato">Contato</a>
-            </div>
-            
-            <p class="footer-disclaimer">
-                Copyright 2024 – Código V ® Todos os Direitos Reservados. Este site não é afiliado ao Facebook ou a qualquer entidade Facebook. Uma vez que você deixa o Facebook, a responsabilidade não é deles, mas do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Não vendemos seu e-mail ou qualquer informação para terceiros. Nunca fazemos spam de qualquer tipo.
-            </p>
+            <div class="text-content" style="color: #888; font-size: clamp(9px, 2.5vw, 10px); text-align: center;">Este sitio web no está afiliado a FB ni a ninguna entidad de esta. Una vez que abandona Fb, la responsabilidad no es de ellos sino de nuestro sitio web. Hacemos todo lo posible para indicar claramente y mostrar todas las pruebas del producto y utilizar resultados reales. No vendemos su correo electrónico ni ninguna información a terceros. Nunca hacemos ningún tipo de spam. Si tiene alguna pregunta, no dude en utilizar el enlace de contacto y hablar con nosotros durante el horario comercial de lunes a viernes de 9:00 a. M. A 6:00 p. M. Leemos y respondemos todos los mensajes por orden de llegada...</div>
         </div>
-    </footer>
+    </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // Inicializar Swiper para depoimentos
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-            autoplay: {
-                delay: 5000,
-            },
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-pergunta').forEach(pergunta => {
-            pergunta.addEventListener('click', () => {
-                const resposta = pergunta.nextElementSibling;
-                const estaAberta = resposta.classList.contains('aberta');
-                
-                // Fechar todas as respostas
-                document.querySelectorAll('.faq-resposta').forEach(r => {
-                    r.classList.remove('aberta');
-                    r.style.maxHeight = null;
-                });
-                
-                document.querySelectorAll('.faq-pergunta span:last-child').forEach(icone => {
-                    icone.textContent = '+';
-                });
-                
-                // Se não estava aberta, abrir esta
-                if (!estaAberta) {
-                    resposta.classList.add('aberta');
-                    resposta.style.maxHeight = resposta.scrollHeight + 'px';
-                    pergunta.querySelector('span:last-child').textContent = '-';
-                }
-            });
-        });
-
-        // Pixel do Facebook (exemplo)
-        // Este código deve ser substituído pelo seu pixel real
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'SEU_PIXEL_ID_AQUI');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+    <!-- Scripts Finais -->
+    <script src="js/latest.js" data-utmify-prevent-subids async defer></script>
+    <script>document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll("a").forEach((e=>{e.getAttribute("href")?.includes("#")||(e.getAttribute("href")?.includes("?")?e.setAttribute("href",e.getAttribute("href")+window.location.search.replace("?","&")):e.setAttribute("href",e.getAttribute("href")+window.location.search):"")}))}));</script>
 </body>
 </html>
