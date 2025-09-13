@@ -4,344 +4,184 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Atención - Diseño</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --red:#c8102e;
       --darkred:#a50b20;
       --panel:#efefef;
       --text:#0b0b0b;
+      --bg:#000;
+      --white:#fff;
+      --highlight:#00ff7f;
+      --muted:rgba(255,255,255,0.92);
+      --maxw:860px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
-    body{
-      background:#ffffff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
+    *{box-sizing:border-box;}
+    html, body{margin:0; padding:0; font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--white);}
+    body{display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:24px 12px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    
+    .wrap{width:100%; max-width:var(--maxw);}
+    .column{display:flex; flex-direction:column; gap:26px; align-items:center; width:100%;}
 
-    /* Card container */
+    /* Card vermelho topo */
     .card{
       width:100%;
-      max-width:420px; /* corresponde ao tamanho da imagem */
+      max-width:420px;
       border-radius:12px;
       overflow:hidden;
       box-shadow:0 6px 20px rgba(0,0,0,0.18);
-      background: linear-gradient(180deg, #fff 0%, #fff 100%);
+      background:#fff;
+      margin-bottom:30px;
     }
-
-    /* Top red header */
-    .header{
+    .card .header{
       background: linear-gradient(180deg, var(--red), var(--darkred));
       color:#fff;
       padding:18px 16px;
       text-align:center;
     }
-    .header h1{
+    .card .header h1{
       margin:0;
       font-size:20px;
-      line-height:1;
       font-weight:800;
       letter-spacing:0.6px;
       text-transform:uppercase;
     }
-    .header p{
+    .card .header p{
       margin:8px 0 0;
       font-size:14px;
       font-weight:700;
       opacity:0.98;
     }
-
-    /* Light grey panel with text */
-    .panel{
+    .card .panel{
       background:var(--panel);
       color:var(--text);
       padding:28px 22px;
       text-align:center;
       line-height:1.48;
     }
-
-    /* Main paragraphs styling */
-    .panel p{
-      margin:18px 0;
-      font-size:15px;
-      font-weight:400;
-    }
-
-    /* Emphasis blocks to match image: bold and slightly larger */
-    .panel .em{
+    .card .panel p{margin:18px 0; font-size:15px; font-weight:400;}
+    .card .panel .em, .card .panel .center-strong, .card .panel .last{
       display:block;
       font-weight:800;
       font-size:16px;
-      margin-top:8px;
-      margin-bottom:8px;
-      line-height:1.24;
+      margin:6px 0;
     }
 
-    /* Some lines in the image are centered and bold across multiple lines - use spans */
-    .panel .center-strong{
-      display:block;
-      font-weight:800;
-      font-size:16px;
-      line-height:1.18;
-      margin-top:6px;
-      margin-bottom:6px;
-    }
+    /* Hero e produto */
+    .hero, .product{width:100%; max-width:760px; border-radius:22px; overflow:hidden; box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+    .hero img, .product img{width:100%; height:auto; display:block; object-fit:cover;}
+    .product{border-radius:14px; box-shadow:0 12px 30px rgba(0,0,0,0.7);}
 
-    /* Last sentence emphasized */
-    .panel .last{
-      font-weight:800;
-      font-size:16px;
-      margin-top:12px;
-      line-height:1.2;
-    }
+    /* Conteúdo texto principal */
+    .content{width:100%; max-width:760px; text-align:center; line-height:1.6; font-size:18px; color:var(--muted);}
+    .content p{margin:18px 0; font-weight:400;}
+    .content .strong, .content .center-strong{display:block; font-weight:800; font-size:20px; margin:8-12px 0; line-height:1.25; color:var(--white);}
+    .content .big{font-size:19px; line-height:1.62; margin-top:10px; font-weight:400;}
 
-    /* Responsive tweaks for very small screens */
-    @media (max-width:360px){
-      .header h1{font-size:18px}
-      .panel{padding:20px 16px}
-      .panel p{font-size:14px}
-      .panel .em, .panel .center-strong, .panel .last{font-size:15px}
+    /* Caixa de benefícios vermelha */
+    .benefits{background-color:#d10000; color:#fff; padding:25px; border-radius:15px; max-width:500px; margin:20px auto; line-height:1.6; font-size:16px; text-align:left;}
+    .benefits h2{font-weight:700; font-size:20px; text-transform:uppercase; margin-bottom:20px;}
+
+    /* Garantia e preço */
+    .guarantee{max-width:500px; width:100%; margin:25px auto; text-align:center;}
+    .guarantee img{width:100%; max-width:500px; border-radius:15px;}
+    .price{font-size:28px; font-weight:700; color:var(--highlight); text-align:center; margin-top:10px;}
+
+    /* Responsivo */
+    @media (max-width:720px){
+      :root{--maxw:420px;}
+      .content{font-size:16px;}
+      .strong, .center-strong{font-size:18px;}
+      .hero, .product{border-radius:18px;}
+    }
+    @media (max-width:420px){
+      .content{font-size:15px; padding:0 8px;}
+      .strong, .center-strong{font-size:17px;}
+      .hero, .product{border-radius:14px;}
+      .benefits{padding:18px;}
     }
   </style>
 </head>
 <body>
+
+  <!-- Card vermelho com atenção -->
   <div class="card" role="region" aria-label="Atención paso 4 de 4">
     <div class="header">
       <h1>ATENCIÓN PASO 4 DE 4:</h1>
       <p>¡ESPERA UN MOMENTO! FALTA EL ÚLTIMO PASO PARA CONFIRMAR TU COMPRA...</p>
     </div>
-
     <div class="panel">
       <p>La cruda realidad del sexo es que, la mayoría de mujeres dicen que el tamaño del pene no importa, pero como sexóloga, <span class="em">te digo que sí importa, y mucho.</span></p>
-
       <p>Tener un miembro con el tamaño y grosor adecuado <span class="center-strong">provocará los orgasmos más intensos que cualquier mujer pueda llegar a experimentar.</span></p>
-
       <p>El problema es que el punto mágico que enciende todas las terminaciones nerviosas de la vagina, está <span class="center-strong">en un lugar que la mayoría de los hombres no pueden alcanzar...</span></p>
-
       <p>A menos que tengas una herramienta dura entre 17 y 20 centímetros de tamaño.</p>
-
       <p>Sé que es difícil, quieres creer que el tamaño no importa, <span class="center-strong">que puedes obsesionar a cualquier mujer solo con la boca o con los dedos.</span></p>
-
-      <p class="last">Pero te puedo asegurar querido, que tu mujer ahora mismo está deseando que tú tuvieras <span style="display:block">dos, <strong>tres o más de cuatro centímetros adicionales.</strong></span></p>
+      <p class="last">Pero te puedo asegurar querido, que tu mujer ahora mismo está deseando que tú tuvieras <span style="display:block"><strong>dos, tres o más de cuatro centímetros adicionales.</strong></span></p>
     </div>
   </div>
 
-
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#000;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,0.92);
-      --maxw:860px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:var(--text);}
-    body{
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      justify-content:center;
-      padding:28px 18px;
-    }
-
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-
-    /* Card-like column to center content */
-    .column{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      gap:26px;
-      align-items:center;
-    }
-
-    /* Top hero image */
-    .hero{
-      width:100%;
-      max-width:760px;
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
-      -webkit-mask-image: linear-gradient(#000 0 0); /* keep crisp edges on mobile */
-    }
-    .hero img{
-      display:block;
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      vertical-align:middle;
-      background:#111;
-    }
-
-    /* Text content area: white text, centered, controlled line height */
-    .content{
-      width:100%;
-      max-width:760px;
-      color:var(--muted);
-      text-align:center;
-      line-height:1.6;
-      font-size:18px;
-      letter-spacing:0.2px;
-    }
-    /* Paragraph styles to match the large blocks in the reference */
-    .content p{
-      margin:18px 0;
-      font-weight:400;
-    }
-
-    /* Emphasis blocks (bold, slightly larger) */
-    .strong{
-      display:block;
-      font-weight:800;
-      font-size:20px;
-      margin:12px 0;
-      line-height:1.25;
-      color:var(--text);
-    }
-
-    .center-strong{
-      display:block;
-      font-weight:800;
-      font-size:20px;
-      margin:8px 0;
-      line-height:1.18;
-      color:var(--text);
-    }
-
-    /* Product collage image (segunda imagem) */
-    .product{
-      width:100%;
-      max-width:760px;
-      border-radius:14px;
-      overflow:hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
-      background:#000;
-    }
-    .product img{display:block;width:100%;height:auto;object-fit:cover;}
-
-    /* Footer text blocks (resto do texto) */
-    .content .big{
-      font-size:19px;
-      line-height:1.62;
-      margin-top:10px;
-      font-weight:400;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width:720px){
-      :root{--maxw:420px}
-      .content{font-size:16px}
-      .strong, .center-strong{font-size:18px}
-      .hero{border-radius:18px}
-    }
-    @media (max-width:420px){
-      .content{font-size:15px; padding:0 8px}
-      .strong, .center-strong{font-size:17px}
-      .hero{border-radius:14px}
-    }
-  </style>
-</head>
-<body>
   <div class="wrap">
     <div class="column">
-
-      <!-- PRIMEIRA IMAGEM (hero) -->
-      <div class="hero" aria-hidden="false">
+      <!-- Hero image -->
+      <div class="hero">
         <img src="https://i.postimg.cc/gkj5xSbX/Duramax-09-13-2025-04-33-PM.png" alt="Imagem hero">
       </div>
 
-      <!-- BLOCO DE TEXTO (cole aqui o texto exato se quiser) -->
-      <div class="content" role="main" aria-label="Conteúdo principal">
-        <!-- Exemplo de parágrafos que imitam o visual do seu screenshot. 
-             Substitua o texto abaixo pelo texto exato caso queira correspondência perfeita. -->
+      <!-- Texto principal -->
+      <div class="content" role="main">
         <p>La cruda realidad del sexo es que, la mayoría de mujeres dicen que el tamaño del pene no importa, pero como sexóloga, <span class="strong">te digo que sí importa, y mucho.</span></p>
-
         <p>Tener un miembro con el tamaño y grosor adecuado <span class="center-strong">provocará los orgasmos más intensos que cualquier mujer pueda llegar a experimentar.</span></p>
-
         <p>El problema es que el punto mágico que enciende todas las terminaciones nerviosas de la vagina, está <span class="center-strong">en un lugar que la mayoría de los hombres no pueden alcanzar...</span></p>
-
         <p>A menos que tengas una herramienta dura entre 17 y 20 centímetros de tamaño.</p>
-
         <p>Sé que es difícil, quieres creer que el tamaño no importa, <span class="center-strong">que puedes obsesionar a cualquier mujer solo con la boca o con los dedos.</span></p>
-
         <p class="big">Pero te puedo asegurar querido, que tu mujer ahora mismo está deseando que tú tuvieras <strong>dos, tres o más de cuatro centímetros adicionales.</strong></p>
       </div>
 
-      <!-- SEGUNDA IMAGEM (collage / produto) -->
-      <div class="product" aria-hidden="false">
+      <!-- Produto / segunda imagem -->
+      <div class="product">
         <img src="https://i.postimg.cc/43kFFX7V/Duramax-09-13-2025-04-34-PM.png" alt="Produto Falo X Master">
       </div>
 
-      <!-- RESTO DO TEXTO (mais parágrafos mantendo o mesmo estilo) -->
-      <div class="content" aria-label="Texto adicional">
+      <!-- Texto adicional -->
+      <div class="content">
         <p class="big">Aqui vai o resto do conteúdo explicativo. Este bloco reproduz o estilo do seu screenshot: texto em branco sobre fundo preto, centralizado e com espaçamento generoso para leitura em mobile.</p>
-
         <p>Coloque aqui os parágrafos seguintes com as garantias, benefícios, detalhes do curso, chamadas para ação, depoimentos falsos (se houver) ou qualquer outro conteúdo que apareça no seu layout original.</p>
-
         <p class="strong">Falo X Master — Transforme suas habilidades e tenha resultados rápidos.</p>
-
-        <p>Se preferir, posso inserir aqui o texto exato do seu print (faça o upload ou cole o texto) e eu o ajusto com a tipografia, quebras de linha e negritos exatamente como na referência.</p>
       </div>
+
+      <!-- Caixa de benefícios -->
+      <div class="benefits">
+        <h2>LO QUE DESCUBRAS DENTRO DE ESTE PROTOCOLO:</h2>
+        <p>✅ Tendrás acceso al <b>“Protocolo 8 en 7”</b> un conjunto de técnicas fácilmente replicables que permite a cualquier hombre lograr erecciones 8 veces más potentes que el viagra <b>DE FORMA NATURAL!</b></p>
+        <p>✅ Accederás al <b>“Ritual afrodisiaco de 7 segundos”</b> que se encargará de aumentar el flujo sanguíneo dándote erecciones fuertes y prolongadas con tan solo pensarlo...</p>
+        <p>✅ Al aplicar este truco tendrás un pene que provocará el máximo placer a tu pareja.</p>
+        <p>✅ El <b>“simple ritual diario de 2 minutos”</b> que debes seguir para activar el mismo proceso de crecimiento del pene generado durante la pubertad de una manera 100% natural.</p>
+        <p>✅ Te entregaré <b>“La rutina mágica de crecimiento”</b>, con la que tendrás una ganancia de tamaño y volumen casi instantánea para alcanzar el punto mágico en el cuerpo de una mujer, responsable de provocarle los orgasmos vaginales más intensos que jamás haya experimentado...</p>
+        <p>✅ Compartiré contigo <b>“El secreto de los actores”</b> con el que serás capaz de estimular correctamente el crecimiento de forma natural y controlada, para evitar terminar con “un pene deformado”.</p>
+        <p>✅ Pondré en tus manos <b>“Truco del buen dotado”</b> para aumentar el grosor de tu pene, esto te permitirá tener todo lo necesario para estimular las áreas de mayor placer de la vagina de tu pareja.</p>
+      </div>
+
+      <!-- Garantia -->
+      <div class="guarantee">
+        <img src="https://i.postimg.cc/9MNdKB8K/Duramax-09-13-2025-04-39-PM.png" alt="Garantía 15 días">
+      </div>
+
+      <!-- Preço -->
+      <div class="price">$27 USD</div>
+
+      <!-- Hotmart -->
+      <div id="hotmart-sales-funnel"></div>
+      <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+      <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+      </script>
+
+      <!-- UTMs -->
+      <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
 
     </div>
   </div>
 
-  <!-- HOTMART - Sales Funnel Widget -->
-<!--- sales funnel container --->
-<div id="hotmart-sales-funnel"></div>
-
-<!--- script load and setup --->
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-<script>
-checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-</script>
-<!-- HOTMART - Sales Funnel Widget -->
-
-<!-- Caixa vermelha de benefícios -->
-<div style="background-color:#d10000; color:#fff; font-family:Poppins, Arial, sans-serif; padding:25px; border-radius:15px; max-width:500px; margin:20px auto; line-height:1.6; font-size:16px;">
-    <h2 style="font-weight:700; font-size:20px; text-transform:uppercase; margin-bottom:20px; text-align:left;">
-        LO QUE DESCUBRAS DENTRO DE ESTE PROTOCOLO:
-    </h2>
-
-    <p>✅ Tendrás acceso al <b>“Protocolo 8 en 7”</b> un conjunto de técnicas fácilmente replicables que permite a cualquier hombre lograr erecciones 8 veces más potentes que el viagra <b>DE FORMA NATURAL!</b></p>
-
-    <p>✅ Accederás al <b>“Ritual afrodisiaco de 7 segundos”</b> que se encargará de aumentar el flujo sanguíneo dándote erecciones fuertes y prolongadas con tan solo pensarlo...</p>
-
-    <p>✅ Al aplicar este truco tendrás un pene que provocará el máximo placer a tu pareja.</p>
-
-    <p>✅ El <b>“simple ritual diario de 2 minutos”</b> que debes seguir para activar el mismo proceso de crecimiento del pene generado durante la pubertad de una manera 100% natural.</p>
-
-    <p>✅ Te entregaré <b>“La rutina mágica de crecimiento”</b>, con la que tendrás una ganancia de tamaño y volumen casi instantánea para alcanzar el punto mágico en el cuerpo de una mujer, responsable de provocarle los orgasmos vaginales más intensos que jamás haya experimentado...</p>
-
-    <p>✅ Compartiré contigo <b>“El secreto de los actores”</b> con el que serás capaz de estimular correctamente el crecimiento de forma natural y controlada, para evitar terminar con “un pene deformado”.</p>
-
-    <p>✅ Pondré en tus manos <b>“Truco del buen dotado”</b> para aumentar el grosor de tu pene, esto te permitirá tener todo lo necesario para estimular las áreas de mayor placer de la vagina de tu pareja.</p>
-</div>
-
-<!-- Imagem da Garantia -->
-<div style="text-align:center; margin:25px 0;">
-    <img src="https://i.postimg.cc/9MNdKB8K/Duramax-09-13-2025-04-39-PM.png" alt="Garantía 15 días" style="max-width:500px; width:100%; border-radius:15px;">
-</div>
-
-<!-- Preço -->
-<div style="text-align:center; font-family:Poppins, Arial, sans-serif; font-size:28px; font-weight:700; color:#00ff7f; margin-top:10px;">
-    $27 USD
-</div>
-
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-  
 </body>
 </html>
