@@ -1,1 +1,132 @@
-😎😎😎😎
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atención - Diseño</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#c8102e;
+      --darkred:#a50b20;
+      --panel:#efefef;
+      --text:#0b0b0b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    /* Card container */
+    .card{
+      width:100%;
+      max-width:420px; /* corresponde ao tamanho da imagem */
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(0,0,0,0.18);
+      background: linear-gradient(180deg, #fff 0%, #fff 100%);
+    }
+
+    /* Top red header */
+    .header{
+      background: linear-gradient(180deg, var(--red), var(--darkred));
+      color:#fff;
+      padding:18px 16px;
+      text-align:center;
+    }
+    .header h1{
+      margin:0;
+      font-size:20px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+    }
+    .header p{
+      margin:8px 0 0;
+      font-size:14px;
+      font-weight:700;
+      opacity:0.98;
+    }
+
+    /* Light grey panel with text */
+    .panel{
+      background:var(--panel);
+      color:var(--text);
+      padding:28px 22px;
+      text-align:center;
+      line-height:1.48;
+    }
+
+    /* Main paragraphs styling */
+    .panel p{
+      margin:18px 0;
+      font-size:15px;
+      font-weight:400;
+    }
+
+    /* Emphasis blocks to match image: bold and slightly larger */
+    .panel .em{
+      display:block;
+      font-weight:800;
+      font-size:16px;
+      margin-top:8px;
+      margin-bottom:8px;
+      line-height:1.24;
+    }
+
+    /* Some lines in the image are centered and bold across multiple lines - use spans */
+    .panel .center-strong{
+      display:block;
+      font-weight:800;
+      font-size:16px;
+      line-height:1.18;
+      margin-top:6px;
+      margin-bottom:6px;
+    }
+
+    /* Last sentence emphasized */
+    .panel .last{
+      font-weight:800;
+      font-size:16px;
+      margin-top:12px;
+      line-height:1.2;
+    }
+
+    /* Responsive tweaks for very small screens */
+    @media (max-width:360px){
+      .header h1{font-size:18px}
+      .panel{padding:20px 16px}
+      .panel p{font-size:14px}
+      .panel .em, .panel .center-strong, .panel .last{font-size:15px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Atención paso 4 de 4">
+    <div class="header">
+      <h1>ATENCIÓN PASO 4 DE 4:</h1>
+      <p>¡ESPERA UN MOMENTO! FALTA EL ÚLTIMO PASO PARA CONFIRMAR TU COMPRA...</p>
+    </div>
+
+    <div class="panel">
+      <p>La cruda realidad del sexo es que, la mayoría de mujeres dicen que el tamaño del pene no importa, pero como sexóloga, <span class="em">te digo que sí importa, y mucho.</span></p>
+
+      <p>Tener un miembro con el tamaño y grosor adecuado <span class="center-strong">provocará los orgasmos más intensos que cualquier mujer pueda llegar a experimentar.</span></p>
+
+      <p>El problema es que el punto mágico que enciende todas las terminaciones nerviosas de la vagina, está <span class="center-strong">en un lugar que la mayoría de los hombres no pueden alcanzar...</span></p>
+
+      <p>A menos que tengas una herramienta dura entre 17 y 20 centímetros de tamaño.</p>
+
+      <p>Sé que es difícil, quieres creer que el tamaño no importa, <span class="center-strong">que puedes obsesionar a cualquier mujer solo con la boca o con los dedos.</span></p>
+
+      <p class="last">Pero te puedo asegurar querido, que tu mujer ahora mismo está deseando que tú tuvieras <span style="display:block">dos, <strong>tres o más de cuatro centímetros adicionales.</strong></span></p>
+    </div>
+  </div>
+</body>
+</html>
