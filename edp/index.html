@@ -29,6 +29,16 @@
         max-width: 100%;
         height: auto;
     }
+
+    /* Ajuste para primeira imagem (imagem alta) */
+    .vsl-image-superior {
+        max-width: 90%;
+        max-height: 60vh; /* altura máxima 60% da tela */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px; /* espaçamento menor entre as duas imagens */
+    }
 </style>
 </head>
 <body>
@@ -43,7 +53,7 @@
 </script>
 
 <!-- Imagem acima da outra imagem -->
-<img src="https://i.postimg.cc/fbMdkXny/Hrhbuu2134953.webp" alt="Imagem Superior" class="vsl-image">
+<img src="https://i.postimg.cc/fbMdkXny/Hrhbuu2134953.webp" alt="Imagem Superior" class="vsl-image-superior">
 
 <!-- Imagem abaixo da VSL -->
 <img src="https://i.postimg.cc/yxqJ0Sgw/zovwd5mx9.png" alt="Imagem Inferior" class="vsl-image">
