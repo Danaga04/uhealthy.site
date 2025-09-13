@@ -1,243 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Pantalla - Progreso</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#000;
-    --header-grad-start:#d80000;
-    --header-grad-end:#7a0000;
-    --banner-grad-start:#c51b1b;
-    --banner-grad-end:#6b0000;
-    --progress-start:#16a34a;
-    --progress-end:#0d6b3a;
-    --percent:75; /* altere aqui a porcentagem */
-    --container-width:420px; /* largura para simular mobile vertical */
-  }
-
-  /* Reset */
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    background:var(--bg);
-    font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    padding:18px 12px;
-  }
-
-  /* centered mobile-like column */
-  .mock {
-    width:100%;
-    max-width:var(--container-width);
-  }
-
-  /* Header area with red gradient and a white pill containing IMPORTANTE: */
-  .header {
-    background:linear-gradient(90deg,var(--header-grad-start),var(--header-grad-end));
-    padding:18px 12px 22px;
-    border-radius:6px;
-    position:relative;
-    text-align:center;
-  }
-
-  .importante-box {
-    display:inline-block;
-    background:#fff;
-    padding:6px 12px;
-    border-radius:2px;
-    margin-top:-6px; /* pop out a bit */
-    box-shadow:0 2px 0 rgba(0,0,0,0.15);
-  }
-
-  .importante-box span{
-    color:var(--header-grad-start);
-    font-weight:800;
-    letter-spacing:1px;
-    font-size:26px;
-    display:inline-block;
-    line-height:1;
-    font-family:"Poppins",sans-serif;
-  }
-
-  .header-sub {
-    margin-top:14px;
-    font-size:20px;
-    font-weight:600;
-    font-style:italic;
-    line-height:1.15;
-    color:#fff;
-    max-width:92%;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  /* Space between header and progress */
-  .spacer{height:30px}
-
-  /* Progress bar container */
-  .progress-wrap{
-    padding:0 6px;
-  }
-
-  .progress {
-    height:46px;
-    border-radius:8px;
-    background:linear-gradient(90deg,#0e7d3b 0%, #065a2d 100%);
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,0.4) inset;
-  }
-
-  /* the green filled bar using a pseudo-element */
-  .progress::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:calc(var(--percent) * 1%);
-    background:linear-gradient(90deg,var(--progress-start),var(--progress-end));
-    border-radius:8px;
-    transition:width .6s ease;
-    filter:drop-shadow(0 2px 4px rgba(0,0,0,0.25));
-  }
-
-  .progress .percent {
-    position:relative; /* above the ::before */
-    z-index:2;
-    font-size:36px;
-    font-weight:700;
-    color:white;
-    text-shadow:0 2px 0 rgba(0,0,0,0.35);
-  }
-
-  /* small warning icon row */
-  .warn-row{
-    margin-top:18px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding-left:8px;
-  }
-
-  .triangle {
-    width:28px;
-    height:28px;
-    flex:0 0 28px;
-  }
-
-  /* Banner red with white text, uppercase, centered, two lines */
-  .banner{
-    margin-top:22px;
-    background:linear-gradient(90deg,var(--banner-grad-start),var(--banner-grad-end));
-    padding:14px 12px;
-    border-radius:4px;
-    text-align:center;
-    box-shadow:0 6px 20px rgba(0,0,0,0.6);
-  }
-
-  .banner h2{
-    font-size:20px;
-    line-height:1.05;
-    letter-spacing:1px;
-    font-weight:800;
-    text-transform:uppercase;
-    margin:0 auto;
-    max-width:92%;
-  }
-
-  /* mimic the large empty black area below in the image */
-  .bottom-space{
-    height:880px; /* ajustável para reproduzir comprimento da imagem */
-  }
-
-  /* responsive tweaks for smaller screens */
-  @media (max-width:420px){
-    .importante-box span{font-size:24px}
-    .header-sub{font-size:18px}
-    .progress{height:44px}
-    .progress .percent{font-size:34px}
-    .banner h2{font-size:18px}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla - Progreso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      line-height: 1.4;
+    }
+    .header {
+      background: linear-gradient(90deg, #d80000, #7a0000);
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .header span {
+      background: #fff;
+      color: #d80000;
+      font-weight: 800;
+      font-size: 22px;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 16px;
+      font-style: italic;
+    }
+    .step {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
+    .progress {
+      width: 90%;
+      margin: 0 auto;
+      height: 30px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(90deg, #16a34a, #0d6b3a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+    .warning {
+      font-size: 14px;
+      margin: 10px 0;
+      text-align: center;
+    }
+    .warning span {
+      color: #ffcc00;
+      font-size: 18px;
+    }
+    .banner {
+      background: linear-gradient(90deg, #c51b1b, #6b0000);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 15px auto;
+      width: 90%;
+      border-radius: 5px;
+    }
+    .content {
+      padding: 0 20px 30px;
+      font-size: 15px;
+    }
+    .content p {
+      margin: 12px 0;
+    }
+    .content strong {
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
-  <div class="mock" role="main">
 
-    <!-- header -->
-    <header class="header" aria-hidden="false">
-      <div class="importante-box" aria-hidden="true">
-        <span>IMPORTANTE:</span>
-      </div>
-
-      <div class="header-sub">
-        Salir o cerrar esta página puede provocar errores en tu compra.
-      </div>
-    </header>
-
-    <div class="spacer"></div>
-
-    <!-- progress -->
-    <div class="progress-wrap" aria-live="polite" aria-atomic="true">
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
-        <div class="percent">75%</div>
-      </div>
-    </div>
-
-    <!-- warning row -->
-    <div class="warn-row" aria-hidden="true">
-      <!-- SVG triangle yellow with exclamation -->
-      <svg class="triangle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#FFD24D"/>
-            <stop offset="1" stop-color="#FFB81C"/>
-          </linearGradient>
-        </defs>
-        <path d="M32 6 L60 54 H4 Z" fill="url(#g1)" stroke="#B36A00" stroke-width="2" />
-        <rect x="30.4" y="20" width="3.2" height="18" rx="1.6" fill="#6b3b00"/>
-        <circle cx="32" cy="46" r="2.6" fill="#6b3b00"/>
-      </svg>
-
-      <div style="font-size:14px;color:#fff;opacity:0.9; font-weight:600;">
-        &nbsp; <!-- espaço para manter posição igual à imagem (pouco texto ao lado do triângulo) -->
-      </div>
-    </div>
-
-    <!-- red banner with message -->
-    <section class="banner" aria-hidden="false">
-      <h2>TU ACCESO A CÓDIGO V<br>SE ESTÁ CREANDO...</h2>
-    </section>
-
-    <div class="bottom-space" aria-hidden="true"></div>
+  <!-- Header -->
+  <div class="header">
+    <span>IMPORTANTE:</span>
+    <p>Salir o cerrar esta página puede provocar errores en tu compra.</p>
   </div>
 
-  <script>
-    /* script para atualizar dinamicamente a porcentagem se quiser:
-       pega valor de :root --percent e atualiza aria e texto */
-    (function(){
-      const root = document.documentElement;
-      const percent = getComputedStyle(root).getPropertyValue('--percent').trim();
-      const p = parseInt(percent) || 0;
-      const prog = document.querySelector('.progress');
-      const label = document.querySelector('.progress .percent');
-      if(prog && label){
-        prog.setAttribute('aria-valuenow', String(p));
-        label.textContent = p + '%';
-      }
-    })();
-  </script>
+  <!-- Step -->
+  <div class="step">PASO 3 DE 4</div>
+
+  <!-- Progress -->
+  <div class="progress">
+    <div class="progress-bar">75%</div>
+  </div>
+
+  <!-- Warning -->
+  <div class="warning">
+    <span>⚠</span> Tu orden aún no está completa
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    TU ACCESO A CODIGO V SE ESTÁ CREANDO...
+  </div>
+
+  <!-- Content Text -->
+  <div class="content">
+    <p>¡Mientras, escucha esto hasta el final!</p>
+
+    <p><strong>Debes saber que el tiempo que duras en la cama sí importa</strong>, pero no como piensas.</p>
+
+    <p>Si no puedes controlar tu excitación y aguantar fácilmente al menos 20 minutos de acción intensa y continua sin venirte, <strong>corres el riesgo de dejarla a medias y con ganas de más.</strong></p>
+
+    <p>Porque cuando penetras a una mujer se libera en su cerebro una sustancia química llamada oxitocina, y <strong>cuanto más se libere esta sustancia, más atraída se sentirá a ti.</strong></p>
+
+    <p>Si eyaculas demasiado rápido, su cerebro no tiene tiempo de registrar que está teniendo sexo y no sucederá nada, <strong>no se liberará nada de oxitocina y ella rápidamente se cansará de ti.</strong></p>
+
+    <p>Ahora, la verdad es que el tiempo que duras en la cama importa mucho más para ti que para ella.</p>
+
+    <p>Porque cuando un hombre dura horas en la cama, cuando puede tener sexo dos, tres o cuatro veces seguidas… <strong>obtiene niveles de confianza y energía indescriptibles</strong>, y la forma en que ella lo mira cambia por completo.</p>
+
+    <p>Por que cuanto más genial te sientas, más seguro estarás, y mejor será tu rendimiento.</p>
+
+    <p>Es por eso que durar el tiempo que quieras, no solo hace que puedas satisfacer completamente a una mujer, <strong>sino que te coloca en el podio de los hombres con el que todas desearían estar.</strong></p>
+  </div>
+
 </body>
 </html>
