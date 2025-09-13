@@ -99,7 +99,25 @@ src="https://www.facebook.com/tr?id=712196305168265&ev=PageView&noscript=1"
   defer
 ></script>
 
+<style>
+  .esconder {
+    display: none;
+  }
+</style>
+
+<script>
+  var delaySeconds = 589;
+  var player = document.querySelector("vturb-smartplayer");
+  player.addEventListener("player:ready", function() {
+    player.displayHiddenElements(delaySeconds, [".esconder"], {
+      persist: true
+    });
+  });
+</script>
+
+    
 </body>
 </html>
+
 
 
