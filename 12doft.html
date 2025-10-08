@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Temple Abundance Declarations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            color: #3e2723;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .intro {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .intro h2 {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .intro ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .intro li {
+            margin: 8px 0;
+            position: relative;
+        }
+
+        .intro li:before {
+            content: "✦";
+            position: absolute;
+            left: -20px;
+            color: #d4af37;
+        }
+
+        .declaration-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 2px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .declaration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .declaration-number {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a2e;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hebrew {
+            font-size: 1.8em;
+            color: #d4af37;
+            margin: 15px 0;
+            text-align: right;
+            direction: rtl;
+            font-weight: bold;
+        }
+
+        .pronunciation {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #f4e4c1;
+        }
+
+        .pronunciation strong {
+            color: #d4af37;
+        }
+
+        .translation {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 15px 0;
+            color: #f0e6d2;
+        }
+
+        .meaning {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid #d4af37;
+            font-size: 0.95em;
+            color: #d4c5a9;
+        }
+
+        .audio-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            color: #1a1a2e;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .audio-btn:hover {
+            background: linear-gradient(135deg, #f4e4c1 0%, #d4af37 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .audio-btn:active {
+            transform: scale(0.98);
+        }
+
+        .usage-section {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 2px solid #d4af37;
+        }
+
+        .usage-section h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .usage-item {
+            background: rgba(52, 73, 94, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #d4af37;
+        }
+
+        .usage-item strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #d4c5a9;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .declaration-card {
+                padding: 20px;
+            }
+            
+            .hebrew {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✡ 12 Temple Abundance Declarations ✡</h1>
+            <p class="subtitle">Sacred Phrases from Solomon's Temple in Jerusalem</p>
+        </header>
+
+        <div class="intro">
+            <h2>About the Declarations</h2>
+            <p style="margin-bottom: 15px;">These powerful declarations were extracted from the walls of Solomon's Temple in Jerusalem, originally written in ancient Hebrew. For centuries, Jewish merchants have used these phrases to:</p>
+            <ul>
+                <li>Attract customers and opportunities</li>
+                <li>Close important deals</li>
+                <li>Multiply wealth and prosperity</li>
+                <li>Bless enterprises</li>
+            </ul>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 1</span>
+            <div class="hebrew">בָּרוּךְ אַתָּה יְיָ מַצְמִיחַ קֶרֶן יְשׁוּעָה</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Baruch Atah Adonai Matzmíach Keren Yeshuá
+            </div>
+            <div class="translation">
+                "Blessed are You, Lord, who makes the power of salvation flourish"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> Recite before starting new businesses or ventures. This declaration invokes divine strength to make your projects prosper from the root.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Baruch Atah Adonai Matzmíach Keren Yeshuá')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 2</span>
+            <div class="hebrew">פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Potêach Et Yadêcha Umasbia Lechol Chai Ratzon
+            </div>
+            <div class="translation">
+                "You open Your hand and satisfy the desire of every living creature"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To attract customers and abundance to your business. Recite when opening your establishment's doors in the morning.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Potêach Et Yadêcha Umasbia Lechol Chai Ratzon')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 3</span>
+            <div class="hebrew">יְהוָה יִתֶּן עֹז לְעַמּוֹ</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Adonai Yiten Oz Le'amo
+            </div>
+            <div class="translation">
+                "The Lord will give strength to His people"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> Before important meetings and difficult negotiations. This phrase grants spiritual strength and authority.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Adonai Yiten Oz Le amo')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 4</span>
+            <div class="hebrew">וַיְבָרֶךְ אֹתְךָ יְהוָה אֱלֹהֶיךָ</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Vayevarech Otcha Adonai Elohêcha
+            </div>
+            <div class="translation">
+                "And the Lord your God will bless you"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To invoke blessings upon investments and financial applications. Recite when making important transactions.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Vayevarech Otcha Adonai Elohêcha')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 5</span>
+            <div class="hebrew">הָעֹשֶׁר וְהַכָּבוֹד מִלְּפָנֶיךָ</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Ha'osher Vehaacavod Milfanêcha
+            </div>
+            <div class="translation">
+                "Wealth and honor come from You"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> Before job interviews and promotion opportunities. Attracts recognition and professional appreciation.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Ha osher Vehaacavod Milfanêcha')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 6</span>
+            <div class="hebrew">מַרְבֶּה בְרָכָה וְהַצְלָחָה</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Marbê Berachá Vehatzlachá
+            </div>
+            <div class="translation">
+                "Multiplies blessing and prosperity"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To multiply results and profits. Use when closing contracts and business agreements.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Marbê Berachá Vehatzlachá')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 7</span>
+            <div class="hebrew">כִּי לְךָ הַגְּדֻלָּה וְהַגְּבוּרָה</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Ki Lechá Hagedulá Vehagvurá
+            </div>
+            <div class="translation">
+                "For Yours is the greatness and the power"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To conquer positions of leadership and authority. Recite before presentations and important speeches.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Ki Lechá Hagedulá Vehagvurá')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 8</span>
+            <div class="hebrew">נוֹתֵן לֶחֶם לְכָל בָּשָׂר</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Noten Lechem Lechol Basar
+            </div>
+            <div class="translation">
+                "Who gives food to all flesh"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To ensure constant and abundant provision. Ideal for merchants and entrepreneurs seeking continuous customer flow.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Noten Lechem Lechol Basar')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 9</span>
+            <div class="hebrew">תְּבָרֵךְ אֶת בֵּית עַבְדֶּךָ</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Tevarech Et Beit Avdêcha
+            </div>
+            <div class="translation">
+                "Bless the house of Your servant"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To bless your commercial establishment, office, or workplace. Recite when entering the environment.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Tevarech Et Beit Avdêcha')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 10</span>
+            <div class="hebrew">וְיִתֶּן לְךָ הָאֱלֹהִים מִטַּל הַשָּׁמַיִם</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Veyiten Lechá HaElohim Mital Hashamáyim
+            </div>
+            <div class="translation">
+                "And may God give you the dew of heaven"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> To attract unexpected resources and opportunities from Above. Use when seeking new investors or partnerships.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Veyiten Lechá HaElohim Mital Hashamáyim')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 11</span>
+            <div class="hebrew">הַשְׁפַּע וְהַרְוָחָה יָבוֹא</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Hashpá Vehavachá Yavó
+            </div>
+            <div class="translation">
+                "Abundance and relief will come"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> In times of financial difficulty. This declaration opens paths and attracts unexpected solutions.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Hashpá Vehavachá Yavó')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="declaration-card">
+            <span class="declaration-number">Declaration 12</span>
+            <div class="hebrew">יְבָרֶכְךָ יְהוָה וְיִשְׁמְרֶךָ</div>
+            <div class="pronunciation">
+                <strong>Pronunciation:</strong> Yevarechechá Adonai Veyishmerécha
+            </div>
+            <div class="translation">
+                "The Lord bless you and keep you"
+            </div>
+            <div class="meaning">
+                <strong>Usage:</strong> The most powerful of all. Use for complete protection and blessing over all your businesses and ventures. The ultimate priestly blessing.
+            </div>
+            <button class="audio-btn" onclick="speakHebrew('Yevarechechá Adonai Veyishmerécha')">🔊 Hear Pronunciation</button>
+        </div>
+
+        <div class="usage-section">
+            <h2>When to Use the Declarations</h2>
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <strong>Important Meetings</strong>
+                    <p>Declarations 1, 3, 7</p>
+                </div>
+                <div class="usage-item">
+                    <strong>Job Interviews</strong>
+                    <p>Declarations 5, 7, 12</p>
+                </div>
+                <div class="usage-item">
+                    <strong>Business Opening</strong>
+                    <p>Declarations 2, 8, 9</p>
+                </div>
+                <div class="usage-item">
+                    <strong>Investments</strong>
+                    <p>Declarations 4, 6, 10</p>
+                </div>
+                <div class="usage-item">
+                    <strong>New Businesses</strong>
+                    <p>Declarations 1, 6, 12</p>
+                </div>
+                <div class="usage-item">
+                    <strong>Difficult Times</strong>
+                    <p>Declarations 11, 12</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>✡ May these sacred declarations bring abundance and prosperity to your life ✡</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Ancient tradition preserved through the generations</p>
+        </footer>
+    </div>
+
+    <script>
+        function speakHebrew(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'he-IL';
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                
+                const voices = speechSynthesis.getVoices();
+                const hebrewVoice = voices.find(voice => voice.lang === 'he-IL');
+                if (hebrewVoice) {
+                    utterance.voice = hebrewVoice;
+                }
+                
+                speechSynthesis.cancel();
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('Your browser does not support speech synthesis. Try reading the written pronunciation.');
+            }
+        }
+
+        if ('speechSynthesis' in window) {
+            speechSynthesis.getVoices();
+            window.speechSynthesis.onvoiceschanged = function() {
+                speechSynthesis.getVoices();
+            };
+        }
+    </script>
+</body>
+</html>
