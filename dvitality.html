@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Vitality - Biblical Foods for Purification & Longevity</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a3a1a 0%, #0f2a0f 100%);
+            font-family: 'Lora', serif;
+            color: #2d4a2d;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #fdfcf5 0%, #f5f2e8 100%);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+            border: 4px solid #4a6741;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #5a7a52 0%, #4a6741 100%);
+            color: #fdfcf5;
+            padding: 50px 30px;
+            text-align: center;
+            border-bottom: 6px double #2d4a2d;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🌿';
+            font-size: 40px;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fdfcf5;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #4a6741;
+        }
+        
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 60px 40px 40px;
+        }
+        
+        .intro {
+            background: rgba(90,122,82,0.08);
+            padding: 30px;
+            border-left: 5px solid #5a7a52;
+            margin-bottom: 40px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            color: #4a6741;
+            margin: 50px 0 25px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #5a7a52;
+        }
+        
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: #5a7a52;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .food-card {
+            background: white;
+            border: 2px solid #d4c4a8;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(90,122,82,0.2);
+        }
+        
+        .food-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #5a7a52;
+        }
+        
+        .food-number {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            color: #5a7a52;
+            font-weight: 700;
+        }
+        
+        .food-title {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: #4a6741;
+            font-weight: 600;
+        }
+        
+        .verse {
+            font-style: italic;
+            color: #6b8563;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: rgba(90,122,82,0.05);
+            border-left: 3px solid #5a7a52;
+        }
+        
+        .benefits {
+            margin: 15px 0;
+        }
+        
+        .benefits-title {
+            font-weight: 600;
+            color: #4a6741;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .benefits ul, .usage ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+        
+        .benefits li, .usage li {
+            margin: 6px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #5a7a52;
+            font-weight: bold;
+        }
+        
+        .usage li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #5a7a52;
+        }
+        
+        .recipe-card {
+            background: linear-gradient(135deg, #fdfcf5 0%, #f9f6ed 100%);
+            border: 3px solid #5a7a52;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .recipe-title {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            color: #4a6741;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .recipe-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #6b8563;
+            margin-bottom: 20px;
+        }
+        
+        .ingredients, .preparation, .recipe-benefits {
+            margin: 20px 0;
+        }
+        
+        .section-label {
+            font-weight: 600;
+            color: #5a7a52;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .combination-box {
+            background: white;
+            border-left: 5px solid #5a7a52;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .combination-title {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            color: #4a6741;
+            margin-bottom: 10px;
+        }
+        
+        .protocol-section {
+            background: rgba(90,122,82,0.1);
+            padding: 30px;
+            margin: 30px 0;
+            border: 3px double #5a7a52;
+        }
+        
+        .week-phase {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #5a7a52;
+        }
+        
+        .week-phase h4 {
+            font-family: 'Cinzel', serif;
+            color: #4a6741;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 20px;
+            border: 2px solid #d4c4a8;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-text {
+            font-weight: 600;
+            color: #4a6741;
+            margin-bottom: 5px;
+        }
+        
+        .principles-list {
+            background: rgba(90,122,82,0.05);
+            padding: 25px 40px;
+            margin: 20px 0;
+        }
+        
+        .principles-list li {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+        
+        .warning-box {
+            background: #fff8dc;
+            border: 3px solid #daa520;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .warning-box h3 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #5a7a52 0%, #4a6741 100%);
+            color: #fdfcf5;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        
+        .print-button {
+            display: block;
+            width: 220px;
+            margin: 40px auto;
+            padding: 18px;
+            background: #5a7a52;
+            color: #fdfcf5;
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .print-button:hover {
+            background: #4a6741;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .food-card, .recipe-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">🌿 DIVINE VITALITY 🌿</h1>
+            <p class="subtitle">Complete Guide to Biblical Foods for Purification and Longevity</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                📖 This guide gathers the ancient wisdom of foods mentioned in the Holy Scriptures, used by the ancients to purify the body, restore energy, and prolong life with complete health. Each food carries within it the power of nature and divine blessing.
+            </div>
+
+            <h2>🍯 THE 12 SACRED FOODS</h2>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">1</div>
+                    <div class="food-title">WILD HONEY</div>
+                </div>
+                <div class="verse">"A land flowing with milk and honey" - Exodus 3:8</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Natural blood purifier</li>
+                        <li>Instant and lasting energy</li>
+                        <li>Antibacterial and antiviral properties</li>
+                        <li>Strengthens immune system</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>1 tablespoon on empty stomach with warm water</li>
+                        <li>Natural sweetener in medicinal teas</li>
+                        <li>Poultice for wounds (external use)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">2</div>
+                    <div class="food-title">OLIVE OIL</div>
+                </div>
+                <div class="verse">"You anoint my head with oil" - Psalms 23:5</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Eliminates liver toxins</li>
+                        <li>Protects the heart</li>
+                        <li>Powerful anti-inflammatory</li>
+                        <li>Cellular rejuvenator</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>1 tablespoon on empty stomach</li>
+                        <li>Base for all meals</li>
+                        <li>Therapeutic skin massage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">3</div>
+                    <div class="food-title">FIGS</div>
+                </div>
+                <div class="verse">"Each under their own vine and fig tree" - 1 Kings 4:25</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Rich source of purifying fiber</li>
+                        <li>Strengthens bones (calcium)</li>
+                        <li>Regulates intestines</li>
+                        <li>Sustainable energy</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>3-5 dried figs per day</li>
+                        <li>Fig paste with honey</li>
+                        <li>Leaf tea for purification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">4</div>
+                    <div class="food-title">DATES</div>
+                </div>
+                <div class="verse">"The palm trees will flourish" - Psalms 92:12</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Energy superfood</li>
+                        <li>Rich in potassium (healthy heart)</li>
+                        <li>Combats anemia</li>
+                        <li>Strengthens physical vitality</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>3-7 dates at breakfast</li>
+                        <li>Replace refined sugar</li>
+                        <li>Combined with nuts and almonds</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">5</div>
+                    <div class="food-title">POMEGRANATE</div>
+                </div>
+                <div class="verse">"Like halves of a pomegranate are your temples" - Song of Songs 4:3</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Supreme antioxidant</li>
+                        <li>Deeply purifies blood</li>
+                        <li>Combats aging</li>
+                        <li>Protects the heart</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Fresh juice in the morning</li>
+                        <li>Seeds in salads</li>
+                        <li>Peel tea (detoxifying)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">6</div>
+                    <div class="food-title">GRAPES & RAISINS</div>
+                </div>
+                <div class="verse">"I am the true vine" - John 15:1</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Kidney cleansing</li>
+                        <li>Powerful antioxidants (resveratrol)</li>
+                        <li>Quick energy</li>
+                        <li>Cardiovascular health</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Fresh grapes as snack</li>
+                        <li>Raisins at breakfast</li>
+                        <li>Whole grape juice (no sugar)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">7</div>
+                    <div class="food-title">WHOLE GRAINS</div>
+                </div>
+                <div class="verse">"Wheat and barley" - Ezekiel 4:9</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Bread of life - complete sustenance</li>
+                        <li>Fiber for toxin elimination</li>
+                        <li>Prolonged energy</li>
+                        <li>Stabilizes blood sugar</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Naturally fermented whole bread</li>
+                        <li>Oat or barley porridge</li>
+                        <li>Sprouted grains</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">8</div>
+                    <div class="food-title">LENTILS & LEGUMES</div>
+                </div>
+                <div class="verse">"Let me have some of that red stew" - Genesis 25:30</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Complete plant protein</li>
+                        <li>Iron to combat fatigue</li>
+                        <li>Intestinal purification</li>
+                        <li>Muscle strengthening</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Lentil soup 2-3x per week</li>
+                        <li>Sprouted chickpeas</li>
+                        <li>Various beans combined with grains</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">9</div>
+                    <div class="food-title">BITTER HERBS</div>
+                </div>
+                <div class="verse">"With bitter herbs they shall eat it" - Exodus 12:8</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Deep detoxification</li>
+                        <li>Stimulates digestion</li>
+                        <li>Purifies liver</li>
+                        <li>Eliminates parasites</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Lettuce, arugula, watercress, endive</li>
+                        <li>Salads before meals</li>
+                        <li>Dandelion and boldo teas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">10</div>
+                    <div class="food-title">ALMONDS & NUTS</div>
+                </div>
+                <div class="verse">"Almonds, pistachios and walnuts" - Genesis 43:11</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Sacred fats for the brain</li>
+                        <li>Lasting energy</li>
+                        <li>Strengthens nerves</li>
+                        <li>Combats inflammation</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>Daily handful (7-10 units)</li>
+                        <li>Almond milk</li>
+                        <li>Homemade nut butter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">11</div>
+                    <div class="food-title">GARLIC & ONION</div>
+                </div>
+                <div class="verse">"We remember the garlic and onions" - Numbers 11:5</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Natural antibiotics</li>
+                        <li>Blood purifiers</li>
+                        <li>Combat infections</li>
+                        <li>Strengthen immunity</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>1-2 raw garlic cloves per day</li>
+                        <li>Raw onion in salads</li>
+                        <li>Garlic syrup with honey</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-header">
+                    <div class="food-number">12</div>
+                    <div class="food-title">PURE WATER</div>
+                </div>
+                <div class="verse">"Living waters will flow" - John 7:38</div>
+                <div class="benefits">
+                    <div class="benefits-title">Benefits:</div>
+                    <ul>
+                        <li>Base of all purification</li>
+                        <li>Eliminates toxins</li>
+                        <li>Hydrates cells</li>
+                        <li>Renews entire organism</li>
+                    </ul>
+                </div>
+                <div class="usage">
+                    <div class="benefits-title">How to Use:</div>
+                    <ul>
+                        <li>2-3 liters per day</li>
+                        <li>Water on empty stomach (2 glasses)</li>
+                        <li>Water with lemon in the morning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>🌅 SACRED ANCESTRAL RECIPES</h2>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Morning Purification Elixir</div>
+                <div class="recipe-subtitle">To drink on empty stomach</div>
+                <div class="ingredients">
+                    <div class="section-label">Ingredients:</div>
+                    <ul>
+                        <li>1 glass warm water</li>
+                        <li>1 tablespoon pure honey</li>
+                        <li>Juice of 1/2 lemon</li>
+                        <li>1 pinch cinnamon</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <div class="section-label">Preparation:</div>
+                    <p>Mix everything and drink slowly, with gratitude.</p>
+                </div>
+                <div class="recipe-benefits">
+                    <div class="section-label">Benefits:</div>
+                    <p>Awakens digestive system, alkalizes blood, eliminates toxins accumulated during sleep.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Ezekiel's Bread</div>
+                <div class="recipe-subtitle">Complete biblical recipe</div>
+                <div class="ingredients">
+                    <div class="section-label">Ingredients:</div>
+                    <ul>
+                        <li>2 cups whole wheat</li>
+                        <li>1 cup barley</li>
+                        <li>1/2 cup lentils</li>
+                        <li>1/2 cup beans</li>
+                        <li>1/4 cup chickpeas</li>
+                        <li>Water and salt</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <div class="section-label">Preparation:</div>
+                    <p>Grind grains, make dough with water and salt, ferment naturally for 12 hours, bake in medium oven.</p>
+                </div>
+                <div class="recipe-benefits">
+                    <div class="section-label">Benefits:</div>
+                    <p>Complete protein, all essential amino acids, sustainable energy.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Longevity Soup</div>
+                <div class="recipe-subtitle">Complete meal of the patriarchs</div>
+                <div class="ingredients">
+                    <div class="section-label">Ingredients:</div>
+                    <ul>
+                        <li>1 cup lentils</li>
+                        <li>2 chopped onions</li>
+                        <li>4 garlic cloves</li>
+                        <li>Olive oil</li>
+                        <li>Fresh herbs (thyme, oregano)</li>
+                        <li>Sea salt</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <div class="section-label">Preparation:</div>
+                    <p>Sauté onion and garlic in oil, add lentils and water, cook until tender, finish with herbs.</p>
+                </div>
+                <div class="recipe-benefits">
+                    <div class="section-label">Benefits:</div>
+                    <p>Restores vital energy, purifies blood, strengthens entire body.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Vitality Tonic</div>
+                <div class="recipe-subtitle">Natural energy drink</div>
+                <div class="ingredients">
+                    <div class="section-label">Ingredients:</div>
+                    <ul>
+                        <li>1 pomegranate (juice)</li>
+                        <li>7 dates</li>
+                        <li>1 tablespoon honey</li>
+                        <li>Coconut water</li>
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <div class="section-label">Preparation:</div>
+                    <p>Blend everything, strain if preferred.</p>
+                </div>
+                <div class="recipe-benefits">
+                    <div class="section-label">Benefits:</div>
+                    <p>Immediate energy, potent antioxidants, deep hydration.</p>
+                </div>
+            </div>
+
+            <h2>🔥 SACRED COMBINATIONS</h2>
+
+            <div class="combination-box">
+                <div class="combination-title">Combination 1: Divine Energy</div>
+                <p><strong>Dates + Almonds + Honey</strong></p>
+                <p><strong>When:</strong> Breakfast or pre-physical activity</p>
+                <p><strong>Effect:</strong> Instant and lasting strength</p>
+            </div>
+
+            <div class="combination-box">
+                <div class="combination-title">Combination 2: Deep Purification</div>
+                <p><strong>Pomegranate + Grapes + Lemon Water</strong></p>
+                <p><strong>When:</strong> Mid-morning</p>
+                <p><strong>Effect:</strong> Cellular detoxification</p>
+            </div>
+
+            <div class="combination-box">
+                <div class="combination-title">Combination 3: Fortified Immunity</div>
+                <p><strong>Garlic + Honey + Olive Oil</strong></p>
+                <p><strong>When:</strong> Before bed</p>
+                <p><strong>Effect:</strong> Powerful natural antibiotic</p>
+            </div>
+
+            <div class="combination-box">
+                <div class="combination-title">Combination 4: Longevity</div>
+                <p><strong>Lentils + Whole Grains + Bitter Herbs</strong></p>
+                <p><strong>When:</strong> Main lunch</p>
+                <p><strong>Effect:</strong> Complete and purifying nutrition</p>
+            </div>
+
+            <div class="combination-box">
+                <div class="combination-title">Combination 5: Rejuvenation</div>
+                <p><strong>Figs + Olive Oil + Nuts</strong></p>
+                <p><strong>When:</strong> Afternoon snack</p>
+                <p><strong>Effect:</strong> Antioxidants and sacred fats</p>
+            </div>
+
+            <h2>🌟 40-DAY PROTOCOL - COMPLETE RENEWAL</h2>
+
+            <div class="protocol-section">
+                <div class="week-phase">
+                    <h4>Week 1-10: Purification</h4>
+                    <ul>
+                        <li>Morning elixir daily</li>
+                        <li>Eliminate processed foods and sugar</li>
+                        <li>Abundant water (3L/day)</li>
+                        <li>Purifying tea at night</li>
+                    </ul>
+                </div>
+
+                <div class="week-phase">
+                    <h4>Week 11-20: Strengthening</h4>
+                    <ul>
+                        <li>Introduce whole grains</li>
+                        <li>Longevity soup 3x/week</li>
+                        <li>Dates and nuts daily</li>
+                        <li>Increase bitter herbs</li>
+                    </ul>
+                </div>
+
+                <div class="week-phase">
+                    <h4>Week 21-30: Restoration</h4>
+                    <ul>
+                        <li>All sacred combinations</li>
+                        <li>Ezekiel's bread as base</li>
+                        <li>Daily vitality tonic</li>
+                        <li>Olive oil in all meals</li>
+                    </ul>
+                </div>
+
+                <div class="week-phase">
+                    <h4>Week 31-40: Maintenance</h4>
+                    <ul>
+                        <li>Established lifestyle</li>
+                        <li>12-hour fast (overnight)</li>
+                        <li>Gratitude before meals</li>
+                        <li>Weekly sacred rest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>💎 BENEFITS AFTER 40 DAYS</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💉</div>
+                    <div class="benefit-text">Purified Blood</div>
+                    <p style="font-size: 14px;">Toxins eliminated, nutrients absorbed</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-text">Restored Energy</div>
+                    <p style="font-size: 14px;">Physical and mental vitality renewed</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-text">Fortified Immunity</div>
+                    <p style="font-size: 14px;">Disease resistance multiplied</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚖️</div>
+                    <div class="benefit-text">Balanced Weight</div>
+                    <p style="font-size: 14px;">Body at natural ideal weight</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <div class="benefit-text">Radiant Skin</div>
+                    <p style="font-size: 14px;">Visible rejuvenation</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧠</div>
+                    <div class="benefit-text">Clear Mind</div>
+                    <p style="font-size: 14px;">Focus, memory and inner peace</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🙏</div>
+                    <div class="benefit-text">Elevated Spirit</div>
+                    <p style="font-size: 14px;">Connection with the sacred strengthened</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌳</div>
+                    <div class="benefit-text">Longevity</div>
+                    <p style="font-size: 14px;">Life prolonged with quality</p>
+                </div>
+            </div>
+
+            <h2>🙏 PRINCIPLES FOR DAILY PRACTICE</h2>
+
+            <div class="principles-list">
+                <ul>
+                    <li><strong>Gratitude:</strong> Give thanks before each meal</li>
+                    <li><strong>Fasting:</strong> Respect 12 hours between dinner and breakfast</li>
+                    <li><strong>Chewing:</strong> 30 times each portion</li>
+                    <li><strong>Simplicity:</strong> The more natural, the more powerful</li>
+                    <li><strong>Moderation:</strong> Eat until 80% satiety</li>
+                    <li><strong>Joy:</strong> Make meals sacred moments</li>
+                    <li><strong>Rest:</strong> Sleep 7-8 hours per night</li>
+                    <li><strong>Movement:</strong> Walk daily in fresh air</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ IMPORTANT WARNINGS</h3>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>This guide is based on ancestral wisdom and natural foods</li>
+                    <li>Does not replace professional medical guidance</li>
+                    <li>Pregnant women, children, and people with specific conditions should consult a health professional</li>
+                    <li>Use organic foods whenever possible</li>
+                    <li>Respect individual allergies and intolerances</li>
+                </ul>
+            </div>
+
+            <h2>📚 BIBLICAL REFERENCES</h2>
+
+            <div class="verse" style="margin: 20px 0;">
+                Genesis 1:29 - "Behold, I have given you every plant yielding seed"
+            </div>
+
+            <div class="verse" style="margin: 20px 0;">
+                Ezekiel 47:12 - "Their leaves will be for healing"
+            </div>
+
+            <div class="verse" style="margin: 20px 0;">
+                3 John 1:2 - "I pray that you may prosper in health"
+            </div>
+
+            <div class="verse" style="margin: 20px 0;">
+                1 Corinthians 6:19 - "Your body is a temple of the Holy Spirit"
+            </div>
+
+            <h2>🌿 CONCLUSION</h2>
+
+            <div class="intro">
+                Divine Vitality is not just a diet, but a return to original wisdom about nutrition. The foods mentioned in Scripture carry the power of healing, purification, and life extension because they were created with divine purpose.
+                <br><br>
+                By following this guide, you not only nourish your physical body but also honor the sacred temple that is your life, connecting with the wisdom of the ancestors and with the Creator.
+            </div>
+
+            <button class="print-button" onclick="window.print()">Print Guide</button>
+        </div>
+
+        <div class="footer">
+            <div class="footer-quote">
+                "And you shall know the truth, and the truth shall set you free."
+                <br>- John 8:32
+            </div>
+            <p style="margin-top: 30px; font-size: 16px;">
+                May your journey toward complete vitality be blessed!
+            </p>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                Developed based on biblical principles and ancient wisdom<br>
+                For educational and inspirational use
+            </p>
+        </div>
+    </div>
+</body>
+</html>
