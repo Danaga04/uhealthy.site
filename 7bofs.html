@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Solomon's 7 Blessings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f4f4f4;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .star-symbol {
+            font-size: 60px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #d4af37;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #b8b8b8;
+            font-style: italic;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border-left: 4px solid #d4af37;
+        }
+
+        h2 {
+            color: #d4af37;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .number-badge {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #1a1a2e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .horario-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .horario-item:hover {
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .horario-titulo {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .horario-desc {
+            color: #d4d4d4;
+            margin-bottom: 8px;
+        }
+
+        .dia-semana {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .dia-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .dia-nome {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .dia-tipo {
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .lua-fases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .lua-card {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .lua-emoji {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .lua-nome {
+            color: #ffd700;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .aviso {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .aviso-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .aviso-texto {
+            font-size: 1.1em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="star-symbol">✡</div>
+            <h1>Map of Solomon's 7 Blessings</h1>
+            <p class="subtitle">Sacred Knowledge of the Ancient Rabbis</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="number-badge">1</span> The 7 Sacred Moments of the Day</h2>
+            
+            <div class="horario-item">
+                <div class="horario-titulo">🌅 Dawn (5am to 6am)</div>
+                <div class="horario-desc"><strong>Power:</strong> New beginnings, mental clarity</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Requests for wisdom, new projects, spiritual renewal</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">☀️ First Light (6am to 7am)</div>
+                <div class="horario-desc"><strong>Power:</strong> Opening of celestial portals</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Daily protection, gratitude, divine connection</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌤️ Mid-Morning (9am to 10am)</div>
+                <div class="horario-desc"><strong>Power:</strong> Strength and prosperity in business</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Financial requests, professional success</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌞 Noon (12pm)</div>
+                <div class="horario-desc"><strong>Power:</strong> Moment of maximum solar potency</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Physical healing, vitality, inner strength</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌆 Sunset (6pm to 7pm)</div>
+                <div class="horario-desc"><strong>Power:</strong> Transition between worlds, open portal</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Requests for love, reconciliation, family harmony</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌙 First Hour of Night (8pm to 9pm)</div>
+                <div class="horario-desc"><strong>Power:</strong> Revealed mysteries, amplified intuition</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Hidden knowledge, prophetic dreams, spiritual visions</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌌 Midnight (12am)</div>
+                <div class="horario-desc"><strong>Power:</strong> Maximum connection with the divine</div>
+                <div class="horario-desc"><strong>Ideal for:</strong> Urgent requests, powerful intercession, miracles</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="number-badge">2</span> Days of the Week and Their Powers</h2>
+            
+            <div class="dia-semana">
+                <div class="dia-card">
+                    <div class="dia-nome">🕯️ Sunday</div>
+                    <div class="dia-tipo">HEALING AND VITALITY</div>
+                    <div class="horario-desc">Day of the Sun. Prayers for physical health, vital energy, recovery from illness, and body renewal.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">🌙 Monday</div>
+                    <div class="dia-tipo">INTUITION AND DREAMS</div>
+                    <div class="horario-desc">Day of the Moon. Prayers for insights, spiritual visions, intuition development, and revealing dreams.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">⚔️ Tuesday</div>
+                    <div class="dia-tipo">PROTECTION AND STRENGTH</div>
+                    <div class="horario-desc">Day of Mars. Prayers for protection against enemies, courage, overcoming obstacles, and justice.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">📚 Wednesday</div>
+                    <div class="dia-tipo">KNOWLEDGE AND COMMUNICATION</div>
+                    <div class="horario-desc">Day of Mercury. Prayers for wisdom, studies, successful negotiations, and mental clarity.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">💰 Thursday</div>
+                    <div class="dia-tipo">PROSPERITY AND ABUNDANCE</div>
+                    <div class="horario-desc">Day of Jupiter. Prayers for money, financial expansion, business luck, and material growth.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">💕 Friday</div>
+                    <div class="dia-tipo">LOVE AND RELATIONSHIPS</div>
+                    <div class="horario-desc">Day of Venus. Prayers for love, marriage, family harmony, beauty, and relationships.</div>
+                </div>
+
+                <div class="dia-card">
+                    <div class="dia-nome">✨ Saturday (Shabbat)</div>
+                    <div class="dia-tipo">MOST SACRED DAY</div>
+                    <div class="horario-desc">Sacred day of rest. All prayers have multiplied power. Ideal for important requests and deep connection.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="number-badge">3</span> Moon Phases and Request Multiplication</h2>
+            
+            <div class="lua-fases">
+                <div class="lua-card">
+                    <div class="lua-emoji">🌑</div>
+                    <div class="lua-nome">New Moon</div>
+                    <div class="horario-desc"><strong>Power:</strong> New beginnings</div>
+                    <div class="horario-desc">Ideal for starting projects, planting seeds of prosperity, requests for renewal</div>
+                </div>
+
+                <div class="lua-card">
+                    <div class="lua-emoji">🌓</div>
+                    <div class="lua-nome">Waxing Moon</div>
+                    <div class="horario-desc"><strong>Power:</strong> Growth and attraction</div>
+                    <div class="horario-desc">Multiplies requests for money, love, health. Everything you wish to ATTRACT and GROW</div>
+                </div>
+
+                <div class="lua-card">
+                    <div class="lua-emoji">🌕</div>
+                    <div class="lua-nome">Full Moon</div>
+                    <div class="horario-desc"><strong>Power:</strong> Maximum potency</div>
+                    <div class="horario-desc">Most powerful moment of the month. Urgent requests, miracles, rapid manifestations</div>
+                </div>
+
+                <div class="lua-card">
+                    <div class="lua-emoji">🌗</div>
+                    <div class="lua-nome">Waning Moon</div>
+                    <div class="horario-desc"><strong>Power:</strong> Release and cleansing</div>
+                    <div class="horario-desc">Ideal for removing problems, debts, illnesses, enemies. Everything you wish to ELIMINATE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-icon">⚠️</div>
+            <div class="aviso-texto">
+                POWERFUL COMBINATION: When you pray at the right time + right day + correct moon phase, 
+                your prayers have 7x more power according to the teachings of the ancient rabbis.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="number-badge">4</span> How to Use This Map</h2>
+            
+            <div class="horario-item">
+                <div class="horario-titulo">📋 Step 1: Identify your need</div>
+                <div class="horario-desc">Healing, money, protection, love, or knowledge?</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">📅 Step 2: Choose the corresponding day of the week</div>
+                <div class="horario-desc">Consult the "Days of the Week and Their Powers" section</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🕐 Step 3: Pray at one of the 7 sacred moments</div>
+                <div class="horario-desc">Prefer Dawn, Noon, or Midnight for maximum potency</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">🌙 Step 4: Observe the moon phase</div>
+                <div class="horario-desc">Waxing to attract, Waning to remove, Full for urgencies</div>
+            </div>
+
+            <div class="horario-item">
+                <div class="horario-titulo">✨ Step 5: Pray with faith and pure heart</div>
+                <div class="horario-desc">Sincere intention multiplies the power of your prayers</div>
+            </div>
+        </div>
+
+        <div class="aviso" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.1)); margin-top: 50px;">
+            <div class="aviso-icon">✡️</div>
+            <div class="aviso-texto" style="font-size: 1.3em;">
+                "He who prays at the right time, in the right place, and with the right heart, 
+                shall have his prayers heard in heaven."<br>
+                <em style="font-size: 0.9em; color: #d4d4d4;">- Teaching of the Ancient Rabbis</em>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
