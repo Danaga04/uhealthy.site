@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Manuscript of Solomon's Wisdom</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+            font-family: 'Crimson Text', serif;
+            color: #2a1810;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #f4e8d0 0%, #e8dcc0 100%);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 100px rgba(139,90,43,0.1);
+            border: 3px solid #8b5a2b;
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139,90,43,0.03) 2px, rgba(139,90,43,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(139,90,43,0.03) 2px, rgba(139,90,43,0.03) 4px);
+            pointer-events: none;
+        }
+        
+        .manuscript {
+            padding: 60px 50px;
+            position: relative;
+        }
+        
+        .decorative-border {
+            border: 2px solid #8b5a2b;
+            border-style: double;
+            padding: 30px;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .title-page {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 3px double #8b5a2b;
+            margin-bottom: 50px;
+        }
+        
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #5a3a1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            color: #8b5a2b;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .ornament {
+            font-size: 30px;
+            color: #8b5a2b;
+            margin: 20px 0;
+        }
+        
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            color: #5a3a1a;
+            margin: 40px 0 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: #6b4423;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #8b5a2b;
+            padding-bottom: 8px;
+        }
+        
+        h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #7a5230;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 30px;
+        }
+        
+        .verse {
+            font-style: italic;
+            color: #5a3a1a;
+            padding: 15px 40px;
+            margin: 20px 0;
+            border-left: 3px solid #8b5a2b;
+            background: rgba(139,90,43,0.05);
+        }
+        
+        .hebrew {
+            font-size: 20px;
+            color: #8b5a2b;
+            font-weight: 600;
+        }
+        
+        ul {
+            margin: 15px 0 15px 60px;
+            list-style: none;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #8b5a2b;
+        }
+        
+        .pillar {
+            background: rgba(139,90,43,0.08);
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #8b5a2b;
+        }
+        
+        .key-box {
+            background: rgba(255,255,255,0.5);
+            border: 2px solid #8b5a2b;
+            padding: 15px 25px;
+            margin: 15px 0;
+        }
+        
+        .day-schedule {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .day {
+            background: rgba(139,90,43,0.05);
+            padding: 15px;
+            border-left: 3px solid #8b5a2b;
+        }
+        
+        .day strong {
+            font-family: 'Cinzel', serif;
+            color: #5a3a1a;
+            font-size: 18px;
+        }
+        
+        .declaration {
+            font-size: 18px;
+            font-weight: 600;
+            color: #5a3a1a;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(139,90,43,0.08);
+            border-left: 3px solid #8b5a2b;
+            text-align: left;
+            text-indent: 0;
+        }
+        
+        .commitment-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255,255,255,0.4);
+            border: 3px double #8b5a2b;
+        }
+        
+        .signature-line {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            gap: 15px;
+        }
+        
+        .signature-line label {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #5a3a1a;
+            min-width: 120px;
+        }
+        
+        .signature-line input {
+            flex: 1;
+            border: none;
+            border-bottom: 2px solid #8b5a2b;
+            background: transparent;
+            font-family: 'Crimson Text', serif;
+            font-size: 18px;
+            padding: 8px;
+            color: #2a1810;
+        }
+        
+        .print-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background: #8b5a2b;
+            color: #f4e8d0;
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .print-button:hover {
+            background: #6b4423;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: 2px solid #8b5a2b;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .signature-line input {
+                border-bottom: 2px solid #8b5a2b;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            .pillar, .key-box {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="manuscript">
+            <div class="title-page">
+                <div class="ornament">❧</div>
+                <h1 class="main-title">The Manuscript<br/>of Solomon's Wisdom</h1>
+                <div class="subtitle">Ancient Teachings on Prosperity, Protection & Multiplication of Blessings</div>
+                <div class="ornament">❦</div>
+                <p style="text-indent: 0; text-align: center; margin-top: 30px; font-style: italic;">
+                    Extracted from ancient sources and interpreted<br/>through the lens of Hebrew tradition
+                </p>
+            </div>
+
+            <div class="decorative-border">
+                <h2>INTRODUCTION</h2>
+                <p>This manuscript presents a compilation of teachings attributed to the wisdom of Solomon, extracted from ancient sources and interpreted through the Hebrew tradition. The content seeks to reveal spiritual and practical principles about prosperity, protection, and multiplication of blessings.</p>
+            </div>
+
+            <h2>PART I: THE FOUNDATIONS OF WISDOM</h2>
+            
+            <h3>Chapter 1: The Principle of Wisdom</h3>
+            <div class="verse">"The fear of the LORD is the beginning of wisdom" (Proverbs 9:10)</div>
+            <p>True prosperity begins with the recognition of divine sovereignty. Solomon teaches that:</p>
+            <ul>
+                <li>Wisdom precedes wealth - Seek first knowledge, and riches will follow</li>
+                <li>Fear is not terror, but reverence - Deep respect for divine principles</li>
+                <li>Humility opens doors - Recognizing limitations is the first step to overcoming them</li>
+            </ul>
+
+            <h3>Chapter 2: The Three Pillars of Prosperity</h3>
+            
+            <div class="pillar">
+                <h4>Pillar 1: TSEDAKAH (<span class="hebrew">צדקה</span>) - Justice and Generosity</h4>
+                <ul>
+                    <li>Giving to the needy is not loss, it is spiritual investment</li>
+                    <li>10% of everything you receive should return in works of justice</li>
+                    <li>Generosity creates a cycle of abundance</li>
+                </ul>
+            </div>
+
+            <div class="pillar">
+                <h4>Pillar 2: AVODAH (<span class="hebrew">עבודה</span>) - Work with Purpose</h4>
+                <div class="verse">"The hand of the diligent will rule" (Proverbs 12:24)</div>
+                <ul>
+                    <li>Work with excellence, as if serving the Creator</li>
+                    <li>Honest work is a form of worship</li>
+                </ul>
+            </div>
+
+            <div class="pillar">
+                <h4>Pillar 3: EMUNAH (<span class="hebrew">אמונה</span>) - Faith and Trust</h4>
+                <ul>
+                    <li>Trust the process, even when you don't see immediate results</li>
+                    <li>Faith moves mountains, but also moves resources</li>
+                    <li>Declare your blessings before seeing them manifested</li>
+                </ul>
+            </div>
+
+            <h2>PART II: SECRETS OF MULTIPLICATION</h2>
+
+            <h3>Chapter 3: The Law of First Fruits</h3>
+            <p><strong>Fundamental Principle:</strong> The first determines the rest</p>
+            <p><strong>Practices:</strong></p>
+            <ul>
+                <li>Consecrate the first day of the week - Dedicate time to spiritual reflection</li>
+                <li>Offer the first hours - The best energies should be directed to the essential</li>
+                <li>Give the first fruit - The first salary, the first harvest, the first profit</li>
+            </ul>
+            <div class="verse">"Honor the LORD with your wealth and with the firstfruits of all your produce; then your barns will be filled with plenty" (Proverbs 3:9-10)</div>
+
+            <h3>Chapter 4: The Secret of the Eighth Day</h3>
+            <p>In Jewish tradition, the number 8 represents new beginning and supernatural abundance:</p>
+            <ul>
+                <li>Circumcision on the 8th day - Mark of covenant and protection</li>
+                <li>8 days of Hanukkah - Multiplication of oil that lasted 8 days</li>
+                <li>Shemini Atzeret - The 8th day after Sukkot, day of divine retention of blessing</li>
+            </ul>
+            <p><strong>Practical Application:</strong></p>
+            <ul>
+                <li>Fast for 8 days (partial) for renewal</li>
+                <li>Declare blessings for 8 consecutive days</li>
+                <li>Practice generosity for 8 days in a row</li>
+            </ul>
+
+            <h3>Chapter 5: The 7 Keys of Prosperity</h3>
+            
+            <div class="key-box">
+                <h4>1. ZACHOR (<span class="hebrew">זכור</span>) - Remember</h4>
+                <p style="text-indent: 0;">Remember past blessings. Gratitude attracts more blessings. Keep a journal of victories.</p>
+            </div>
+
+            <div class="key-box">
+                <h4>2. SHAMOR (<span class="hebrew">שמור</span>) - Guard</h4>
+                <p style="text-indent: 0;">Guard your resources. Economy is not greed, it is wisdom.</p>
+                <div class="verse">"The wise store up choice food and oil, but fools gulp theirs down" (Proverbs 21:20)</div>
+            </div>
+
+            <div class="key-box">
+                <h4>3. LIMUD (<span class="hebrew">לימוד</span>) - Study</h4>
+                <p style="text-indent: 0;">Study constantly. Invest in knowledge.</p>
+                <div class="verse">"Buy truth, and do not sell it" (Proverbs 23:23)</div>
+            </div>
+
+            <div class="key-box">
+                <h4>4. ANAVAH (<span class="hebrew">ענווה</span>) - Humility</h4>
+                <p style="text-indent: 0;">Practice humility. Pride precedes ruin.</p>
+                <div class="verse">"Before honor comes humility" (Proverbs 15:33)</div>
+            </div>
+
+            <div class="key-box">
+                <h4>5. CHESED (<span class="hebrew">חסד</span>) - Kindness</h4>
+                <p style="text-indent: 0;">Demonstrate kindness. Treat people well. Your relationships are your greatest asset.</p>
+            </div>
+
+            <div class="key-box">
+                <h4>6. SAVLANUT (<span class="hebrew">סבלנות</span>) - Patience</h4>
+                <p style="text-indent: 0;">Have patience. Haste is the enemy of prosperity.</p>
+                <div class="verse">"Whoever is in a hurry to get rich will not go unpunished" (Proverbs 28:20)</div>
+            </div>
+
+            <div class="key-box">
+                <h4>7. BITACHON (<span class="hebrew">ביטחון</span>) - Trust</h4>
+                <p style="text-indent: 0;">Trust the process. Don't give up in difficult days.</p>
+                <div class="verse">"The righteous falls seven times and rises again" (Proverbs 24:16)</div>
+            </div>
+
+            <h2>PART III: PROTECTION AND SPIRITUAL SHIELDING</h2>
+
+            <h3>Chapter 6: The Shield of 72 Names</h3>
+            <p>According to Kabbalistic tradition, there are 72 sacred combinations of divine names that offer protection. Main applications:</p>
+            
+            <p><strong>For Financial Protection:</strong> Meditate on the name Vav-Hei-Vav (<span class="hebrew">והו</span>) - Meaning: "Ordered Prosperity" - Use: Before important meetings or financial decisions</p>
+            
+            <p><strong>For Family Protection:</strong> Meditate on the name Alef-Lamed-Dalet (<span class="hebrew">אלד</span>) - Meaning: "Protector of the home" - Use: At the entrance of your house</p>
+            
+            <p><strong>For Business Protection:</strong> Meditate on the name Mem-Bet-Hei (<span class="hebrew">מבה</span>) - Meaning: "Eliminator of obstacles" - Use: When signing contracts or starting ventures</p>
+
+            <h3>Chapter 7: Prayers of Protection</h3>
+            
+            <div class="verse">
+                <strong>Morning Prayer (Shacharit):</strong><br/>
+                "Lord God of my fathers, today I consecrate my ways to You. May my steps be directed by Your wisdom, may my words bring blessings, and may my hands produce abundant fruit. Protect me from all evil, guard my family, and multiply our resources so that we may be a blessing to many. Amen."
+            </div>
+
+            <div class="verse">
+                <strong>Evening Prayer (Arvit):</strong><br/>
+                "Heavenly Father, I thank You for this day that ends. I acknowledge Your blessings, great and small. May my rest be restorative and may my dreams bring revelation. Protect us during the night and renew our strength for a new day of victories. Amen."
+            </div>
+
+            <h2>PART IV: RITUALS AND PRACTICES</h2>
+
+            <h3>Chapter 8: The Weekly Cycle of Blessings</h3>
+
+            <div class="day-schedule">
+                <div class="day">
+                    <strong>Sunday (Yom Rishon) - Day of Restart</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Plan the week • Declare your goals • Practice generosity</p>
+                </div>
+
+                <div class="day">
+                    <strong>Monday (Yom Sheni) - Day of Action</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Execute with excellence • Maintain total focus • Avoid distractions</p>
+                </div>
+
+                <div class="day">
+                    <strong>Tuesday (Yom Shlishi) - Day of Creativity</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Seek innovative solutions • Study something new • Connect with mentors</p>
+                </div>
+
+                <div class="day">
+                    <strong>Wednesday (Yom Revi'i) - Day of Balance</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Evaluate your progress • Adjust course if necessary • Practice gratitude</p>
+                </div>
+
+                <div class="day">
+                    <strong>Thursday (Yom Chamishi) - Day of Connection</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Strengthen relationships • Network • Demonstrate kindness</p>
+                </div>
+
+                <div class="day">
+                    <strong>Friday (Yom Shishi) - Day of Completion</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Complete pending tasks • Prepare for rest • Light candles at sunset (symbolic)</p>
+                </div>
+
+                <div class="day">
+                    <strong>Saturday (Shabbat) - Day of Rest</strong>
+                    <p style="text-indent: 0; margin-top: 8px;">Do not work • Recharge energies • Spend time with family</p>
+                </div>
+            </div>
+
+            <h3>Chapter 9: Declarations of Power</h3>
+            <p>Recite these declarations daily:</p>
+
+            <div class="declaration">"I am a child of the King, heir of blessings"</div>
+            <div class="declaration">"Everything I touch prospers and multiplies"</div>
+            <div class="declaration">"I am protected by the divine shield"</div>
+            <div class="declaration">"My house is a sanctuary of peace"</div>
+            <div class="declaration">"My children are arrows in the warrior's hands"</div>
+            <div class="declaration">"My business honors the Creator"</div>
+            <div class="declaration">"I am the head and not the tail, above and not below"</div>
+
+            <h2>PART V: PRACTICAL FINANCIAL WISDOM</h2>
+
+            <h3>Chapter 10: The 10 Commandments of Prosperity</h3>
+            <ul>
+                <li>Do not spend more than you earn</li>
+                <li>Save 20% of everything you receive</li>
+                <li>Invest in assets, not liabilities</li>
+                <li>Diversify your income sources</li>
+                <li>Pay your debts urgently</li>
+                <li>Do not be surety for strangers</li>
+                <li>Always negotiate with justice</li>
+                <li>Honor your financial commitments</li>
+                <li>Teach finances to your children</li>
+                <li>Use money to bless others</li>
+            </ul>
+
+            <h3>Chapter 11: The Strategy of 7 Storehouses</h3>
+            <p>Divide your resources into 7 categories:</p>
+            <ul>
+                <li><strong>Storehouse of Consecration (10%)</strong> - Donations and charity</li>
+                <li><strong>Storehouse of Reserve (10%)</strong> - Emergency savings</li>
+                <li><strong>Storehouse of Growth (10%)</strong> - Investments</li>
+                <li><strong>Storehouse of Dwelling (30%)</strong> - Housing and utilities</li>
+                <li><strong>Storehouse of Sustenance (20%)</strong> - Food and necessities</li>
+                <li><strong>Storehouse of Wisdom (10%)</strong> - Education and books</li>
+                <li><strong>Storehouse of Joy (10%)</strong> - Leisure and quality of life</li>
+            </ul>
+
+            <h2>PART VI: SECRET CODES OF THE MANUSCRIPTS</h2>
+
+            <h3>Chapter 12: Gematria of Prosperity</h3>
+            <p>Gematria is the system of assigning numerical values to Hebrew letters. Important values:</p>
+            <ul>
+                <li><strong>CHAI (<span class="hebrew">חי</span>) = 18 = Life</strong> - Always donate amounts in multiples of 18</li>
+                <li><strong>SHALOM (<span class="hebrew">שלום</span>) = 376 = Complete Peace</strong> - Goal of peaceful days per year (minimum)</li>
+                <li><strong>AHAVAH (<span class="hebrew">אהבה</span>) = 13 = Love</strong> - Practice 13 acts of kindness per week</li>
+                <li><strong>HOSHEK (<span class="hebrew">חושך</span>) = 334 = Darkness</strong> - Fast 334 minutes (5h34min) in critical moments</li>
+            </ul>
+
+            <h3>Chapter 13: The Secret of the Letters</h3>
+            <p>Each Hebrew letter possesses meaning and power:</p>
+            <ul>
+                <li><strong>ALEPH (<span class="hebrew">א</span>) - Leadership and beginning</strong> - Use to start new projects</li>
+                <li><strong>BET (<span class="hebrew">ב</span>) - House and structure</strong> - Use to protect your home</li>
+                <li><strong>GIMEL (<span class="hebrew">ג</span>) - Generosity and reward</strong> - Use when practicing charity</li>
+                <li><strong>DALET (<span class="hebrew">ד</span>) - Door and opportunity</strong> - Use when seeking new doors</li>
+                <li><strong>HEI (<span class="hebrew">ה</span>) - Divine revelation</strong> - Use when seeking wisdom</li>
+            </ul>
+
+            <h2>PART VII: TESTIMONIES OF TRADITION</h2>
+
+            <h3>Chapter 14: Stories of Transformation</h3>
+            
+            <p><strong>The Story of the Jerusalem Merchant:</strong> A poor merchant followed the principles of this manuscript for 7 years. He began giving 10% even when he didn't have enough. In the third year, his sales tripled. In the seventh year, he became the main supplier of the region.</p>
+            <p><em>Lesson: Faithfulness in small gestures attracts great blessings.</em></p>
+
+            <p><strong>The Story of the Widow Who Multiplied the Oil:</strong> A widow applied the principle of first fruits, giving her first jar of oil. The next day, her oil did not cease flowing for 30 days, sufficient to pay all debts.</p>
+            <p><em>Lesson: Generosity activates miracles.</em></p>
+
+            <h2>PART VIII: ADVANCED PRACTICES</h2>
+
+            <h3>Chapter 15: The Fast of Prosperity</h3>
+            <p><strong>Duration:</strong> 3 days (partial - only liquids and fruits)</p>
+            <p><strong>Purpose:</strong></p>
+            <ul>
+                <li>Break cycles of scarcity</li>
+                <li>Open portals of blessings</li>
+                <li>Renew the mind</li>
+            </ul>
+            <p><strong>Structure:</strong></p>
+            <ul>
+                <li>Day 1: Breaking generational curses</li>
+                <li>Day 2: Activation of dormant blessings</li>
+                <li>Day 3: Declaration of prosperity</li>
+            </ul>
+
+            <h3>Chapter 16: The Meditation of the Patriarchs</h3>
+            <p>Connect with the heritage of the patriarchs:</p>
+            <ul>
+                <li><strong>Meditation of Abraham</strong> - Faith that moves resources</li>
+                <li><strong>Meditation of Isaac</strong> - Multiplication of harvests</li>
+                <li><strong>Meditation of Jacob</strong> - Strategy and prosperity</li>
+            </ul>
+
+            <div class="decorative-border">
+                <h2>CONCLUSION</h2>
+                <p>This manuscript contains principles tested by generations. Solomon's wisdom is not magic, but diligent application of spiritual and practical laws.</p>
+            </div>
+
+            <div class="commitment-section">
+                <h3 style="text-align: center; border: none; margin-bottom: 30px;">FINAL COMMITMENT</h3>
+                <p style="text-indent: 0; text-align: center; font-size: 18px; line-height: 1.8;">
+                    "I, <strong id="nameDisplay">___________________</strong>, commit to applying the teachings of this manuscript for 120 consecutive days, trusting that the God of Abraham, Isaac, and Jacob will multiply my blessings, protect my family, and make me a channel of prosperity to many."
+                </p>
+                
+                <div class="signature-line">
+                    <label>Name:</label>
+                    <input type="text" id="nameInput" placeholder="Write your name here">
+                </div>
+                
+                <div class="signature-line">
+                    <label>Date:</label>
+                    <input type="text" id="dateInput" placeholder="Enter date">
+                </div>
+                
+                <div class="signature-line">
+                    <label>Signature:</label>
+                    <input type="text" placeholder="Sign here">
+                </div>
+            </div>
+
+            <button class="print-button" onclick="window.print()">Print Manuscript</button>
+        </div>
+    </div>
+
+    <script>
+        // Auto-fill today's date
+        const dateInput = document.getElementById('dateInput');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateInput.value = today.toLocaleDateString('en-US', options);
+
+        // Update name display when user types
+        const nameInput = document.getElementById('nameInput');
+        const nameDisplay = document.getElementById('nameDisplay');
+        
+        nameInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                nameDisplay.textContent = this.value;
+            } else {
+                nameDisplay.textContent = '___________________';
+            }
+        });
+    </script>
+</body>
+</html>
